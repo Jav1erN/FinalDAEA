@@ -1,0 +1,14 @@
+C:\Users\javier\Desktop\Entregables 2026\Desarrollo de aplicaciones Empresariales Avanzado\ClinicSystem\ClinicSystem.Infrastructure\bin\Debug\net9.0\ClinicSystem.Infrastructure.deps.json
+C:\Users\javier\Desktop\Entregables 2026\Desarrollo de aplicaciones Empresariales Avanzado\ClinicSystem\ClinicSystem.Infrastructure\bin\Debug\net9.0\ClinicSystem.Infrastructure.runtimeconfig.json
+C:\Users\javier\Desktop\Entregables 2026\Desarrollo de aplicaciones Empresariales Avanzado\ClinicSystem\ClinicSystem.Infrastructure\bin\Debug\net9.0\ClinicSystem.Infrastructure.dll
+C:\Users\javier\Desktop\Entregables 2026\Desarrollo de aplicaciones Empresariales Avanzado\ClinicSystem\ClinicSystem.Infrastructure\bin\Debug\net9.0\ClinicSystem.Infrastructure.pdb
+C:\Users\javier\Desktop\Entregables 2026\Desarrollo de aplicaciones Empresariales Avanzado\ClinicSystem\ClinicSystem.Infrastructure\obj\Debug\net9.0\ClinicSystem.Infrastructure.csproj.AssemblyReference.cache
+C:\Users\javier\Desktop\Entregables 2026\Desarrollo de aplicaciones Empresariales Avanzado\ClinicSystem\ClinicSystem.Infrastructure\obj\Debug\net9.0\ClinicSystem.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\javier\Desktop\Entregables 2026\Desarrollo de aplicaciones Empresariales Avanzado\ClinicSystem\ClinicSystem.Infrastructure\obj\Debug\net9.0\ClinicSystem.Infrastructure.AssemblyInfoInputs.cache
+C:\Users\javier\Desktop\Entregables 2026\Desarrollo de aplicaciones Empresariales Avanzado\ClinicSystem\ClinicSystem.Infrastructure\obj\Debug\net9.0\ClinicSystem.Infrastructure.AssemblyInfo.cs
+C:\Users\javier\Desktop\Entregables 2026\Desarrollo de aplicaciones Empresariales Avanzado\ClinicSystem\ClinicSystem.Infrastructure\obj\Debug\net9.0\ClinicSystem.Infrastructure.csproj.CoreCompileInputs.cache
+C:\Users\javier\Desktop\Entregables 2026\Desarrollo de aplicaciones Empresariales Avanzado\ClinicSystem\ClinicSystem.Infrastructure\obj\Debug\net9.0\ClinicSystem.Infrastructure.dll
+C:\Users\javier\Desktop\Entregables 2026\Desarrollo de aplicaciones Empresariales Avanzado\ClinicSystem\ClinicSystem.Infrastructure\obj\Debug\net9.0\refint\ClinicSystem.Infrastructure.dll
+C:\Users\javier\Desktop\Entregables 2026\Desarrollo de aplicaciones Empresariales Avanzado\ClinicSystem\ClinicSystem.Infrastructure\obj\Debug\net9.0\ClinicSystem.Infrastructure.pdb
+C:\Users\javier\Desktop\Entregables 2026\Desarrollo de aplicaciones Empresariales Avanzado\ClinicSystem\ClinicSystem.Infrastructure\obj\Debug\net9.0\ClinicSystem.Infrastructure.genruntimeconfig.cache
+C:\Users\javier\Desktop\Entregables 2026\Desarrollo de aplicaciones Empresariales Avanzado\ClinicSystem\ClinicSystem.Infrastructure\obj\Debug\net9.0\ref\ClinicSystem.Infrastructure.dll
