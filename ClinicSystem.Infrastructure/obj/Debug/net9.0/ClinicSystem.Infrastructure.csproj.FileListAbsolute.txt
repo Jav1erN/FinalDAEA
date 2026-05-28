@@ -12,3 +12,18 @@ C:\Users\javier\Desktop\Entregables 2026\Desarrollo de aplicaciones Empresariale
 C:\Users\javier\Desktop\Entregables 2026\Desarrollo de aplicaciones Empresariales Avanzado\ClinicSystem\ClinicSystem.Infrastructure\obj\Debug\net9.0\ClinicSystem.Infrastructure.pdb
 C:\Users\javier\Desktop\Entregables 2026\Desarrollo de aplicaciones Empresariales Avanzado\ClinicSystem\ClinicSystem.Infrastructure\obj\Debug\net9.0\ClinicSystem.Infrastructure.genruntimeconfig.cache
 C:\Users\javier\Desktop\Entregables 2026\Desarrollo de aplicaciones Empresariales Avanzado\ClinicSystem\ClinicSystem.Infrastructure\obj\Debug\net9.0\ref\ClinicSystem.Infrastructure.dll
+D:\FINAL PROJECT\ClinicSystem.Infrastructure\bin\Debug\net9.0\ClinicSystem.Infrastructure.deps.json
+D:\FINAL PROJECT\ClinicSystem.Infrastructure\bin\Debug\net9.0\ClinicSystem.Infrastructure.runtimeconfig.json
+D:\FINAL PROJECT\ClinicSystem.Infrastructure\bin\Debug\net9.0\ClinicSystem.Infrastructure.dll
+D:\FINAL PROJECT\ClinicSystem.Infrastructure\bin\Debug\net9.0\ClinicSystem.Infrastructure.pdb
+D:\FINAL PROJECT\ClinicSystem.Infrastructure\obj\Debug\net9.0\ClinicSystem.Infrastructure.csproj.AssemblyReference.cache
+D:\FINAL PROJECT\ClinicSystem.Infrastructure\obj\Debug\net9.0\ClinicSystem.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+D:\FINAL PROJECT\ClinicSystem.Infrastructure\obj\Debug\net9.0\ClinicSystem.Infrastructure.AssemblyInfoInputs.cache
+D:\FINAL PROJECT\ClinicSystem.Infrastructure\obj\Debug\net9.0\ClinicSystem.Infrastructure.AssemblyInfo.cs
+D:\FINAL PROJECT\ClinicSystem.Infrastructure\obj\Debug\net9.0\ClinicSystem.Infrastructure.csproj.CoreCompileInputs.cache
+D:\FINAL PROJECT\ClinicSystem.Infrastructure\obj\Debug\net9.0\ClinicSystem.Infrastructure.sourcelink.json
+D:\FINAL PROJECT\ClinicSystem.Infrastructure\obj\Debug\net9.0\ClinicSystem.Infrastructure.dll
+D:\FINAL PROJECT\ClinicSystem.Infrastructure\obj\Debug\net9.0\refint\ClinicSystem.Infrastructure.dll
+D:\FINAL PROJECT\ClinicSystem.Infrastructure\obj\Debug\net9.0\ClinicSystem.Infrastructure.pdb
+D:\FINAL PROJECT\ClinicSystem.Infrastructure\obj\Debug\net9.0\ClinicSystem.Infrastructure.genruntimeconfig.cache
+D:\FINAL PROJECT\ClinicSystem.Infrastructure\obj\Debug\net9.0\ref\ClinicSystem.Infrastructure.dll
