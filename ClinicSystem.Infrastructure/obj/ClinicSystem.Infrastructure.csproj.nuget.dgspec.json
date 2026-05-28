@@ -1,25 +1,32 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\javier\\Desktop\\Entregables 2026\\Desarrollo de aplicaciones Empresariales Avanzado\\ClinicSystem\\ClinicSystem.Infrastructure\\ClinicSystem.Infrastructure.csproj": {}
+    "D:\\FINAL PROJECT\\ClinicSystem.Infrastructure\\ClinicSystem.Infrastructure.csproj": {}
   },
   "projects": {
-    "C:\\Users\\javier\\Desktop\\Entregables 2026\\Desarrollo de aplicaciones Empresariales Avanzado\\ClinicSystem\\ClinicSystem.Infrastructure\\ClinicSystem.Infrastructure.csproj": {
+    "D:\\FINAL PROJECT\\ClinicSystem.Infrastructure\\ClinicSystem.Infrastructure.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\javier\\Desktop\\Entregables 2026\\Desarrollo de aplicaciones Empresariales Avanzado\\ClinicSystem\\ClinicSystem.Infrastructure\\ClinicSystem.Infrastructure.csproj",
+        "projectUniqueName": "D:\\FINAL PROJECT\\ClinicSystem.Infrastructure\\ClinicSystem.Infrastructure.csproj",
         "projectName": "ClinicSystem.Infrastructure",
-        "projectPath": "C:\\Users\\javier\\Desktop\\Entregables 2026\\Desarrollo de aplicaciones Empresariales Avanzado\\ClinicSystem\\ClinicSystem.Infrastructure\\ClinicSystem.Infrastructure.csproj",
-        "packagesPath": "C:\\Users\\javier\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\javier\\Desktop\\Entregables 2026\\Desarrollo de aplicaciones Empresariales Avanzado\\ClinicSystem\\ClinicSystem.Infrastructure\\obj\\",
+        "projectPath": "D:\\FINAL PROJECT\\ClinicSystem.Infrastructure\\ClinicSystem.Infrastructure.csproj",
+        "packagesPath": "C:\\Users\\mirey\\.nuget\\packages\\",
+        "outputPath": "D:\\FINAL PROJECT\\ClinicSystem.Infrastructure\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\javier\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\mirey\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net9.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -44,6 +51,10 @@
         "net9.0": {
           "targetAlias": "net9.0",
           "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[9.0.16, )"
+            },
             "Microsoft.EntityFrameworkCore.Design": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
@@ -77,7 +88,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.312/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.314/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

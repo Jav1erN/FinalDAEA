@@ -8,6 +8,7 @@
     ".NETCoreApp,Version=v9.0": {
       "ClinicSystem.Infrastructure/1.0.0": {
         "dependencies": {
+          "Microsoft.EntityFrameworkCore": "9.0.16",
           "Microsoft.EntityFrameworkCore.Design": "9.0.16",
           "Microsoft.EntityFrameworkCore.Tools": "9.0.16",
           "Npgsql.EntityFrameworkCore.PostgreSQL": "9.0.4"
@@ -604,14 +605,7 @@
         }
       },
       "System.Runtime.CompilerServices.Unsafe/6.0.0": {},
-      "System.Text.Json/9.0.16": {
-        "runtime": {
-          "lib/net9.0/System.Text.Json.dll": {
-            "assemblyVersion": "9.0.0.0",
-            "fileVersion": "9.0.1626.22923"
-          }
-        }
-      },
+      "System.Text.Json/9.0.16": {},
       "System.Threading.Channels/7.0.0": {}
     }
   },

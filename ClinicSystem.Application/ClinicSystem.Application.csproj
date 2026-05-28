@@ -7,17 +7,16 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <Folder Include="Features\Appointments\" />
-      <Folder Include="Features\Authentication\DTOs\" />
-      <Folder Include="Features\Authentication\Queries\" />
-      <Folder Include="Features\Billing\" />
-      <Folder Include="Features\Doctors\" />
-      <Folder Include="Features\Laboratory\" />
-      <Folder Include="Features\Patients\DTOs\" />
+      <Folder Include="Common\Behaviors\" />
+      <Folder Include="Common\Exceptions\" />
+      <Folder Include="Common\Interfaces\" />
+      <Folder Include="Common\Results\" />
+      <Folder Include="Features\" />
     </ItemGroup>
 
     <ItemGroup>
       <PackageReference Include="FluentValidation" Version="12.1.1" />
+      <PackageReference Include="FluentValidation.DependencyInjectionExtensions" Version="12.1.1" />
       <PackageReference Include="MediatR" Version="14.1.0" />
     </ItemGroup>
 
