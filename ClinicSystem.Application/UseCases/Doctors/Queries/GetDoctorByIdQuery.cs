@@ -1,0 +1,33 @@
+using ClinicSystem.Application.Common.Models;
+using ClinicSystem.Application.Ports.Persistence;
+using ClinicSystem.Application.UseCases.Doctors.Dtos;
+using ClinicSystem.Domain.Entities;
+using MediatR;
+
+namespace ClinicSystem.Application.UseCases.Doctors.Queries;
+
+public record GetDoctorByIdQuery(Guid DoctorId) : IRequest<Result<DoctorDto>>;
+
+public class GetDoctorByIdQueryHandler
+    : IRequestHandler<GetDoctorByIdQuery, Result<DoctorDto>>
+{
+    private readonly IUnitOfWork _unitOfWork;
+
+    public GetDoctorByIdQueryHandler(IUnitOfWork unitOfWork)
+    {
+        _unitOfWork = unitOfWork;
+    }
+
+    public async Task<Result<DoctorDto>> Handle(
+        GetDoctorByIdQuery request,
+        CancellationToken cancellationToken)
+    {
+        var entity = await _unitOfWork.Repository<Doctor>()
+            .GetByIdAsync(request.DoctorId, cancellationToken);
+
+        if (entity is null)
+            return Result<DoctorDto>.Failure("Doctor not found");
+
+        return Result<DoctorDto>.Success(entity.ToDto());
+    }
+}

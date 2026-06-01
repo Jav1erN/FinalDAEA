@@ -1,0 +1,33 @@
+using ClinicSystem.Application.Common.Models;
+using ClinicSystem.Application.Ports.Persistence;
+using ClinicSystem.Application.UseCases.Appointments.Dtos;
+using ClinicSystem.Domain.Entities;
+using MediatR;
+
+namespace ClinicSystem.Application.UseCases.Appointments.Queries;
+
+public record GetAppointmentByIdQuery(Guid AppointmentId) : IRequest<Result<AppointmentDto>>;
+
+public class GetAppointmentByIdQueryHandler
+    : IRequestHandler<GetAppointmentByIdQuery, Result<AppointmentDto>>
+{
+    private readonly IUnitOfWork _unitOfWork;
+
+    public GetAppointmentByIdQueryHandler(IUnitOfWork unitOfWork)
+    {
+        _unitOfWork = unitOfWork;
+    }
+
+    public async Task<Result<AppointmentDto>> Handle(
+        GetAppointmentByIdQuery request,
+        CancellationToken cancellationToken)
+    {
+        var entity = await _unitOfWork.Repository<Appointment>()
+            .GetByIdAsync(request.AppointmentId, cancellationToken);
+
+        if (entity is null)
+            return Result<AppointmentDto>.Failure("Appointment not found");
+
+        return Result<AppointmentDto>.Success(entity.ToDto());
+    }
+}

@@ -1,0 +1,12 @@
+C:\Users\javier\Desktop\Entregables 2026\Desarrollo de aplicaciones Empresariales Avanzado\ClinicSystem\ClinicSystem.Domain\bin\Debug\net9.0\ClinicSystem.Domain.deps.json
+C:\Users\javier\Desktop\Entregables 2026\Desarrollo de aplicaciones Empresariales Avanzado\ClinicSystem\ClinicSystem.Domain\bin\Debug\net9.0\ClinicSystem.Domain.dll
+C:\Users\javier\Desktop\Entregables 2026\Desarrollo de aplicaciones Empresariales Avanzado\ClinicSystem\ClinicSystem.Domain\bin\Debug\net9.0\ClinicSystem.Domain.pdb
+C:\Users\javier\Desktop\Entregables 2026\Desarrollo de aplicaciones Empresariales Avanzado\ClinicSystem\ClinicSystem.Domain\obj\Debug\net9.0\ClinicSystem.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\javier\Desktop\Entregables 2026\Desarrollo de aplicaciones Empresariales Avanzado\ClinicSystem\ClinicSystem.Domain\obj\Debug\net9.0\ClinicSystem.Domain.AssemblyInfoInputs.cache
+C:\Users\javier\Desktop\Entregables 2026\Desarrollo de aplicaciones Empresariales Avanzado\ClinicSystem\ClinicSystem.Domain\obj\Debug\net9.0\ClinicSystem.Domain.AssemblyInfo.cs
+C:\Users\javier\Desktop\Entregables 2026\Desarrollo de aplicaciones Empresariales Avanzado\ClinicSystem\ClinicSystem.Domain\obj\Debug\net9.0\ClinicSystem.Domain.csproj.CoreCompileInputs.cache
+C:\Users\javier\Desktop\Entregables 2026\Desarrollo de aplicaciones Empresariales Avanzado\ClinicSystem\ClinicSystem.Domain\obj\Debug\net9.0\ClinicSystem.Domain.sourcelink.json
+C:\Users\javier\Desktop\Entregables 2026\Desarrollo de aplicaciones Empresariales Avanzado\ClinicSystem\ClinicSystem.Domain\obj\Debug\net9.0\ClinicSystem.Domain.dll
+C:\Users\javier\Desktop\Entregables 2026\Desarrollo de aplicaciones Empresariales Avanzado\ClinicSystem\ClinicSystem.Domain\obj\Debug\net9.0\refint\ClinicSystem.Domain.dll
+C:\Users\javier\Desktop\Entregables 2026\Desarrollo de aplicaciones Empresariales Avanzado\ClinicSystem\ClinicSystem.Domain\obj\Debug\net9.0\ClinicSystem.Domain.pdb
+C:\Users\javier\Desktop\Entregables 2026\Desarrollo de aplicaciones Empresariales Avanzado\ClinicSystem\ClinicSystem.Domain\obj\Debug\net9.0\ref\ClinicSystem.Domain.dll
