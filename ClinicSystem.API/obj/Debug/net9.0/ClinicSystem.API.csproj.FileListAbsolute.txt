@@ -1,0 +1,147 @@
+D:\FINAL PROJECT\ClinicSystem.API\bin\Debug\net9.0\appsettings.Development.json
+D:\FINAL PROJECT\ClinicSystem.API\bin\Debug\net9.0\appsettings.json
+D:\FINAL PROJECT\ClinicSystem.API\bin\Debug\net9.0\ClinicSystem.API.staticwebassets.endpoints.json
+D:\FINAL PROJECT\ClinicSystem.API\bin\Debug\net9.0\ClinicSystem.API.exe
+D:\FINAL PROJECT\ClinicSystem.API\bin\Debug\net9.0\ClinicSystem.API.deps.json
+D:\FINAL PROJECT\ClinicSystem.API\bin\Debug\net9.0\ClinicSystem.API.runtimeconfig.json
+D:\FINAL PROJECT\ClinicSystem.API\bin\Debug\net9.0\ClinicSystem.API.dll
+D:\FINAL PROJECT\ClinicSystem.API\bin\Debug\net9.0\ClinicSystem.API.pdb
+D:\FINAL PROJECT\ClinicSystem.API\bin\Debug\net9.0\FluentValidation.dll
+D:\FINAL PROJECT\ClinicSystem.API\bin\Debug\net9.0\FluentValidation.DependencyInjectionExtensions.dll
+D:\FINAL PROJECT\ClinicSystem.API\bin\Debug\net9.0\MediatR.dll
+D:\FINAL PROJECT\ClinicSystem.API\bin\Debug\net9.0\MediatR.Contracts.dll
+D:\FINAL PROJECT\ClinicSystem.API\bin\Debug\net9.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+D:\FINAL PROJECT\ClinicSystem.API\bin\Debug\net9.0\Microsoft.AspNetCore.OpenApi.dll
+D:\FINAL PROJECT\ClinicSystem.API\bin\Debug\net9.0\Microsoft.EntityFrameworkCore.dll
+D:\FINAL PROJECT\ClinicSystem.API\bin\Debug\net9.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+D:\FINAL PROJECT\ClinicSystem.API\bin\Debug\net9.0\Microsoft.EntityFrameworkCore.Relational.dll
+D:\FINAL PROJECT\ClinicSystem.API\bin\Debug\net9.0\Microsoft.Extensions.Caching.Abstractions.dll
+D:\FINAL PROJECT\ClinicSystem.API\bin\Debug\net9.0\Microsoft.Extensions.Caching.Memory.dll
+D:\FINAL PROJECT\ClinicSystem.API\bin\Debug\net9.0\Microsoft.Extensions.Configuration.Abstractions.dll
+D:\FINAL PROJECT\ClinicSystem.API\bin\Debug\net9.0\Microsoft.Extensions.DependencyInjection.dll
+D:\FINAL PROJECT\ClinicSystem.API\bin\Debug\net9.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+D:\FINAL PROJECT\ClinicSystem.API\bin\Debug\net9.0\Microsoft.Extensions.DependencyModel.dll
+D:\FINAL PROJECT\ClinicSystem.API\bin\Debug\net9.0\Microsoft.Extensions.Logging.dll
+D:\FINAL PROJECT\ClinicSystem.API\bin\Debug\net9.0\Microsoft.Extensions.Logging.Abstractions.dll
+D:\FINAL PROJECT\ClinicSystem.API\bin\Debug\net9.0\Microsoft.Extensions.Options.dll
+D:\FINAL PROJECT\ClinicSystem.API\bin\Debug\net9.0\Microsoft.Extensions.Primitives.dll
+D:\FINAL PROJECT\ClinicSystem.API\bin\Debug\net9.0\Microsoft.IdentityModel.Abstractions.dll
+D:\FINAL PROJECT\ClinicSystem.API\bin\Debug\net9.0\Microsoft.IdentityModel.JsonWebTokens.dll
+D:\FINAL PROJECT\ClinicSystem.API\bin\Debug\net9.0\Microsoft.IdentityModel.Logging.dll
+D:\FINAL PROJECT\ClinicSystem.API\bin\Debug\net9.0\Microsoft.IdentityModel.Protocols.dll
+D:\FINAL PROJECT\ClinicSystem.API\bin\Debug\net9.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+D:\FINAL PROJECT\ClinicSystem.API\bin\Debug\net9.0\Microsoft.IdentityModel.Tokens.dll
+D:\FINAL PROJECT\ClinicSystem.API\bin\Debug\net9.0\Microsoft.OpenApi.dll
+D:\FINAL PROJECT\ClinicSystem.API\bin\Debug\net9.0\Npgsql.dll
+D:\FINAL PROJECT\ClinicSystem.API\bin\Debug\net9.0\Npgsql.EntityFrameworkCore.PostgreSQL.dll
+D:\FINAL PROJECT\ClinicSystem.API\bin\Debug\net9.0\Serilog.dll
+D:\FINAL PROJECT\ClinicSystem.API\bin\Debug\net9.0\Serilog.AspNetCore.dll
+D:\FINAL PROJECT\ClinicSystem.API\bin\Debug\net9.0\Serilog.Extensions.Hosting.dll
+D:\FINAL PROJECT\ClinicSystem.API\bin\Debug\net9.0\Serilog.Extensions.Logging.dll
+D:\FINAL PROJECT\ClinicSystem.API\bin\Debug\net9.0\Serilog.Formatting.Compact.dll
+D:\FINAL PROJECT\ClinicSystem.API\bin\Debug\net9.0\Serilog.Settings.Configuration.dll
+D:\FINAL PROJECT\ClinicSystem.API\bin\Debug\net9.0\Serilog.Sinks.Console.dll
+D:\FINAL PROJECT\ClinicSystem.API\bin\Debug\net9.0\Serilog.Sinks.Debug.dll
+D:\FINAL PROJECT\ClinicSystem.API\bin\Debug\net9.0\Serilog.Sinks.File.dll
+D:\FINAL PROJECT\ClinicSystem.API\bin\Debug\net9.0\Swashbuckle.AspNetCore.Swagger.dll
+D:\FINAL PROJECT\ClinicSystem.API\bin\Debug\net9.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+D:\FINAL PROJECT\ClinicSystem.API\bin\Debug\net9.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+D:\FINAL PROJECT\ClinicSystem.API\bin\Debug\net9.0\System.Diagnostics.DiagnosticSource.dll
+D:\FINAL PROJECT\ClinicSystem.API\bin\Debug\net9.0\System.IdentityModel.Tokens.Jwt.dll
+D:\FINAL PROJECT\ClinicSystem.API\bin\Debug\net9.0\ClinicSystem.Application.dll
+D:\FINAL PROJECT\ClinicSystem.API\bin\Debug\net9.0\ClinicSystem.Infrastructure.dll
+D:\FINAL PROJECT\ClinicSystem.API\bin\Debug\net9.0\ClinicSystem.Application.pdb
+D:\FINAL PROJECT\ClinicSystem.API\bin\Debug\net9.0\ClinicSystem.Infrastructure.pdb
+D:\FINAL PROJECT\ClinicSystem.API\obj\Debug\net9.0\ClinicSystem.API.csproj.AssemblyReference.cache
+D:\FINAL PROJECT\ClinicSystem.API\obj\Debug\net9.0\rpswa.dswa.cache.json
+D:\FINAL PROJECT\ClinicSystem.API\obj\Debug\net9.0\ClinicSystem.API.GeneratedMSBuildEditorConfig.editorconfig
+D:\FINAL PROJECT\ClinicSystem.API\obj\Debug\net9.0\ClinicSystem.API.AssemblyInfoInputs.cache
+D:\FINAL PROJECT\ClinicSystem.API\obj\Debug\net9.0\ClinicSystem.API.AssemblyInfo.cs
+D:\FINAL PROJECT\ClinicSystem.API\obj\Debug\net9.0\ClinicSystem.API.csproj.CoreCompileInputs.cache
+D:\FINAL PROJECT\ClinicSystem.API\obj\Debug\net9.0\ClinicSystem.API.MvcApplicationPartsAssemblyInfo.cs
+D:\FINAL PROJECT\ClinicSystem.API\obj\Debug\net9.0\ClinicSystem.API.MvcApplicationPartsAssemblyInfo.cache
+D:\FINAL PROJECT\ClinicSystem.API\obj\Debug\net9.0\ClinicSystem.API.sourcelink.json
+D:\FINAL PROJECT\ClinicSystem.API\obj\Debug\net9.0\rjimswa.dswa.cache.json
+D:\FINAL PROJECT\ClinicSystem.API\obj\Debug\net9.0\rjsmrazor.dswa.cache.json
+D:\FINAL PROJECT\ClinicSystem.API\obj\Debug\net9.0\rjsmcshtml.dswa.cache.json
+D:\FINAL PROJECT\ClinicSystem.API\obj\Debug\net9.0\scopedcss\bundle\ClinicSystem.API.styles.css
+D:\FINAL PROJECT\ClinicSystem.API\obj\Debug\net9.0\staticwebassets.build.json
+D:\FINAL PROJECT\ClinicSystem.API\obj\Debug\net9.0\staticwebassets.build.json.cache
+D:\FINAL PROJECT\ClinicSystem.API\obj\Debug\net9.0\staticwebassets.development.json
+D:\FINAL PROJECT\ClinicSystem.API\obj\Debug\net9.0\staticwebassets.build.endpoints.json
+D:\FINAL PROJECT\ClinicSystem.API\obj\Debug\net9.0\ClinicSy.806AE36F.Up2Date
+D:\FINAL PROJECT\ClinicSystem.API\obj\Debug\net9.0\ClinicSystem.API.dll
+D:\FINAL PROJECT\ClinicSystem.API\obj\Debug\net9.0\refint\ClinicSystem.API.dll
+D:\FINAL PROJECT\ClinicSystem.API\obj\Debug\net9.0\ClinicSystem.API.pdb
+D:\FINAL PROJECT\ClinicSystem.API\obj\Debug\net9.0\ClinicSystem.API.genruntimeconfig.cache
+D:\FINAL PROJECT\ClinicSystem.API\obj\Debug\net9.0\ref\ClinicSystem.API.dll
+C:\Users\javier\Desktop\Entregables 2026\Desarrollo de aplicaciones Empresariales Avanzado\ClinicSystem\ClinicSystem.API\bin\Debug\net9.0\appsettings.Development.json
+C:\Users\javier\Desktop\Entregables 2026\Desarrollo de aplicaciones Empresariales Avanzado\ClinicSystem\ClinicSystem.API\bin\Debug\net9.0\appsettings.json
+C:\Users\javier\Desktop\Entregables 2026\Desarrollo de aplicaciones Empresariales Avanzado\ClinicSystem\ClinicSystem.API\bin\Debug\net9.0\ClinicSystem.API.staticwebassets.endpoints.json
+C:\Users\javier\Desktop\Entregables 2026\Desarrollo de aplicaciones Empresariales Avanzado\ClinicSystem\ClinicSystem.API\bin\Debug\net9.0\ClinicSystem.API.exe
+C:\Users\javier\Desktop\Entregables 2026\Desarrollo de aplicaciones Empresariales Avanzado\ClinicSystem\ClinicSystem.API\bin\Debug\net9.0\ClinicSystem.API.deps.json
+C:\Users\javier\Desktop\Entregables 2026\Desarrollo de aplicaciones Empresariales Avanzado\ClinicSystem\ClinicSystem.API\bin\Debug\net9.0\ClinicSystem.API.runtimeconfig.json
+C:\Users\javier\Desktop\Entregables 2026\Desarrollo de aplicaciones Empresariales Avanzado\ClinicSystem\ClinicSystem.API\bin\Debug\net9.0\ClinicSystem.API.dll
+C:\Users\javier\Desktop\Entregables 2026\Desarrollo de aplicaciones Empresariales Avanzado\ClinicSystem\ClinicSystem.API\bin\Debug\net9.0\ClinicSystem.API.pdb
+C:\Users\javier\Desktop\Entregables 2026\Desarrollo de aplicaciones Empresariales Avanzado\ClinicSystem\ClinicSystem.API\bin\Debug\net9.0\FluentValidation.dll
+C:\Users\javier\Desktop\Entregables 2026\Desarrollo de aplicaciones Empresariales Avanzado\ClinicSystem\ClinicSystem.API\bin\Debug\net9.0\FluentValidation.DependencyInjectionExtensions.dll
+C:\Users\javier\Desktop\Entregables 2026\Desarrollo de aplicaciones Empresariales Avanzado\ClinicSystem\ClinicSystem.API\bin\Debug\net9.0\MediatR.dll
+C:\Users\javier\Desktop\Entregables 2026\Desarrollo de aplicaciones Empresariales Avanzado\ClinicSystem\ClinicSystem.API\bin\Debug\net9.0\MediatR.Contracts.dll
+C:\Users\javier\Desktop\Entregables 2026\Desarrollo de aplicaciones Empresariales Avanzado\ClinicSystem\ClinicSystem.API\bin\Debug\net9.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\javier\Desktop\Entregables 2026\Desarrollo de aplicaciones Empresariales Avanzado\ClinicSystem\ClinicSystem.API\bin\Debug\net9.0\Microsoft.AspNetCore.OpenApi.dll
+C:\Users\javier\Desktop\Entregables 2026\Desarrollo de aplicaciones Empresariales Avanzado\ClinicSystem\ClinicSystem.API\bin\Debug\net9.0\Microsoft.EntityFrameworkCore.dll
+C:\Users\javier\Desktop\Entregables 2026\Desarrollo de aplicaciones Empresariales Avanzado\ClinicSystem\ClinicSystem.API\bin\Debug\net9.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+C:\Users\javier\Desktop\Entregables 2026\Desarrollo de aplicaciones Empresariales Avanzado\ClinicSystem\ClinicSystem.API\bin\Debug\net9.0\Microsoft.EntityFrameworkCore.Relational.dll
+C:\Users\javier\Desktop\Entregables 2026\Desarrollo de aplicaciones Empresariales Avanzado\ClinicSystem\ClinicSystem.API\bin\Debug\net9.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\javier\Desktop\Entregables 2026\Desarrollo de aplicaciones Empresariales Avanzado\ClinicSystem\ClinicSystem.API\bin\Debug\net9.0\Microsoft.Extensions.DependencyModel.dll
+C:\Users\javier\Desktop\Entregables 2026\Desarrollo de aplicaciones Empresariales Avanzado\ClinicSystem\ClinicSystem.API\bin\Debug\net9.0\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\javier\Desktop\Entregables 2026\Desarrollo de aplicaciones Empresariales Avanzado\ClinicSystem\ClinicSystem.API\bin\Debug\net9.0\Microsoft.IdentityModel.Abstractions.dll
+C:\Users\javier\Desktop\Entregables 2026\Desarrollo de aplicaciones Empresariales Avanzado\ClinicSystem\ClinicSystem.API\bin\Debug\net9.0\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\javier\Desktop\Entregables 2026\Desarrollo de aplicaciones Empresariales Avanzado\ClinicSystem\ClinicSystem.API\bin\Debug\net9.0\Microsoft.IdentityModel.Logging.dll
+C:\Users\javier\Desktop\Entregables 2026\Desarrollo de aplicaciones Empresariales Avanzado\ClinicSystem\ClinicSystem.API\bin\Debug\net9.0\Microsoft.IdentityModel.Protocols.dll
+C:\Users\javier\Desktop\Entregables 2026\Desarrollo de aplicaciones Empresariales Avanzado\ClinicSystem\ClinicSystem.API\bin\Debug\net9.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\Users\javier\Desktop\Entregables 2026\Desarrollo de aplicaciones Empresariales Avanzado\ClinicSystem\ClinicSystem.API\bin\Debug\net9.0\Microsoft.IdentityModel.Tokens.dll
+C:\Users\javier\Desktop\Entregables 2026\Desarrollo de aplicaciones Empresariales Avanzado\ClinicSystem\ClinicSystem.API\bin\Debug\net9.0\Microsoft.OpenApi.dll
+C:\Users\javier\Desktop\Entregables 2026\Desarrollo de aplicaciones Empresariales Avanzado\ClinicSystem\ClinicSystem.API\bin\Debug\net9.0\Npgsql.dll
+C:\Users\javier\Desktop\Entregables 2026\Desarrollo de aplicaciones Empresariales Avanzado\ClinicSystem\ClinicSystem.API\bin\Debug\net9.0\Npgsql.EntityFrameworkCore.PostgreSQL.dll
+C:\Users\javier\Desktop\Entregables 2026\Desarrollo de aplicaciones Empresariales Avanzado\ClinicSystem\ClinicSystem.API\bin\Debug\net9.0\Serilog.dll
+C:\Users\javier\Desktop\Entregables 2026\Desarrollo de aplicaciones Empresariales Avanzado\ClinicSystem\ClinicSystem.API\bin\Debug\net9.0\Serilog.AspNetCore.dll
+C:\Users\javier\Desktop\Entregables 2026\Desarrollo de aplicaciones Empresariales Avanzado\ClinicSystem\ClinicSystem.API\bin\Debug\net9.0\Serilog.Extensions.Hosting.dll
+C:\Users\javier\Desktop\Entregables 2026\Desarrollo de aplicaciones Empresariales Avanzado\ClinicSystem\ClinicSystem.API\bin\Debug\net9.0\Serilog.Extensions.Logging.dll
+C:\Users\javier\Desktop\Entregables 2026\Desarrollo de aplicaciones Empresariales Avanzado\ClinicSystem\ClinicSystem.API\bin\Debug\net9.0\Serilog.Formatting.Compact.dll
+C:\Users\javier\Desktop\Entregables 2026\Desarrollo de aplicaciones Empresariales Avanzado\ClinicSystem\ClinicSystem.API\bin\Debug\net9.0\Serilog.Settings.Configuration.dll
+C:\Users\javier\Desktop\Entregables 2026\Desarrollo de aplicaciones Empresariales Avanzado\ClinicSystem\ClinicSystem.API\bin\Debug\net9.0\Serilog.Sinks.Console.dll
+C:\Users\javier\Desktop\Entregables 2026\Desarrollo de aplicaciones Empresariales Avanzado\ClinicSystem\ClinicSystem.API\bin\Debug\net9.0\Serilog.Sinks.Debug.dll
+C:\Users\javier\Desktop\Entregables 2026\Desarrollo de aplicaciones Empresariales Avanzado\ClinicSystem\ClinicSystem.API\bin\Debug\net9.0\Serilog.Sinks.File.dll
+C:\Users\javier\Desktop\Entregables 2026\Desarrollo de aplicaciones Empresariales Avanzado\ClinicSystem\ClinicSystem.API\bin\Debug\net9.0\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\javier\Desktop\Entregables 2026\Desarrollo de aplicaciones Empresariales Avanzado\ClinicSystem\ClinicSystem.API\bin\Debug\net9.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\javier\Desktop\Entregables 2026\Desarrollo de aplicaciones Empresariales Avanzado\ClinicSystem\ClinicSystem.API\bin\Debug\net9.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Users\javier\Desktop\Entregables 2026\Desarrollo de aplicaciones Empresariales Avanzado\ClinicSystem\ClinicSystem.API\bin\Debug\net9.0\System.Diagnostics.DiagnosticSource.dll
+C:\Users\javier\Desktop\Entregables 2026\Desarrollo de aplicaciones Empresariales Avanzado\ClinicSystem\ClinicSystem.API\bin\Debug\net9.0\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\javier\Desktop\Entregables 2026\Desarrollo de aplicaciones Empresariales Avanzado\ClinicSystem\ClinicSystem.API\bin\Debug\net9.0\ClinicSystem.Application.dll
+C:\Users\javier\Desktop\Entregables 2026\Desarrollo de aplicaciones Empresariales Avanzado\ClinicSystem\ClinicSystem.API\bin\Debug\net9.0\ClinicSystem.Infrastructure.dll
+C:\Users\javier\Desktop\Entregables 2026\Desarrollo de aplicaciones Empresariales Avanzado\ClinicSystem\ClinicSystem.API\bin\Debug\net9.0\ClinicSystem.Application.pdb
+C:\Users\javier\Desktop\Entregables 2026\Desarrollo de aplicaciones Empresariales Avanzado\ClinicSystem\ClinicSystem.API\bin\Debug\net9.0\ClinicSystem.Infrastructure.pdb
+C:\Users\javier\Desktop\Entregables 2026\Desarrollo de aplicaciones Empresariales Avanzado\ClinicSystem\ClinicSystem.API\obj\Debug\net9.0\ClinicSystem.API.csproj.AssemblyReference.cache
+C:\Users\javier\Desktop\Entregables 2026\Desarrollo de aplicaciones Empresariales Avanzado\ClinicSystem\ClinicSystem.API\obj\Debug\net9.0\rpswa.dswa.cache.json
+C:\Users\javier\Desktop\Entregables 2026\Desarrollo de aplicaciones Empresariales Avanzado\ClinicSystem\ClinicSystem.API\obj\Debug\net9.0\ClinicSystem.API.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\javier\Desktop\Entregables 2026\Desarrollo de aplicaciones Empresariales Avanzado\ClinicSystem\ClinicSystem.API\obj\Debug\net9.0\ClinicSystem.API.AssemblyInfoInputs.cache
+C:\Users\javier\Desktop\Entregables 2026\Desarrollo de aplicaciones Empresariales Avanzado\ClinicSystem\ClinicSystem.API\obj\Debug\net9.0\ClinicSystem.API.AssemblyInfo.cs
+C:\Users\javier\Desktop\Entregables 2026\Desarrollo de aplicaciones Empresariales Avanzado\ClinicSystem\ClinicSystem.API\obj\Debug\net9.0\ClinicSystem.API.csproj.CoreCompileInputs.cache
+C:\Users\javier\Desktop\Entregables 2026\Desarrollo de aplicaciones Empresariales Avanzado\ClinicSystem\ClinicSystem.API\obj\Debug\net9.0\ClinicSystem.API.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\javier\Desktop\Entregables 2026\Desarrollo de aplicaciones Empresariales Avanzado\ClinicSystem\ClinicSystem.API\obj\Debug\net9.0\ClinicSystem.API.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\javier\Desktop\Entregables 2026\Desarrollo de aplicaciones Empresariales Avanzado\ClinicSystem\ClinicSystem.API\obj\Debug\net9.0\ClinicSystem.API.sourcelink.json
+C:\Users\javier\Desktop\Entregables 2026\Desarrollo de aplicaciones Empresariales Avanzado\ClinicSystem\ClinicSystem.API\obj\Debug\net9.0\rjimswa.dswa.cache.json
+C:\Users\javier\Desktop\Entregables 2026\Desarrollo de aplicaciones Empresariales Avanzado\ClinicSystem\ClinicSystem.API\obj\Debug\net9.0\rjsmrazor.dswa.cache.json
+C:\Users\javier\Desktop\Entregables 2026\Desarrollo de aplicaciones Empresariales Avanzado\ClinicSystem\ClinicSystem.API\obj\Debug\net9.0\rjsmcshtml.dswa.cache.json
+C:\Users\javier\Desktop\Entregables 2026\Desarrollo de aplicaciones Empresariales Avanzado\ClinicSystem\ClinicSystem.API\obj\Debug\net9.0\scopedcss\bundle\ClinicSystem.API.styles.css
+C:\Users\javier\Desktop\Entregables 2026\Desarrollo de aplicaciones Empresariales Avanzado\ClinicSystem\ClinicSystem.API\obj\Debug\net9.0\staticwebassets.build.json
+C:\Users\javier\Desktop\Entregables 2026\Desarrollo de aplicaciones Empresariales Avanzado\ClinicSystem\ClinicSystem.API\obj\Debug\net9.0\staticwebassets.build.json.cache
+C:\Users\javier\Desktop\Entregables 2026\Desarrollo de aplicaciones Empresariales Avanzado\ClinicSystem\ClinicSystem.API\obj\Debug\net9.0\staticwebassets.development.json
+C:\Users\javier\Desktop\Entregables 2026\Desarrollo de aplicaciones Empresariales Avanzado\ClinicSystem\ClinicSystem.API\obj\Debug\net9.0\staticwebassets.build.endpoints.json
+C:\Users\javier\Desktop\Entregables 2026\Desarrollo de aplicaciones Empresariales Avanzado\ClinicSystem\ClinicSystem.API\obj\Debug\net9.0\ClinicSy.806AE36F.Up2Date
+C:\Users\javier\Desktop\Entregables 2026\Desarrollo de aplicaciones Empresariales Avanzado\ClinicSystem\ClinicSystem.API\obj\Debug\net9.0\ClinicSystem.API.dll
+C:\Users\javier\Desktop\Entregables 2026\Desarrollo de aplicaciones Empresariales Avanzado\ClinicSystem\ClinicSystem.API\obj\Debug\net9.0\refint\ClinicSystem.API.dll
+C:\Users\javier\Desktop\Entregables 2026\Desarrollo de aplicaciones Empresariales Avanzado\ClinicSystem\ClinicSystem.API\obj\Debug\net9.0\ClinicSystem.API.pdb
+C:\Users\javier\Desktop\Entregables 2026\Desarrollo de aplicaciones Empresariales Avanzado\ClinicSystem\ClinicSystem.API\obj\Debug\net9.0\ClinicSystem.API.genruntimeconfig.cache
+C:\Users\javier\Desktop\Entregables 2026\Desarrollo de aplicaciones Empresariales Avanzado\ClinicSystem\ClinicSystem.API\obj\Debug\net9.0\ref\ClinicSystem.API.dll
