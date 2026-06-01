@@ -2,7 +2,7 @@
 
 # ClinicalSystem
 
-### Enterprise Hospital & Clinical Management Platform
+### Clinical Management Platform
 
 .NET 9 • PostgreSQL • CQRS • MediatR • Hexagonal Architecture • Clean Architecture
 
@@ -33,7 +33,7 @@ El proyecto se desarrolla aplicando estándares modernos de ingeniería de softw
 
 ---
 
-# 🎯 Alcance
+# Alcance
 
 La versión inicial del sistema contempla el desarrollo de los siguientes módulos:
 
