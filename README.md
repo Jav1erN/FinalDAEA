@@ -14,7 +14,7 @@ Sistema integral para la gestión clínica, médica y administrativa de instituc
 
 ---
 
-# 👥 Participantes
+# Participantes
 
 * Javier Neira
 * Mireya Apaza
