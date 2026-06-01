@@ -27,3 +27,4 @@ D:\FINAL PROJECT\ClinicSystem.Infrastructure\obj\Debug\net9.0\refint\ClinicSyste
 D:\FINAL PROJECT\ClinicSystem.Infrastructure\obj\Debug\net9.0\ClinicSystem.Infrastructure.pdb
 D:\FINAL PROJECT\ClinicSystem.Infrastructure\obj\Debug\net9.0\ClinicSystem.Infrastructure.genruntimeconfig.cache
 D:\FINAL PROJECT\ClinicSystem.Infrastructure\obj\Debug\net9.0\ref\ClinicSystem.Infrastructure.dll
+C:\Users\javier\Desktop\Entregables 2026\Desarrollo de aplicaciones Empresariales Avanzado\ClinicSystem\ClinicSystem.Infrastructure\obj\Debug\net9.0\ClinicSystem.Infrastructure.sourcelink.json
