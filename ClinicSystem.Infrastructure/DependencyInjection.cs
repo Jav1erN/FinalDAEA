@@ -1,4 +1,7 @@
-﻿using ClinicSystem.Infrastructure.Persistence.Context;
+using ClinicSystem.Application.Ports.Persistence;
+using ClinicSystem.Infrastructure.Persistence;
+using ClinicSystem.Infrastructure.Persistence.Context;
+using ClinicSystem.Infrastructure.Persistence.Repositories;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -16,6 +19,10 @@ public static class DependencyInjection
             options.UseNpgsql(
                 configuration.GetConnectionString("DefaultConnection"));
         });
+
+        services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
+        services.AddScoped<IPatientRepository, PatientRepository>();
+        services.AddScoped<IUnitOfWork, UnitOfWork>();
 
         return services;
     }

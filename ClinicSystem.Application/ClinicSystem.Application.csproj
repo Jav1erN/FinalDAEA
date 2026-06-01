@@ -7,21 +7,13 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <Folder Include="Common\Behaviors\" />
-      <Folder Include="Common\Exceptions\" />
-      <Folder Include="Common\Interfaces\" />
-      <Folder Include="Common\Results\" />
-      <Folder Include="Features\" />
-    </ItemGroup>
-
-    <ItemGroup>
       <PackageReference Include="FluentValidation" Version="12.1.1" />
       <PackageReference Include="FluentValidation.DependencyInjectionExtensions" Version="12.1.1" />
       <PackageReference Include="MediatR" Version="14.1.0" />
     </ItemGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\ClinicSystem.Infrastructure\ClinicSystem.Infrastructure.csproj" />
+      <ProjectReference Include="..\ClinicSystem.Domain\ClinicSystem.Domain.csproj" />
     </ItemGroup>
 
 </Project>

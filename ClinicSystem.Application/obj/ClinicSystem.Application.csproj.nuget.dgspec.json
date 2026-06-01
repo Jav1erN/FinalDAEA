@@ -26,8 +26,8 @@
           "net9.0": {
             "targetAlias": "net9.0",
             "projectReferences": {
-              "C:\\Users\\javier\\Desktop\\Entregables 2026\\Desarrollo de aplicaciones Empresariales Avanzado\\ClinicSystem\\ClinicSystem.Infrastructure\\ClinicSystem.Infrastructure.csproj": {
-                "projectPath": "C:\\Users\\javier\\Desktop\\Entregables 2026\\Desarrollo de aplicaciones Empresariales Avanzado\\ClinicSystem\\ClinicSystem.Infrastructure\\ClinicSystem.Infrastructure.csproj"
+              "C:\\Users\\javier\\Desktop\\Entregables 2026\\Desarrollo de aplicaciones Empresariales Avanzado\\ClinicSystem\\ClinicSystem.Domain\\ClinicSystem.Domain.csproj": {
+                "projectPath": "C:\\Users\\javier\\Desktop\\Entregables 2026\\Desarrollo de aplicaciones Empresariales Avanzado\\ClinicSystem\\ClinicSystem.Domain\\ClinicSystem.Domain.csproj"
               }
             }
           }
@@ -81,14 +81,14 @@
         }
       }
     },
-    "C:\\Users\\javier\\Desktop\\Entregables 2026\\Desarrollo de aplicaciones Empresariales Avanzado\\ClinicSystem\\ClinicSystem.Infrastructure\\ClinicSystem.Infrastructure.csproj": {
+    "C:\\Users\\javier\\Desktop\\Entregables 2026\\Desarrollo de aplicaciones Empresariales Avanzado\\ClinicSystem\\ClinicSystem.Domain\\ClinicSystem.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\javier\\Desktop\\Entregables 2026\\Desarrollo de aplicaciones Empresariales Avanzado\\ClinicSystem\\ClinicSystem.Infrastructure\\ClinicSystem.Infrastructure.csproj",
-        "projectName": "ClinicSystem.Infrastructure",
-        "projectPath": "C:\\Users\\javier\\Desktop\\Entregables 2026\\Desarrollo de aplicaciones Empresariales Avanzado\\ClinicSystem\\ClinicSystem.Infrastructure\\ClinicSystem.Infrastructure.csproj",
+        "projectUniqueName": "C:\\Users\\javier\\Desktop\\Entregables 2026\\Desarrollo de aplicaciones Empresariales Avanzado\\ClinicSystem\\ClinicSystem.Domain\\ClinicSystem.Domain.csproj",
+        "projectName": "ClinicSystem.Domain",
+        "projectPath": "C:\\Users\\javier\\Desktop\\Entregables 2026\\Desarrollo de aplicaciones Empresariales Avanzado\\ClinicSystem\\ClinicSystem.Domain\\ClinicSystem.Domain.csproj",
         "packagesPath": "C:\\Users\\javier\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\javier\\Desktop\\Entregables 2026\\Desarrollo de aplicaciones Empresariales Avanzado\\ClinicSystem\\ClinicSystem.Infrastructure\\obj\\",
+        "outputPath": "C:\\Users\\javier\\Desktop\\Entregables 2026\\Desarrollo de aplicaciones Empresariales Avanzado\\ClinicSystem\\ClinicSystem.Domain\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\javier\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -120,32 +120,6 @@
       "frameworks": {
         "net9.0": {
           "targetAlias": "net9.0",
-          "dependencies": {
-            "Microsoft.EntityFrameworkCore": {
-              "target": "Package",
-              "version": "[9.0.0, )"
-            },
-            "Microsoft.EntityFrameworkCore.Design": {
-              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
-              "suppressParent": "All",
-              "target": "Package",
-              "version": "[9.0.0, )"
-            },
-            "Microsoft.EntityFrameworkCore.Relational": {
-              "target": "Package",
-              "version": "[9.0.0, )"
-            },
-            "Microsoft.EntityFrameworkCore.Tools": {
-              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
-              "suppressParent": "All",
-              "target": "Package",
-              "version": "[9.0.0, )"
-            },
-            "Npgsql.EntityFrameworkCore.PostgreSQL": {
-              "target": "Package",
-              "version": "[9.0.0, )"
-            }
-          },
           "imports": [
             "net461",
             "net462",
