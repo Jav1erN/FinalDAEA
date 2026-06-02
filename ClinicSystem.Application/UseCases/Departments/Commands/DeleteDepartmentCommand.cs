@@ -26,6 +26,9 @@ public class DeleteDepartmentCommandHandler
 
         if (entity is null)
             return Result<bool>.Failure("Department not found");
+        
+        entity.IsActive = false;
+        entity.UpdatedAt = DateTime.Now;
 
         repository.Remove(entity);
         await _unitOfWork.SaveChangesAsync(cancellationToken);

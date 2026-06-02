@@ -10,8 +10,7 @@ public record UpdateDepartmentCommand(
     Guid DepartmentId,
     string Name,
     string? Description,
-    bool? IsActive,
-    DateTime? UpdatedAt
+    bool? IsActive
 ) : IRequest<Result<DepartmentDto>>;
 
 public class UpdateDepartmentCommandHandler
@@ -37,7 +36,7 @@ public class UpdateDepartmentCommandHandler
         entity.Name = request.Name;
         entity.Description = request.Description;
         entity.IsActive = request.IsActive;
-        entity.UpdatedAt = request.UpdatedAt;
+        entity.UpdatedAt = DateTime.Now;
         repository.Update(entity);
         await _unitOfWork.SaveChangesAsync(cancellationToken);
 

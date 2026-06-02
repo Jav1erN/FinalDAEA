@@ -6,10 +6,10 @@ using MediatR;
 
 namespace ClinicSystem.Application.UseCases.Departments.Queries;
 
-public record GetDepartmentsQuery : IRequest<Result<IEnumerable<DepartmentDto>>>;
+public record GetDepartmentsQuery : IRequest<Result<List<DepartmentDto>>>;
 
 public class GetDepartmentsQueryHandler
-    : IRequestHandler<GetDepartmentsQuery, Result<IEnumerable<DepartmentDto>>>
+    : IRequestHandler<GetDepartmentsQuery, Result<List<DepartmentDto>>>
 {
     private readonly IUnitOfWork _unitOfWork;
 
@@ -18,13 +18,18 @@ public class GetDepartmentsQueryHandler
         _unitOfWork = unitOfWork;
     }
 
-    public async Task<Result<IEnumerable<DepartmentDto>>> Handle(
+    public async Task<Result<List<DepartmentDto>>> Handle(
         GetDepartmentsQuery request,
         CancellationToken cancellationToken)
     {
         var entities = await _unitOfWork.Repository<Department>()
             .ListAsync(cancellationToken);
 
-        return Result<IEnumerable<DepartmentDto>>.Success(entities.Select(entity => entity.ToDto()));
+        var result = entities
+            .Where(x => x.IsActive == true)
+            .Select(x => x.ToDto())
+            .ToList();
+
+        return Result<List<DepartmentDto>>.Success(result);
     }
 }

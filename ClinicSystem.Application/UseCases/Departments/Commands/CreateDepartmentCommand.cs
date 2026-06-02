@@ -31,7 +31,8 @@ public class CreateDepartmentCommandHandler
             DepartmentId = Guid.NewGuid(),
             Name = request.Name,
             Description = request.Description,
-            IsActive = request.IsActive
+            IsActive = true,
+            CreatedAt = DateTime.Now
         };
 
         await _unitOfWork.Repository<Department>().AddAsync(entity, cancellationToken);

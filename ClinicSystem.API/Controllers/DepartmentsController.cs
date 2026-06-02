@@ -16,14 +16,17 @@ public class DepartmentsController : ControllerBase
         _sender = sender;
     }
 
+    // GET: api/departments
     [HttpGet]
     public async Task<IActionResult> GetAll(CancellationToken cancellationToken)
     {
         var result = await _sender.Send(new GetDepartmentsQuery(), cancellationToken);
+
         return Ok(result.Value);
     }
 
-    [HttpGet("{id}")]
+    // GET: api/departments/{id}
+    [HttpGet("{id:guid}")]
     public async Task<IActionResult> GetById(Guid id, CancellationToken cancellationToken)
     {
         var result = await _sender.Send(new GetDepartmentByIdQuery(id), cancellationToken);
@@ -34,8 +37,11 @@ public class DepartmentsController : ControllerBase
         return Ok(result.Value);
     }
 
+    // POST: api/departments
     [HttpPost]
-    public async Task<IActionResult> Create(CreateDepartmentCommand command, CancellationToken cancellationToken)
+    public async Task<IActionResult> Create(
+        [FromBody] CreateDepartmentCommand command,
+        CancellationToken cancellationToken)
     {
         var result = await _sender.Send(command, cancellationToken);
 
@@ -45,10 +51,14 @@ public class DepartmentsController : ControllerBase
         return Ok(result.Value);
     }
 
-    [HttpPut("{id}")]
-    public async Task<IActionResult> Update(Guid id, UpdateDepartmentCommand command, CancellationToken cancellationToken)
+    // PUT: api/departments/{id}
+    [HttpPut("{id:guid}")]
+    public async Task<IActionResult> Update(
+        Guid id,
+        [FromBody] UpdateDepartmentCommand command,
+        CancellationToken cancellationToken)
     {
-        if (!EqualityComparer<Guid>.Default.Equals(id, command.DepartmentId))
+        if (id != command.DepartmentId)
             return BadRequest("Route id does not match request id");
 
         var result = await _sender.Send(command, cancellationToken);
@@ -59,7 +69,8 @@ public class DepartmentsController : ControllerBase
         return Ok(result.Value);
     }
 
-    [HttpDelete("{id}")]
+    // DELETE: api/departments/{id}
+    [HttpDelete("{id:guid}")]
     public async Task<IActionResult> Delete(Guid id, CancellationToken cancellationToken)
     {
         var result = await _sender.Send(new DeleteDepartmentCommand(id), cancellationToken);
