@@ -1,0 +1,3 @@
+﻿//En esta carpeta debemos agregar los DTOs de lso Uses Cases para tener orden
+//DEBEMOS modificar los Commands de los Uses Cases para agregar Setters y Getters usar el ejemplo adjuntado
+//Debemos agregar los UnitofWork en Arquitectura no olvidar el unico que tiene Flujo aceptable es Patient los demas debemos agregarlos
