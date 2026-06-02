@@ -50,7 +50,9 @@ public class CreateMedicationCommandHandler
             UpdatedBy = request.UpdatedBy
         };
 
-        await _unitOfWork.Repository<Medication>().AddAsync(entity, cancellationToken);
+        await _unitOfWork.Repository<Medication>()
+            .AddAsync(entity, cancellationToken);
+
         await _unitOfWork.SaveChangesAsync(cancellationToken);
 
         return Result<MedicationDto>.Success(entity.ToDto());

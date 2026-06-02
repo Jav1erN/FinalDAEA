@@ -25,6 +25,11 @@ public class GetMedicationsQueryHandler
         var entities = await _unitOfWork.Repository<Medication>()
             .ListAsync(cancellationToken);
 
-        return Result<IEnumerable<MedicationDto>>.Success(entities.Select(entity => entity.ToDto()));
+        var medications = entities
+            .Where(x => x.DeletedAt == null)
+            .Select(x => x.ToDto());
+
+        return Result<IEnumerable<MedicationDto>>
+            .Success(medications);
     }
 }

@@ -10,3 +10,15 @@ C:\Users\javier\Desktop\Entregables 2026\Desarrollo de aplicaciones Empresariale
 C:\Users\javier\Desktop\Entregables 2026\Desarrollo de aplicaciones Empresariales Avanzado\ClinicSystem\ClinicSystem.Domain\obj\Debug\net9.0\refint\ClinicSystem.Domain.dll
 C:\Users\javier\Desktop\Entregables 2026\Desarrollo de aplicaciones Empresariales Avanzado\ClinicSystem\ClinicSystem.Domain\obj\Debug\net9.0\ClinicSystem.Domain.pdb
 C:\Users\javier\Desktop\Entregables 2026\Desarrollo de aplicaciones Empresariales Avanzado\ClinicSystem\ClinicSystem.Domain\obj\Debug\net9.0\ref\ClinicSystem.Domain.dll
+D:\FINALPROJECT\ClinicSystem.Domain\bin\Debug\net9.0\ClinicSystem.Domain.deps.json
+D:\FINALPROJECT\ClinicSystem.Domain\bin\Debug\net9.0\ClinicSystem.Domain.dll
+D:\FINALPROJECT\ClinicSystem.Domain\bin\Debug\net9.0\ClinicSystem.Domain.pdb
+D:\FINALPROJECT\ClinicSystem.Domain\obj\Debug\net9.0\ClinicSystem.Domain.GeneratedMSBuildEditorConfig.editorconfig
+D:\FINALPROJECT\ClinicSystem.Domain\obj\Debug\net9.0\ClinicSystem.Domain.AssemblyInfoInputs.cache
+D:\FINALPROJECT\ClinicSystem.Domain\obj\Debug\net9.0\ClinicSystem.Domain.AssemblyInfo.cs
+D:\FINALPROJECT\ClinicSystem.Domain\obj\Debug\net9.0\ClinicSystem.Domain.csproj.CoreCompileInputs.cache
+D:\FINALPROJECT\ClinicSystem.Domain\obj\Debug\net9.0\ClinicSystem.Domain.sourcelink.json
+D:\FINALPROJECT\ClinicSystem.Domain\obj\Debug\net9.0\ClinicSystem.Domain.dll
+D:\FINALPROJECT\ClinicSystem.Domain\obj\Debug\net9.0\refint\ClinicSystem.Domain.dll
+D:\FINALPROJECT\ClinicSystem.Domain\obj\Debug\net9.0\ClinicSystem.Domain.pdb
+D:\FINALPROJECT\ClinicSystem.Domain\obj\Debug\net9.0\ref\ClinicSystem.Domain.dll

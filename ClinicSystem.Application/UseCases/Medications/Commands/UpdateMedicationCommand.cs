@@ -17,8 +17,6 @@ public record UpdateMedicationCommand(
     int? Stock,
     decimal? UnitPrice,
     bool? IsActive,
-    DateTime? UpdatedAt,
-    Guid? CreatedBy,
     Guid? UpdatedBy
 ) : IRequest<Result<MedicationDto>>;
 
@@ -36,8 +34,8 @@ public class UpdateMedicationCommandHandler
         UpdateMedicationCommand request,
         CancellationToken cancellationToken)
     {
-        var repository = _unitOfWork.Repository<Medication>();
-        var entity = await repository.GetByIdAsync(request.MedicationId, cancellationToken);
+        var entity = await _unitOfWork.Repository<Medication>()
+            .GetByIdAsync(request.MedicationId, cancellationToken);
 
         if (entity is null)
             return Result<MedicationDto>.Failure("Medication not found");
@@ -51,10 +49,11 @@ public class UpdateMedicationCommandHandler
         entity.Stock = request.Stock;
         entity.UnitPrice = request.UnitPrice;
         entity.IsActive = request.IsActive;
-        entity.UpdatedAt = request.UpdatedAt;
-        entity.CreatedBy = request.CreatedBy;
         entity.UpdatedBy = request.UpdatedBy;
-        repository.Update(entity);
+        entity.UpdatedAt = DateTime.Now;
+
+        _unitOfWork.Repository<Medication>().Update(entity);
+
         await _unitOfWork.SaveChangesAsync(cancellationToken);
 
         return Result<MedicationDto>.Success(entity.ToDto());

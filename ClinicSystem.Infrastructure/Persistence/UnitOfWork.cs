@@ -12,14 +12,18 @@ public class UnitOfWork : IUnitOfWork
     public UnitOfWork(
         ClinicDbContext context,
         IPatientRepository patients,
+        IMedicationRepository medications,
         IServiceProvider serviceProvider)
     {
         _context = context;
         Patients = patients;
+        Medications = medications;
         _serviceProvider = serviceProvider;
     }
 
     public IPatientRepository Patients { get; }
+    
+    public IMedicationRepository Medications { get; }
 
     public IRepository<T> Repository<T>() where T : class
     {

@@ -17,16 +17,27 @@ public class MedicationsController : ControllerBase
     }
 
     [HttpGet]
-    public async Task<IActionResult> GetAll(CancellationToken cancellationToken)
+    public async Task<IActionResult> GetAll(
+        CancellationToken cancellationToken)
     {
-        var result = await _sender.Send(new GetMedicationsQuery(), cancellationToken);
+        var result = await _sender.Send(
+            new GetMedicationsQuery(),
+            cancellationToken);
+
+        if (result.IsFailure)
+            return BadRequest(result.Error);
+
         return Ok(result.Value);
     }
 
-    [HttpGet("{id}")]
-    public async Task<IActionResult> GetById(Guid id, CancellationToken cancellationToken)
+    [HttpGet("{id:guid}")]
+    public async Task<IActionResult> GetById(
+        Guid id,
+        CancellationToken cancellationToken)
     {
-        var result = await _sender.Send(new GetMedicationByIdQuery(id), cancellationToken);
+        var result = await _sender.Send(
+            new GetMedicationByIdQuery(id),
+            cancellationToken);
 
         if (result.IsFailure)
             return NotFound(result.Error);
@@ -35,9 +46,13 @@ public class MedicationsController : ControllerBase
     }
 
     [HttpPost]
-    public async Task<IActionResult> Create(CreateMedicationCommand command, CancellationToken cancellationToken)
+    public async Task<IActionResult> Create(
+        [FromBody] CreateMedicationCommand command,
+        CancellationToken cancellationToken)
     {
-        var result = await _sender.Send(command, cancellationToken);
+        var result = await _sender.Send(
+            command,
+            cancellationToken);
 
         if (result.IsFailure)
             return BadRequest(result.Error);
@@ -45,13 +60,18 @@ public class MedicationsController : ControllerBase
         return Ok(result.Value);
     }
 
-    [HttpPut("{id}")]
-    public async Task<IActionResult> Update(Guid id, UpdateMedicationCommand command, CancellationToken cancellationToken)
+    [HttpPut("{id:guid}")]
+    public async Task<IActionResult> Update(
+        Guid id,
+        [FromBody] UpdateMedicationCommand command,
+        CancellationToken cancellationToken)
     {
-        if (!EqualityComparer<Guid>.Default.Equals(id, command.MedicationId))
+        if (id != command.MedicationId)
             return BadRequest("Route id does not match request id");
 
-        var result = await _sender.Send(command, cancellationToken);
+        var result = await _sender.Send(
+            command,
+            cancellationToken);
 
         if (result.IsFailure)
             return NotFound(result.Error);
@@ -59,10 +79,14 @@ public class MedicationsController : ControllerBase
         return Ok(result.Value);
     }
 
-    [HttpDelete("{id}")]
-    public async Task<IActionResult> Delete(Guid id, CancellationToken cancellationToken)
+    [HttpDelete("{id:guid}")]
+    public async Task<IActionResult> Delete(
+        Guid id,
+        CancellationToken cancellationToken)
     {
-        var result = await _sender.Send(new DeleteMedicationCommand(id), cancellationToken);
+        var result = await _sender.Send(
+            new DeleteMedicationCommand(id),
+            cancellationToken);
 
         if (result.IsFailure)
             return NotFound(result.Error);

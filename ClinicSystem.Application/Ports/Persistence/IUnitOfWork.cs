@@ -3,6 +3,8 @@ namespace ClinicSystem.Application.Ports.Persistence;
 public interface IUnitOfWork
 {
     IPatientRepository Patients { get; }
+    
+    IMedicationRepository Medications { get; }
 
     IRepository<T> Repository<T>() where T : class;
 

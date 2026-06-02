@@ -21,13 +21,17 @@ public class DeleteMedicationCommandHandler
         DeleteMedicationCommand request,
         CancellationToken cancellationToken)
     {
-        var repository = _unitOfWork.Repository<Medication>();
-        var entity = await repository.GetByIdAsync(request.MedicationId, cancellationToken);
+        var entity = await _unitOfWork.Repository<Medication>()
+            .GetByIdAsync(request.MedicationId, cancellationToken);
 
         if (entity is null)
             return Result<bool>.Failure("Medication not found");
 
-        repository.Remove(entity);
+        entity.DeletedAt = DateTime.Now;
+        entity.IsActive = false;
+
+        _unitOfWork.Repository<Medication>().Update(entity);
+
         await _unitOfWork.SaveChangesAsync(cancellationToken);
 
         return Result<bool>.Success(true);

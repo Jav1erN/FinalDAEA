@@ -27,3 +27,19 @@ C:\Users\javier\Desktop\Entregables 2026\Desarrollo de aplicaciones Empresariale
 C:\Users\javier\Desktop\Entregables 2026\Desarrollo de aplicaciones Empresariales Avanzado\ClinicSystem\ClinicSystem.Application\obj\Debug\net9.0\ref\ClinicSystem.Application.dll
 C:\Users\javier\Desktop\Entregables 2026\Desarrollo de aplicaciones Empresariales Avanzado\ClinicSystem\ClinicSystem.Application\bin\Debug\net9.0\ClinicSystem.Domain.dll
 C:\Users\javier\Desktop\Entregables 2026\Desarrollo de aplicaciones Empresariales Avanzado\ClinicSystem\ClinicSystem.Application\bin\Debug\net9.0\ClinicSystem.Domain.pdb
+D:\FINALPROJECT\ClinicSystem.Application\bin\Debug\net9.0\ClinicSystem.Application.deps.json
+D:\FINALPROJECT\ClinicSystem.Application\bin\Debug\net9.0\ClinicSystem.Application.dll
+D:\FINALPROJECT\ClinicSystem.Application\bin\Debug\net9.0\ClinicSystem.Application.pdb
+D:\FINALPROJECT\ClinicSystem.Application\bin\Debug\net9.0\ClinicSystem.Domain.dll
+D:\FINALPROJECT\ClinicSystem.Application\bin\Debug\net9.0\ClinicSystem.Domain.pdb
+D:\FINALPROJECT\ClinicSystem.Application\obj\Debug\net9.0\ClinicSystem.Application.csproj.AssemblyReference.cache
+D:\FINALPROJECT\ClinicSystem.Application\obj\Debug\net9.0\ClinicSystem.Application.GeneratedMSBuildEditorConfig.editorconfig
+D:\FINALPROJECT\ClinicSystem.Application\obj\Debug\net9.0\ClinicSystem.Application.AssemblyInfoInputs.cache
+D:\FINALPROJECT\ClinicSystem.Application\obj\Debug\net9.0\ClinicSystem.Application.AssemblyInfo.cs
+D:\FINALPROJECT\ClinicSystem.Application\obj\Debug\net9.0\ClinicSystem.Application.csproj.CoreCompileInputs.cache
+D:\FINALPROJECT\ClinicSystem.Application\obj\Debug\net9.0\ClinicSystem.Application.sourcelink.json
+D:\FINALPROJECT\ClinicSystem.Application\obj\Debug\net9.0\ClinicSy.98EE9625.Up2Date
+D:\FINALPROJECT\ClinicSystem.Application\obj\Debug\net9.0\ClinicSystem.Application.dll
+D:\FINALPROJECT\ClinicSystem.Application\obj\Debug\net9.0\refint\ClinicSystem.Application.dll
+D:\FINALPROJECT\ClinicSystem.Application\obj\Debug\net9.0\ClinicSystem.Application.pdb
+D:\FINALPROJECT\ClinicSystem.Application\obj\Debug\net9.0\ref\ClinicSystem.Application.dll
