@@ -7,6 +7,8 @@ public interface IUnitOfWork
     IMedicationRepository Medications { get; }
     
     IDepartmentRepository Departments { get; }
+    
+    INotificationTypeRepository NotificationTypes { get; }
 
     IRepository<T> Repository<T>() where T : class;
 

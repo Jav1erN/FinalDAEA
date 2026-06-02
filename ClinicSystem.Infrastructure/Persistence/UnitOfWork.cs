@@ -14,12 +14,14 @@ public class UnitOfWork : IUnitOfWork
         IPatientRepository patients,
         IMedicationRepository medications,
         IDepartmentRepository departments,
+        INotificationTypeRepository notificationTypes,
         IServiceProvider serviceProvider)
     {
         _context = context;
         Patients = patients;
         Medications = medications;
         Departments = departments;
+        NotificationTypes = notificationTypes;
         _serviceProvider = serviceProvider;
     }
 
@@ -28,6 +30,8 @@ public class UnitOfWork : IUnitOfWork
     public IMedicationRepository Medications { get; }
     
     public IDepartmentRepository Departments { get; }
+
+    public INotificationTypeRepository NotificationTypes { get; }
 
     public IRepository<T> Repository<T>() where T : class
     {
