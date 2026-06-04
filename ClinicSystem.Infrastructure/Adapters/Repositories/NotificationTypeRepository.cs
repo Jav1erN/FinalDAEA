@@ -3,8 +3,7 @@ using ClinicSystem.Domain.Entities;
 using ClinicSystem.Infrastructure.Persistence.Context;
 using Microsoft.EntityFrameworkCore;
 
-namespace ClinicSystem.Infrastructure.Persistence.Repositories;
-
+namespace ClinicSystem.Infrastructure.Adapters.Repositories;
 public class NotificationTypeRepository : Repository<NotificationType>, INotificationTypeRepository
 {
     public NotificationTypeRepository(ClinicDbContext context)

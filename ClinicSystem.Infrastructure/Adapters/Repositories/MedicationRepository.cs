@@ -3,7 +3,7 @@ using ClinicSystem.Domain.Entities;
 using ClinicSystem.Infrastructure.Persistence.Context;
 using Microsoft.EntityFrameworkCore;
 
-namespace ClinicSystem.Infrastructure.Persistence.Repositories;
+namespace ClinicSystem.Infrastructure.Adapters.Repositories;
 
 public class MedicationRepository : Repository<Medication>, IMedicationRepository
 {

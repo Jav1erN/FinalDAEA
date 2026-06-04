@@ -1,7 +1,7 @@
 using ClinicSystem.Application.Common.Models;
 using ClinicSystem.Application.UseCases.RefreshTokens.Dtos;
 using ClinicSystem.Domain.Entities;
-using ClinicSystem.Domain.Ports.Persistence;
+using ClinicSystem.Domain.Ports.Repositories;
 using MediatR;
 
 namespace ClinicSystem.Application.UseCases.RefreshTokens.Queries;

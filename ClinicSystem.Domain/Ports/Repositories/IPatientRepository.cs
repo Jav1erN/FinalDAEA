@@ -1,6 +1,6 @@
 using ClinicSystem.Domain.Entities;
 
-namespace ClinicSystem.Domain.Ports.Persistence;
+namespace ClinicSystem.Domain.Ports.Repositories;
 
 public interface IPatientRepository : IRepository<Patient>
 {

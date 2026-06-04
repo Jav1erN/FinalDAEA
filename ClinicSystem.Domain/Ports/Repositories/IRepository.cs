@@ -1,4 +1,4 @@
-namespace ClinicSystem.Domain.Ports.Persistence;
+namespace ClinicSystem.Domain.Ports.Repositories;
 
 public interface IRepository<T> where T : class
 {

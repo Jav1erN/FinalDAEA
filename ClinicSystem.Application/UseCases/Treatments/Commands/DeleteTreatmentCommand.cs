@@ -1,6 +1,6 @@
 using ClinicSystem.Application.Common.Models;
 using ClinicSystem.Domain.Entities;
-using ClinicSystem.Domain.Ports.Persistence;
+using ClinicSystem.Domain.Ports.Repositories;
 using MediatR;
 
 namespace ClinicSystem.Application.UseCases.Treatments.Commands;

@@ -1,9 +1,9 @@
 using ClinicSystem.Domain.Entities;
-using ClinicSystem.Domain.Ports.Persistence;
+using ClinicSystem.Domain.Ports.Repositories;
 using ClinicSystem.Infrastructure.Persistence.Context;
 using Microsoft.EntityFrameworkCore;
 
-namespace ClinicSystem.Infrastructure.Persistence.Repositories;
+namespace ClinicSystem.Infrastructure.Adapters.Repositories;
 
 public class PatientRepository : Repository<Patient>, IPatientRepository
 {

@@ -1,7 +1,6 @@
 ﻿using ClinicSystem.Domain.Ports.Repositories;
 using ClinicSystem.Domain.Entities;
 using ClinicSystem.Infrastructure.Persistence.Context;
-using ClinicSystem.Infrastructure.Persistence.Repositories;
 using Microsoft.EntityFrameworkCore;
 
 namespace ClinicSystem.Infrastructure.Adapters.Repositories;
