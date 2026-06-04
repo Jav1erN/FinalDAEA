@@ -25,4 +25,8 @@
       <ProjectReference Include="..\ClinicSystem.Domain\ClinicSystem.Domain.csproj" />
     </ItemGroup>
 
+    <ItemGroup>
+      <Folder Include="Adapters\Services\" />
+    </ItemGroup>
+
 </Project>

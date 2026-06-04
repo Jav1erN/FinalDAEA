@@ -1,5 +1,5 @@
-using ClinicSystem.Application.Ports.Persistence;
 using ClinicSystem.Domain.Entities;
+using ClinicSystem.Domain.Ports.Persistence;
 using ClinicSystem.Infrastructure.Persistence.Context;
 using Microsoft.EntityFrameworkCore;
 

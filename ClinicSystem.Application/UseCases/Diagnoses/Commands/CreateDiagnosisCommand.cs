@@ -1,18 +1,21 @@
 using ClinicSystem.Application.Common.Models;
-using ClinicSystem.Application.Ports.Persistence;
 using ClinicSystem.Application.UseCases.Diagnoses.Dtos;
 using ClinicSystem.Domain.Entities;
+using ClinicSystem.Domain.Ports.Repositories;
 using MediatR;
 
 namespace ClinicSystem.Application.UseCases.Diagnoses.Commands;
 
-public record CreateDiagnosisCommand(
-    Guid MedicalRecordId,
-    string Cie10Code,
-    string? Description,
-    bool? IsPrimary,
-    DateTime? NotedAt
-) : IRequest<Result<DiagnosisDto>>;
+public class CreateDiagnosisCommand(
+    
+) : IRequest<Result<DiagnosisDto>>
+{
+   public  Guid MedicalRecordId { get; set; }
+   public string Cie10Code {get; set;}
+    public string? Description {get; set;}
+    public bool? IsPrimary {get; set;}
+    public DateTime? NotedAt {get; set;}
+}
 
 public class CreateDiagnosisCommandHandler
     : IRequestHandler<CreateDiagnosisCommand, Result<DiagnosisDto>>
@@ -44,3 +47,4 @@ public class CreateDiagnosisCommandHandler
         return Result<DiagnosisDto>.Success(entity.ToDto());
     }
 }
+//USAR ESTE ARCHIVO PARA TENER LA BASE PARA TENER DOMINIO DE GETTERS Y SETTERS 

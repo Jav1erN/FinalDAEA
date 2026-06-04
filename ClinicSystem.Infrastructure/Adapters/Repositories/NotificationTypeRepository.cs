@@ -1,4 +1,4 @@
-﻿using ClinicSystem.Application.Ports.Persistence;
+﻿using ClinicSystem.Domain.Ports.Repositories;
 using ClinicSystem.Domain.Entities;
 using ClinicSystem.Infrastructure.Persistence.Context;
 using Microsoft.EntityFrameworkCore;

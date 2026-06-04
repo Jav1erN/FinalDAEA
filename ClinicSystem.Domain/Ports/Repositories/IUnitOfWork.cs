@@ -1,4 +1,6 @@
-namespace ClinicSystem.Application.Ports.Persistence;
+using ClinicSystem.Domain.Ports.Persistence;
+
+namespace ClinicSystem.Domain.Ports.Repositories;
 
 public interface IUnitOfWork
 {

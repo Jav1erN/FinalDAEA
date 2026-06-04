@@ -1,4 +1,5 @@
-using ClinicSystem.Application.Ports.Persistence;
+using ClinicSystem.Domain.Ports.Persistence;
+using ClinicSystem.Domain.Ports.Repositories;
 using ClinicSystem.Infrastructure.Persistence.Context;
 using ClinicSystem.Infrastructure.Persistence.Repositories;
 
