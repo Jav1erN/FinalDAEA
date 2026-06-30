@@ -1,4 +1,4 @@
-namespace ClinicSystem.Application.UseCases.BillingDetails.Dtos;
+﻿namespace ClinicSystem.Application.UseCases.BillingDetails.Dtos;
 
 public class BillingDetailDto
 {
@@ -14,3 +14,4 @@ public class BillingDetailDto
 
     public decimal? Amount { get; set; } = null;
 }
+

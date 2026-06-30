@@ -1,4 +1,4 @@
-using ClinicSystem.Application.Common.Models;
+﻿using ClinicSystem.Application.Common.Models;
 using ClinicSystem.Domain.Entities;
 using ClinicSystem.Domain.Ports.Persistence;
 using MediatR;
@@ -21,7 +21,7 @@ public class DeleteAppointmentStatusCommandHandler
         DeleteAppointmentStatusCommand request,
         CancellationToken cancellationToken)
     {
-        var repository = _unitOfWork.Repository<AppointmentStatus>();
+        var repository = _unitOfWork.AppointmentStatuses;
         var entity = await repository.GetByIdAsync(request.StatusId, cancellationToken);
 
         if (entity is null)
@@ -33,3 +33,4 @@ public class DeleteAppointmentStatusCommandHandler
         return Result<bool>.Success(true);
     }
 }
+

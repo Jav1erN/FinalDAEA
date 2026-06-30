@@ -1,4 +1,4 @@
-namespace ClinicSystem.Application.UseCases.Departments.Dtos;
+﻿namespace ClinicSystem.Application.UseCases.Departments.Dtos;
 
 public class DepartmentDto
 {
@@ -14,3 +14,4 @@ public class DepartmentDto
 
     public DateTime? UpdatedAt { get; set; } = null;
 }
+

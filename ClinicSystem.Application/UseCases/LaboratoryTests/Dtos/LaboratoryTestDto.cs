@@ -1,4 +1,4 @@
-namespace ClinicSystem.Application.UseCases.LaboratoryTests.Dtos;
+﻿namespace ClinicSystem.Application.UseCases.LaboratoryTests.Dtos;
 
 public class LaboratoryTestDto
 {
@@ -32,3 +32,4 @@ public class LaboratoryTestDto
 
     public Guid? UpdatedBy { get; set; } = null;
 }
+

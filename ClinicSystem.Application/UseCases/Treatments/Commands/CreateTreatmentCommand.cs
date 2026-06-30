@@ -1,4 +1,4 @@
-using ClinicSystem.Application.Common.Models;
+﻿using ClinicSystem.Application.Common.Models;
 using ClinicSystem.Application.UseCases.Treatments.Dtos;
 using ClinicSystem.Domain.Entities;
 using ClinicSystem.Domain.Ports.Persistence;
@@ -40,9 +40,10 @@ public class CreateTreatmentCommandHandler
             Notes = request.Notes
         };
 
-        await _unitOfWork.Repository<Treatment>().AddAsync(entity, cancellationToken);
+        await _unitOfWork.Treatments.AddAsync(entity, cancellationToken);
         await _unitOfWork.SaveChangesAsync(cancellationToken);
 
         return Result<TreatmentDto>.Success(entity.ToDto());
     }
 }
+

@@ -1,4 +1,4 @@
-namespace ClinicSystem.Application.UseCases.InsuranceCompanies.Dtos;
+﻿namespace ClinicSystem.Application.UseCases.InsuranceCompanies.Dtos;
 
 public class InsuranceCompanyDto
 {
@@ -20,3 +20,4 @@ public class InsuranceCompanyDto
 
     public DateTime? UpdatedAt { get; set; } = null;
 }
+

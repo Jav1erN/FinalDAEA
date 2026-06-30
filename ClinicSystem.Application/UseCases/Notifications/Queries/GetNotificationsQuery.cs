@@ -1,4 +1,4 @@
-using ClinicSystem.Application.Common.Models;
+﻿using ClinicSystem.Application.Common.Models;
 using ClinicSystem.Application.UseCases.Notifications.Dtos;
 using ClinicSystem.Domain.Entities;
 using ClinicSystem.Domain.Ports.Persistence;
@@ -22,9 +22,10 @@ public class GetNotificationsQueryHandler
         GetNotificationsQuery request,
         CancellationToken cancellationToken)
     {
-        var entities = await _unitOfWork.Repository<Notification>()
+        var entities = await _unitOfWork.Notifications
             .ListAsync(cancellationToken);
 
         return Result<IEnumerable<NotificationDto>>.Success(entities.Select(entity => entity.ToDto()));
     }
 }
+

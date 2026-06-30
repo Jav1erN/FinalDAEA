@@ -1,4 +1,4 @@
-namespace ClinicSystem.Application.UseCases.AuditLogs.Dtos;
+﻿namespace ClinicSystem.Application.UseCases.AuditLogs.Dtos;
 
 public class AuditLogDto
 {
@@ -22,3 +22,4 @@ public class AuditLogDto
 
     public DateTime? CreatedAt { get; set; } = null;
 }
+

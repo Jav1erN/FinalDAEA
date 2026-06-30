@@ -1,4 +1,4 @@
-using ClinicSystem.Application.Common.Models;
+﻿using ClinicSystem.Application.Common.Models;
 using ClinicSystem.Application.UseCases.Notifications.Dtos;
 using ClinicSystem.Domain.Entities;
 using ClinicSystem.Domain.Ports.Persistence;
@@ -35,7 +35,7 @@ public class UpdateNotificationCommandHandler
         UpdateNotificationCommand request,
         CancellationToken cancellationToken)
     {
-        var repository = _unitOfWork.Repository<Notification>();
+        var repository = _unitOfWork.Notifications;
         var entity = await repository.GetByIdAsync(request.NotificationId, cancellationToken);
 
         if (entity is null)
@@ -58,3 +58,4 @@ public class UpdateNotificationCommandHandler
         return Result<NotificationDto>.Success(entity.ToDto());
     }
 }
+

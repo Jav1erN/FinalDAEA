@@ -1,4 +1,4 @@
-using ClinicSystem.Application.Common.Models;
+﻿using ClinicSystem.Application.Common.Models;
 using ClinicSystem.Application.UseCases.LaboratoryTests.Dtos;
 using ClinicSystem.Domain.Entities;
 using ClinicSystem.Domain.Ports.Persistence;
@@ -36,7 +36,7 @@ public class UpdateLaboratoryTestCommandHandler
         UpdateLaboratoryTestCommand request,
         CancellationToken cancellationToken)
     {
-        var repository = _unitOfWork.Repository<LaboratoryTest>();
+        var repository = _unitOfWork.LaboratoryTests;
         var entity = await repository.GetByIdAsync(request.LaboratoryTestId, cancellationToken);
 
         if (entity is null)
@@ -60,3 +60,4 @@ public class UpdateLaboratoryTestCommandHandler
         return Result<LaboratoryTestDto>.Success(entity.ToDto());
     }
 }
+

@@ -1,4 +1,4 @@
-using ClinicSystem.Domain.Entities;
+﻿using ClinicSystem.Domain.Entities;
 
 namespace ClinicSystem.Application.UseCases.PrescriptionDetails.Dtos;
 
@@ -20,3 +20,4 @@ public static class PrescriptionDetailMappings
         };
     }
 }
+

@@ -1,4 +1,4 @@
-namespace ClinicSystem.Application.UseCases.Billings.Dtos;
+﻿namespace ClinicSystem.Application.UseCases.Billings.Dtos;
 
 public class BillingDto
 {
@@ -32,3 +32,4 @@ public class BillingDto
 
     public Guid? UpdatedBy { get; set; } = null;
 }
+

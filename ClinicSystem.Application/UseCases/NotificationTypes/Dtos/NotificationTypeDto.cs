@@ -1,4 +1,4 @@
-namespace ClinicSystem.Application.UseCases.NotificationTypes.Dtos;
+﻿namespace ClinicSystem.Application.UseCases.NotificationTypes.Dtos;
 
 public class NotificationTypeDto
 {
@@ -14,3 +14,4 @@ public class NotificationTypeDto
 
     public bool? IsActive { get; set; } = null;
 }
+

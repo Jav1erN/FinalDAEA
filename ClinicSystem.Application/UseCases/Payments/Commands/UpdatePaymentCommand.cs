@@ -1,4 +1,4 @@
-using ClinicSystem.Application.Common.Models;
+﻿using ClinicSystem.Application.Common.Models;
 using ClinicSystem.Application.UseCases.Payments.Dtos;
 using ClinicSystem.Domain.Entities;
 using ClinicSystem.Domain.Ports.Persistence;
@@ -31,7 +31,7 @@ public class UpdatePaymentCommandHandler
         UpdatePaymentCommand request,
         CancellationToken cancellationToken)
     {
-        var repository = _unitOfWork.Repository<Payment>();
+        var repository = _unitOfWork.Payments;
         var entity = await repository.GetByIdAsync(request.PaymentId, cancellationToken);
 
         if (entity is null)
@@ -50,3 +50,4 @@ public class UpdatePaymentCommandHandler
         return Result<PaymentDto>.Success(entity.ToDto());
     }
 }
+

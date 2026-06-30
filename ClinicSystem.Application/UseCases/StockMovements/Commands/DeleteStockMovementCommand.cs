@@ -1,4 +1,4 @@
-using ClinicSystem.Application.Common.Models;
+﻿using ClinicSystem.Application.Common.Models;
 using ClinicSystem.Domain.Entities;
 using ClinicSystem.Domain.Ports.Persistence;
 using MediatR;
@@ -21,7 +21,7 @@ public class DeleteStockMovementCommandHandler
         DeleteStockMovementCommand request,
         CancellationToken cancellationToken)
     {
-        var repository = _unitOfWork.Repository<StockMovement>();
+        var repository = _unitOfWork.StockMovements;
         var entity = await repository.GetByIdAsync(request.MovementId, cancellationToken);
 
         if (entity is null)
@@ -33,3 +33,4 @@ public class DeleteStockMovementCommandHandler
         return Result<bool>.Success(true);
     }
 }
+

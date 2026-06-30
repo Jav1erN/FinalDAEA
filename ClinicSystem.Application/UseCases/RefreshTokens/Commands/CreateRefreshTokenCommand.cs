@@ -1,4 +1,4 @@
-using ClinicSystem.Application.Common.Models;
+﻿using ClinicSystem.Application.Common.Models;
 using ClinicSystem.Application.UseCases.RefreshTokens.Dtos;
 using ClinicSystem.Domain.Entities;
 using ClinicSystem.Domain.Ports.Persistence;
@@ -36,9 +36,10 @@ public class CreateRefreshTokenCommandHandler
             RevokedAt = request.RevokedAt
         };
 
-        await _unitOfWork.Repository<RefreshToken>().AddAsync(entity, cancellationToken);
+        await _unitOfWork.RefreshTokens.AddAsync(entity, cancellationToken);
         await _unitOfWork.SaveChangesAsync(cancellationToken);
 
         return Result<RefreshTokenDto>.Success(entity.ToDto());
     }
 }
+

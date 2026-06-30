@@ -1,4 +1,4 @@
-using ClinicSystem.Application.Common.Models;
+﻿using ClinicSystem.Application.Common.Models;
 using ClinicSystem.Application.UseCases.Users.Dtos;
 using ClinicSystem.Domain.Entities;
 using ClinicSystem.Domain.Ports.Persistence;
@@ -22,9 +22,10 @@ public class GetUsersQueryHandler
         GetUsersQuery request,
         CancellationToken cancellationToken)
     {
-        var entities = await _unitOfWork.Repository<User>()
+        var entities = await _unitOfWork.Users
             .ListAsync(cancellationToken);
 
         return Result<IEnumerable<UserDto>>.Success(entities.Select(entity => entity.ToDto()));
     }
 }
+

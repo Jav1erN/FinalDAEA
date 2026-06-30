@@ -1,4 +1,4 @@
-namespace ClinicSystem.Application.UseCases.LaboratoryResults.Dtos;
+﻿namespace ClinicSystem.Application.UseCases.LaboratoryResults.Dtos;
 
 public class LaboratoryResultDto
 {
@@ -18,3 +18,4 @@ public class LaboratoryResultDto
 
     public DateTime? NotedAt { get; set; } = null;
 }
+

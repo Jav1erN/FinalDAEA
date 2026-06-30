@@ -1,4 +1,4 @@
-using ClinicSystem.Application.Common.Models;
+﻿using ClinicSystem.Application.Common.Models;
 using ClinicSystem.Application.UseCases.RefreshTokens.Dtos;
 using ClinicSystem.Domain.Entities;
 using ClinicSystem.Domain.Ports.Persistence;
@@ -22,9 +22,10 @@ public class GetRefreshTokensQueryHandler
         GetRefreshTokensQuery request,
         CancellationToken cancellationToken)
     {
-        var entities = await _unitOfWork.Repository<RefreshToken>()
+        var entities = await _unitOfWork.RefreshTokens
             .ListAsync(cancellationToken);
 
         return Result<IEnumerable<RefreshTokenDto>>.Success(entities.Select(entity => entity.ToDto()));
     }
 }
+

@@ -1,4 +1,4 @@
-using ClinicSystem.Application.Common.Models;
+﻿using ClinicSystem.Application.Common.Models;
 using ClinicSystem.Application.UseCases.AppointmentStatuses.Dtos;
 using ClinicSystem.Domain.Entities;
 using ClinicSystem.Domain.Ports.Persistence;
@@ -32,9 +32,10 @@ public class CreateAppointmentStatusCommandHandler
             Description = request.Description
         };
 
-        await _unitOfWork.Repository<AppointmentStatus>().AddAsync(entity, cancellationToken);
+        await _unitOfWork.AppointmentStatuses.AddAsync(entity, cancellationToken);
         await _unitOfWork.SaveChangesAsync(cancellationToken);
 
         return Result<AppointmentStatusDto>.Success(entity.ToDto());
     }
 }
+

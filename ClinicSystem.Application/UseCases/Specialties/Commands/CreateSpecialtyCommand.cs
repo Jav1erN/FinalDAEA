@@ -1,4 +1,4 @@
-using ClinicSystem.Application.Common.Models;
+﻿using ClinicSystem.Application.Common.Models;
 using ClinicSystem.Application.UseCases.Specialties.Dtos;
 using ClinicSystem.Domain.Entities;
 using ClinicSystem.Domain.Ports.Persistence;
@@ -36,9 +36,10 @@ public class CreateSpecialtyCommandHandler
             IsActive = request.IsActive
         };
 
-        await _unitOfWork.Repository<Specialty>().AddAsync(entity, cancellationToken);
+        await _unitOfWork.Specialties.AddAsync(entity, cancellationToken);
         await _unitOfWork.SaveChangesAsync(cancellationToken);
 
         return Result<SpecialtyDto>.Success(entity.ToDto());
     }
 }
+

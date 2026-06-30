@@ -1,4 +1,4 @@
-using ClinicSystem.Application.Common.Models;
+﻿using ClinicSystem.Application.Common.Models;
 using ClinicSystem.Domain.Entities;
 using ClinicSystem.Domain.Ports.Persistence;
 using MediatR;
@@ -21,7 +21,7 @@ public class DeleteVitalSignCommandHandler
         DeleteVitalSignCommand request,
         CancellationToken cancellationToken)
     {
-        var repository = _unitOfWork.Repository<VitalSign>();
+        var repository = _unitOfWork.VitalSigns;
         var entity = await repository.GetByIdAsync(request.VitalSignId, cancellationToken);
 
         if (entity is null)
@@ -33,3 +33,4 @@ public class DeleteVitalSignCommandHandler
         return Result<bool>.Success(true);
     }
 }
+

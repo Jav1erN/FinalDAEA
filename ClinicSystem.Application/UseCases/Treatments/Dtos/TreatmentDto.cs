@@ -1,4 +1,4 @@
-namespace ClinicSystem.Application.UseCases.Treatments.Dtos;
+﻿namespace ClinicSystem.Application.UseCases.Treatments.Dtos;
 
 public class TreatmentDto
 {
@@ -16,3 +16,4 @@ public class TreatmentDto
 
     public string? Notes { get; set; } = null;
 }
+

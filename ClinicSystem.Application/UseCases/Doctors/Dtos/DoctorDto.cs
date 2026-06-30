@@ -1,4 +1,4 @@
-namespace ClinicSystem.Application.UseCases.Doctors.Dtos;
+﻿namespace ClinicSystem.Application.UseCases.Doctors.Dtos;
 
 public class DoctorDto
 {
@@ -28,3 +28,4 @@ public class DoctorDto
 
     public Guid? UpdatedBy { get; set; } = null;
 }
+

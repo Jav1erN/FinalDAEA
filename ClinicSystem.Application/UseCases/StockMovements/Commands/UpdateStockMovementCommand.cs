@@ -1,4 +1,4 @@
-using ClinicSystem.Application.Common.Models;
+﻿using ClinicSystem.Application.Common.Models;
 using ClinicSystem.Application.UseCases.StockMovements.Dtos;
 using ClinicSystem.Domain.Entities;
 using ClinicSystem.Domain.Ports.Persistence;
@@ -30,7 +30,7 @@ public class UpdateStockMovementCommandHandler
         UpdateStockMovementCommand request,
         CancellationToken cancellationToken)
     {
-        var repository = _unitOfWork.Repository<StockMovement>();
+        var repository = _unitOfWork.StockMovements;
         var entity = await repository.GetByIdAsync(request.MovementId, cancellationToken);
 
         if (entity is null)
@@ -48,3 +48,4 @@ public class UpdateStockMovementCommandHandler
         return Result<StockMovementDto>.Success(entity.ToDto());
     }
 }
+

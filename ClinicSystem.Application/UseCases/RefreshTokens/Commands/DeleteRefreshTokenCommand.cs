@@ -1,4 +1,4 @@
-using ClinicSystem.Application.Common.Models;
+﻿using ClinicSystem.Application.Common.Models;
 using ClinicSystem.Domain.Entities;
 using ClinicSystem.Domain.Ports.Persistence;
 using MediatR;
@@ -21,7 +21,7 @@ public class DeleteRefreshTokenCommandHandler
         DeleteRefreshTokenCommand request,
         CancellationToken cancellationToken)
     {
-        var repository = _unitOfWork.Repository<RefreshToken>();
+        var repository = _unitOfWork.RefreshTokens;
         var entity = await repository.GetByIdAsync(request.RefreshTokenId, cancellationToken);
 
         if (entity is null)
@@ -33,3 +33,4 @@ public class DeleteRefreshTokenCommandHandler
         return Result<bool>.Success(true);
     }
 }
+

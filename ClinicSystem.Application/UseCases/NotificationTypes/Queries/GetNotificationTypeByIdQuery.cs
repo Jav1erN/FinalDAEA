@@ -1,4 +1,4 @@
-using ClinicSystem.Application.Common.Models;
+﻿using ClinicSystem.Application.Common.Models;
 using ClinicSystem.Application.UseCases.NotificationTypes.Dtos;
 using ClinicSystem.Domain.Entities;
 using ClinicSystem.Domain.Ports.Persistence;
@@ -22,7 +22,7 @@ public class GetNotificationTypeByIdQueryHandler
         GetNotificationTypeByIdQuery request,
         CancellationToken cancellationToken)
     {
-        var entity = await _unitOfWork.Repository<NotificationType>()
+        var entity = await _unitOfWork.NotificationTypes
             .GetByIdAsync(request.TypeId, cancellationToken);
 
         if (entity is null)
@@ -31,3 +31,4 @@ public class GetNotificationTypeByIdQueryHandler
         return Result<NotificationTypeDto>.Success(entity.ToDto());
     }
 }
+

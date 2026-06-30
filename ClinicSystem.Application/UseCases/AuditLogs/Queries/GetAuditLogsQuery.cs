@@ -1,4 +1,4 @@
-using ClinicSystem.Application.Common.Models;
+﻿using ClinicSystem.Application.Common.Models;
 using ClinicSystem.Application.UseCases.AuditLogs.Dtos;
 using ClinicSystem.Domain.Entities;
 using ClinicSystem.Domain.Ports.Persistence;
@@ -22,9 +22,10 @@ public class GetAuditLogsQueryHandler
         GetAuditLogsQuery request,
         CancellationToken cancellationToken)
     {
-        var entities = await _unitOfWork.Repository<AuditLog>()
+        var entities = await _unitOfWork.AuditLogs
             .ListAsync(cancellationToken);
 
         return Result<IEnumerable<AuditLogDto>>.Success(entities.Select(entity => entity.ToDto()));
     }
 }
+

@@ -1,4 +1,4 @@
-using ClinicSystem.Application.Common.Models;
+﻿using ClinicSystem.Application.Common.Models;
 using ClinicSystem.Application.UseCases.Patients.Dtos;
 using ClinicSystem.Domain.Entities;
 using ClinicSystem.Domain.Ports.Persistence;
@@ -22,9 +22,10 @@ public class GetPatientsQueryHandler
         GetPatientsQuery request,
         CancellationToken cancellationToken)
     {
-        var entities = await _unitOfWork.Repository<Patient>()
+        var entities = await _unitOfWork.Patients
             .ListAsync(cancellationToken);
 
         return Result<IEnumerable<PatientDto>>.Success(entities.Select(entity => entity.ToDto()));
     }
 }
+

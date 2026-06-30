@@ -1,4 +1,4 @@
-using ClinicSystem.Application.Common.Models;
+﻿using ClinicSystem.Application.Common.Models;
 using ClinicSystem.Application.UseCases.Specialties.Dtos;
 using ClinicSystem.Domain.Entities;
 using ClinicSystem.Domain.Ports.Persistence;
@@ -29,7 +29,7 @@ public class UpdateSpecialtyCommandHandler
         UpdateSpecialtyCommand request,
         CancellationToken cancellationToken)
     {
-        var repository = _unitOfWork.Repository<Specialty>();
+        var repository = _unitOfWork.Specialties;
         var entity = await repository.GetByIdAsync(request.SpecialtyId, cancellationToken);
 
         if (entity is null)
@@ -46,3 +46,4 @@ public class UpdateSpecialtyCommandHandler
         return Result<SpecialtyDto>.Success(entity.ToDto());
     }
 }
+

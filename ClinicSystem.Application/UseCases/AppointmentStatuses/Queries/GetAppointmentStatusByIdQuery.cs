@@ -1,4 +1,4 @@
-using ClinicSystem.Application.Common.Models;
+﻿using ClinicSystem.Application.Common.Models;
 using ClinicSystem.Application.UseCases.AppointmentStatuses.Dtos;
 using ClinicSystem.Domain.Entities;
 using ClinicSystem.Domain.Ports.Persistence;
@@ -22,7 +22,7 @@ public class GetAppointmentStatusByIdQueryHandler
         GetAppointmentStatusByIdQuery request,
         CancellationToken cancellationToken)
     {
-        var entity = await _unitOfWork.Repository<AppointmentStatus>()
+        var entity = await _unitOfWork.AppointmentStatuses
             .GetByIdAsync(request.StatusId, cancellationToken);
 
         if (entity is null)
@@ -31,3 +31,4 @@ public class GetAppointmentStatusByIdQueryHandler
         return Result<AppointmentStatusDto>.Success(entity.ToDto());
     }
 }
+

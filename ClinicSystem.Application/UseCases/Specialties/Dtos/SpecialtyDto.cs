@@ -1,4 +1,4 @@
-namespace ClinicSystem.Application.UseCases.Specialties.Dtos;
+﻿namespace ClinicSystem.Application.UseCases.Specialties.Dtos;
 
 public class SpecialtyDto
 {
@@ -16,3 +16,4 @@ public class SpecialtyDto
 
     public DateTime? UpdatedAt { get; set; } = null;
 }
+

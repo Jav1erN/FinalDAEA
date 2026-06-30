@@ -1,4 +1,4 @@
-using ClinicSystem.Application.Common.Models;
+﻿using ClinicSystem.Application.Common.Models;
 using ClinicSystem.Application.UseCases.Roles.Dtos;
 using ClinicSystem.Domain.Entities;
 using ClinicSystem.Domain.Ports.Persistence;
@@ -32,9 +32,10 @@ public class CreateRoleCommandHandler
             Description = request.Description
         };
 
-        await _unitOfWork.Repository<Role>().AddAsync(entity, cancellationToken);
+        await _unitOfWork.Roles.AddAsync(entity, cancellationToken);
         await _unitOfWork.SaveChangesAsync(cancellationToken);
 
         return Result<RoleDto>.Success(entity.ToDto());
     }
 }
+

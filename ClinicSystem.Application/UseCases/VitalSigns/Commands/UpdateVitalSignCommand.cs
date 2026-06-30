@@ -1,4 +1,4 @@
-using ClinicSystem.Application.Common.Models;
+﻿using ClinicSystem.Application.Common.Models;
 using ClinicSystem.Application.UseCases.VitalSigns.Dtos;
 using ClinicSystem.Domain.Entities;
 using ClinicSystem.Domain.Ports.Persistence;
@@ -35,7 +35,7 @@ public class UpdateVitalSignCommandHandler
         UpdateVitalSignCommand request,
         CancellationToken cancellationToken)
     {
-        var repository = _unitOfWork.Repository<VitalSign>();
+        var repository = _unitOfWork.VitalSigns;
         var entity = await repository.GetByIdAsync(request.VitalSignId, cancellationToken);
 
         if (entity is null)
@@ -58,3 +58,4 @@ public class UpdateVitalSignCommandHandler
         return Result<VitalSignDto>.Success(entity.ToDto());
     }
 }
+

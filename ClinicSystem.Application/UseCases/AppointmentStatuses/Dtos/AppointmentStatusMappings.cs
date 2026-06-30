@@ -1,4 +1,4 @@
-using ClinicSystem.Domain.Entities;
+﻿using ClinicSystem.Domain.Entities;
 
 namespace ClinicSystem.Application.UseCases.AppointmentStatuses.Dtos;
 
@@ -14,3 +14,4 @@ public static class AppointmentStatusMappings
         };
     }
 }
+

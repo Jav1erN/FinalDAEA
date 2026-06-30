@@ -1,4 +1,4 @@
-namespace ClinicSystem.Application.UseCases.Notifications.Dtos;
+﻿namespace ClinicSystem.Application.UseCases.Notifications.Dtos;
 
 public class NotificationDto
 {
@@ -28,3 +28,4 @@ public class NotificationDto
 
     public DateTime? CreatedAt { get; set; } = null;
 }
+

@@ -1,4 +1,4 @@
-using ClinicSystem.Application.Common.Models;
+﻿using ClinicSystem.Application.Common.Models;
 using ClinicSystem.Application.UseCases.LaboratoryTests.Dtos;
 using ClinicSystem.Domain.Entities;
 using ClinicSystem.Domain.Ports.Persistence;
@@ -22,9 +22,10 @@ public class GetLaboratoryTestsQueryHandler
         GetLaboratoryTestsQuery request,
         CancellationToken cancellationToken)
     {
-        var entities = await _unitOfWork.Repository<LaboratoryTest>()
+        var entities = await _unitOfWork.LaboratoryTests
             .ListAsync(cancellationToken);
 
         return Result<IEnumerable<LaboratoryTestDto>>.Success(entities.Select(entity => entity.ToDto()));
     }
 }
+

@@ -1,4 +1,4 @@
-using ClinicSystem.Application.Common.Models;
+﻿using ClinicSystem.Application.Common.Models;
 using ClinicSystem.Application.UseCases.InsuranceCompanies.Dtos;
 using ClinicSystem.Domain.Entities;
 using ClinicSystem.Domain.Ports.Persistence;
@@ -22,7 +22,7 @@ public class GetInsuranceCompanyByIdQueryHandler
         GetInsuranceCompanyByIdQuery request,
         CancellationToken cancellationToken)
     {
-        var entity = await _unitOfWork.Repository<InsuranceCompany>()
+        var entity = await _unitOfWork.InsuranceCompanies
             .GetByIdAsync(request.InsuranceCompanyId, cancellationToken);
 
         if (entity is null)
@@ -31,3 +31,4 @@ public class GetInsuranceCompanyByIdQueryHandler
         return Result<InsuranceCompanyDto>.Success(entity.ToDto());
     }
 }
+

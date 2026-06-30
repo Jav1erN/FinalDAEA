@@ -1,4 +1,4 @@
-using ClinicSystem.Application.Common.Models;
+﻿using ClinicSystem.Application.Common.Models;
 using ClinicSystem.Domain.Entities;
 using ClinicSystem.Domain.Ports.Persistence;
 using MediatR;
@@ -21,7 +21,7 @@ public class DeleteInsurancePolicyCommandHandler
         DeleteInsurancePolicyCommand request,
         CancellationToken cancellationToken)
     {
-        var repository = _unitOfWork.Repository<InsurancePolicy>();
+        var repository = _unitOfWork.InsurancePolicies;
         var entity = await repository.GetByIdAsync(request.InsurancePolicyId, cancellationToken);
 
         if (entity is null)
@@ -33,3 +33,4 @@ public class DeleteInsurancePolicyCommandHandler
         return Result<bool>.Success(true);
     }
 }
+

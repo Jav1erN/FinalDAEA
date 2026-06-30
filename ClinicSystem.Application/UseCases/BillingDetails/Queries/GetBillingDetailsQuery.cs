@@ -1,4 +1,4 @@
-using ClinicSystem.Application.Common.Models;
+﻿using ClinicSystem.Application.Common.Models;
 using ClinicSystem.Application.UseCases.BillingDetails.Dtos;
 using ClinicSystem.Domain.Entities;
 using ClinicSystem.Domain.Ports.Persistence;
@@ -22,9 +22,10 @@ public class GetBillingDetailsQueryHandler
         GetBillingDetailsQuery request,
         CancellationToken cancellationToken)
     {
-        var entities = await _unitOfWork.Repository<BillingDetail>()
+        var entities = await _unitOfWork.BillingDetails
             .ListAsync(cancellationToken);
 
         return Result<IEnumerable<BillingDetailDto>>.Success(entities.Select(entity => entity.ToDto()));
     }
 }
+

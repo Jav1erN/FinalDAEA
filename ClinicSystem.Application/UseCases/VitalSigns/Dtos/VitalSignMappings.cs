@@ -1,4 +1,4 @@
-using ClinicSystem.Domain.Entities;
+﻿using ClinicSystem.Domain.Entities;
 
 namespace ClinicSystem.Application.UseCases.VitalSigns.Dtos;
 
@@ -23,3 +23,4 @@ public static class VitalSignMappings
         };
     }
 }
+

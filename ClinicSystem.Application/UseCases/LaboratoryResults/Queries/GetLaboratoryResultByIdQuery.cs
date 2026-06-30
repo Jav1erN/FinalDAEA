@@ -1,4 +1,4 @@
-using ClinicSystem.Application.Common.Models;
+﻿using ClinicSystem.Application.Common.Models;
 using ClinicSystem.Application.UseCases.LaboratoryResults.Dtos;
 using ClinicSystem.Domain.Entities;
 using ClinicSystem.Domain.Ports.Persistence;
@@ -22,7 +22,7 @@ public class GetLaboratoryResultByIdQueryHandler
         GetLaboratoryResultByIdQuery request,
         CancellationToken cancellationToken)
     {
-        var entity = await _unitOfWork.Repository<LaboratoryResult>()
+        var entity = await _unitOfWork.LaboratoryResults
             .GetByIdAsync(request.ResultId, cancellationToken);
 
         if (entity is null)
@@ -31,3 +31,4 @@ public class GetLaboratoryResultByIdQueryHandler
         return Result<LaboratoryResultDto>.Success(entity.ToDto());
     }
 }
+

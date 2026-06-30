@@ -1,4 +1,4 @@
-using ClinicSystem.Application.Common.Models;
+﻿using ClinicSystem.Application.Common.Models;
 using ClinicSystem.Domain.Entities;
 using ClinicSystem.Domain.Ports.Persistence;
 using MediatR;
@@ -21,7 +21,7 @@ public class DeletePaymentCommandHandler
         DeletePaymentCommand request,
         CancellationToken cancellationToken)
     {
-        var repository = _unitOfWork.Repository<Payment>();
+        var repository = _unitOfWork.Payments;
         var entity = await repository.GetByIdAsync(request.PaymentId, cancellationToken);
 
         if (entity is null)
@@ -33,3 +33,4 @@ public class DeletePaymentCommandHandler
         return Result<bool>.Success(true);
     }
 }
+

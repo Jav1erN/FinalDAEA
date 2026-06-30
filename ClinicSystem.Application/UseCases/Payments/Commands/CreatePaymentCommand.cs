@@ -1,4 +1,4 @@
-using ClinicSystem.Application.Common.Models;
+﻿using ClinicSystem.Application.Common.Models;
 using ClinicSystem.Application.UseCases.Payments.Dtos;
 using ClinicSystem.Domain.Entities;
 using ClinicSystem.Domain.Ports.Persistence;
@@ -42,9 +42,10 @@ public class CreatePaymentCommandHandler
             RegisteredBy = request.RegisteredBy
         };
 
-        await _unitOfWork.Repository<Payment>().AddAsync(entity, cancellationToken);
+        await _unitOfWork.Payments.AddAsync(entity, cancellationToken);
         await _unitOfWork.SaveChangesAsync(cancellationToken);
 
         return Result<PaymentDto>.Success(entity.ToDto());
     }
 }
+

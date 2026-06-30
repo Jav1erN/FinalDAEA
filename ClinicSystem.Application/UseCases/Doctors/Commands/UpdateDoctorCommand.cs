@@ -1,4 +1,4 @@
-using ClinicSystem.Application.Common.Models;
+﻿using ClinicSystem.Application.Common.Models;
 using ClinicSystem.Application.UseCases.Doctors.Dtos;
 using ClinicSystem.Domain.Entities;
 using ClinicSystem.Domain.Ports.Persistence;
@@ -34,7 +34,7 @@ public class UpdateDoctorCommandHandler
         UpdateDoctorCommand request,
         CancellationToken cancellationToken)
     {
-        var repository = _unitOfWork.Repository<Doctor>();
+        var repository = _unitOfWork.Doctors;
         var entity = await repository.GetByIdAsync(request.DoctorId, cancellationToken);
 
         if (entity is null)
@@ -56,3 +56,4 @@ public class UpdateDoctorCommandHandler
         return Result<DoctorDto>.Success(entity.ToDto());
     }
 }
+

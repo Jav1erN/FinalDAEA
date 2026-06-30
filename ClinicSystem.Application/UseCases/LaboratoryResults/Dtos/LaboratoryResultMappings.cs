@@ -1,4 +1,4 @@
-using ClinicSystem.Domain.Entities;
+﻿using ClinicSystem.Domain.Entities;
 
 namespace ClinicSystem.Application.UseCases.LaboratoryResults.Dtos;
 
@@ -19,3 +19,4 @@ public static class LaboratoryResultMappings
         };
     }
 }
+

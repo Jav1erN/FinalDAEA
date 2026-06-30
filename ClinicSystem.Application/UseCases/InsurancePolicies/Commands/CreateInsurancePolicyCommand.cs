@@ -1,4 +1,4 @@
-using ClinicSystem.Application.Common.Models;
+﻿using ClinicSystem.Application.Common.Models;
 using ClinicSystem.Application.UseCases.InsurancePolicies.Dtos;
 using ClinicSystem.Domain.Entities;
 using ClinicSystem.Domain.Ports.Persistence;
@@ -48,9 +48,10 @@ public class CreateInsurancePolicyCommandHandler
             UpdatedBy = request.UpdatedBy
         };
 
-        await _unitOfWork.Repository<InsurancePolicy>().AddAsync(entity, cancellationToken);
+        await _unitOfWork.InsurancePolicies.AddAsync(entity, cancellationToken);
         await _unitOfWork.SaveChangesAsync(cancellationToken);
 
         return Result<InsurancePolicyDto>.Success(entity.ToDto());
     }
 }
+

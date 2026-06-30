@@ -1,4 +1,4 @@
-using ClinicSystem.Domain.Entities;
+﻿using ClinicSystem.Domain.Entities;
 
 namespace ClinicSystem.Application.UseCases.Patients.Dtos;
 
@@ -30,3 +30,4 @@ public static class PatientMappings
         };
     }
 }
+

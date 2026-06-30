@@ -1,4 +1,4 @@
-namespace ClinicSystem.Application.UseCases.StockMovements.Dtos;
+﻿namespace ClinicSystem.Application.UseCases.StockMovements.Dtos;
 
 public class StockMovementDto
 {
@@ -18,3 +18,4 @@ public class StockMovementDto
 
     public DateTime? CreatedAt { get; set; } = null;
 }
+

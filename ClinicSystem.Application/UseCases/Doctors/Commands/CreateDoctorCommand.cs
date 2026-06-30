@@ -1,4 +1,4 @@
-using ClinicSystem.Application.Common.Models;
+﻿using ClinicSystem.Application.Common.Models;
 using ClinicSystem.Application.UseCases.Doctors.Dtos;
 using ClinicSystem.Domain.Entities;
 using ClinicSystem.Domain.Ports.Persistence;
@@ -46,9 +46,10 @@ public class CreateDoctorCommandHandler
             UpdatedBy = request.UpdatedBy
         };
 
-        await _unitOfWork.Repository<Doctor>().AddAsync(entity, cancellationToken);
+        await _unitOfWork.Doctors.AddAsync(entity, cancellationToken);
         await _unitOfWork.SaveChangesAsync(cancellationToken);
 
         return Result<DoctorDto>.Success(entity.ToDto());
     }
 }
+

@@ -1,4 +1,4 @@
-using ClinicSystem.Application.Common.Models;
+﻿using ClinicSystem.Application.Common.Models;
 using ClinicSystem.Application.UseCases.Departments.Dtos;
 using ClinicSystem.Domain.Entities;
 using ClinicSystem.Domain.Ports.Persistence;
@@ -28,7 +28,7 @@ public class UpdateDepartmentCommandHandler
         UpdateDepartmentCommand request,
         CancellationToken cancellationToken)
     {
-        var repository = _unitOfWork.Repository<Department>();
+        var repository = _unitOfWork.Departments;
         var entity = await repository.GetByIdAsync(request.DepartmentId, cancellationToken);
 
         if (entity is null)
@@ -44,3 +44,4 @@ public class UpdateDepartmentCommandHandler
         return Result<DepartmentDto>.Success(entity.ToDto());
     }
 }
+

@@ -1,4 +1,4 @@
-using ClinicSystem.Application.Common.Models;
+﻿using ClinicSystem.Application.Common.Models;
 using ClinicSystem.Application.UseCases.Roles.Dtos;
 using ClinicSystem.Domain.Entities;
 using ClinicSystem.Domain.Ports.Persistence;
@@ -22,9 +22,10 @@ public class GetRolesQueryHandler
         GetRolesQuery request,
         CancellationToken cancellationToken)
     {
-        var entities = await _unitOfWork.Repository<Role>()
+        var entities = await _unitOfWork.Roles
             .ListAsync(cancellationToken);
 
         return Result<IEnumerable<RoleDto>>.Success(entities.Select(entity => entity.ToDto()));
     }
 }
+

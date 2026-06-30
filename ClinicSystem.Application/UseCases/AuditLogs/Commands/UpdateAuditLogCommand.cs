@@ -1,4 +1,4 @@
-using ClinicSystem.Application.Common.Models;
+﻿using ClinicSystem.Application.Common.Models;
 using ClinicSystem.Application.UseCases.AuditLogs.Dtos;
 using ClinicSystem.Domain.Entities;
 using ClinicSystem.Domain.Ports.Persistence;
@@ -32,7 +32,7 @@ public class UpdateAuditLogCommandHandler
         UpdateAuditLogCommand request,
         CancellationToken cancellationToken)
     {
-        var repository = _unitOfWork.Repository<AuditLog>();
+        var repository = _unitOfWork.AuditLogs;
         var entity = await repository.GetByIdAsync(request.AuditLogId, cancellationToken);
 
         if (entity is null)
@@ -52,3 +52,4 @@ public class UpdateAuditLogCommandHandler
         return Result<AuditLogDto>.Success(entity.ToDto());
     }
 }
+

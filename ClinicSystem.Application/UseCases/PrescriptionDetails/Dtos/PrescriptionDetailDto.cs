@@ -1,4 +1,4 @@
-namespace ClinicSystem.Application.UseCases.PrescriptionDetails.Dtos;
+﻿namespace ClinicSystem.Application.UseCases.PrescriptionDetails.Dtos;
 
 public class PrescriptionDetailDto
 {
@@ -20,3 +20,4 @@ public class PrescriptionDetailDto
 
     public bool? IsSubstitutable { get; set; } = null;
 }
+

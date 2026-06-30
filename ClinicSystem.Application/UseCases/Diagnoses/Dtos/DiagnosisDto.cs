@@ -1,4 +1,4 @@
-namespace ClinicSystem.Application.UseCases.Diagnoses.Dtos;
+﻿namespace ClinicSystem.Application.UseCases.Diagnoses.Dtos;
 
 public class DiagnosisDto
 {
@@ -14,3 +14,4 @@ public class DiagnosisDto
 
     public DateTime? NotedAt { get; set; } = null;
 }
+

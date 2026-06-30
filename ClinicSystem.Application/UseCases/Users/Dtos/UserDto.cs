@@ -1,4 +1,4 @@
-namespace ClinicSystem.Application.UseCases.Users.Dtos;
+﻿namespace ClinicSystem.Application.UseCases.Users.Dtos;
 
 public class UserDto
 {
@@ -30,3 +30,4 @@ public class UserDto
 
     public Guid? UpdatedBy { get; set; } = null;
 }
+

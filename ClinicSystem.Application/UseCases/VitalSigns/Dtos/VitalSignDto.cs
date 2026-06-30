@@ -1,4 +1,4 @@
-namespace ClinicSystem.Application.UseCases.VitalSigns.Dtos;
+﻿namespace ClinicSystem.Application.UseCases.VitalSigns.Dtos;
 
 public class VitalSignDto
 {
@@ -26,3 +26,4 @@ public class VitalSignDto
 
     public DateTime? RecordedAt { get; set; } = null;
 }
+

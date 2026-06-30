@@ -1,4 +1,4 @@
-using ClinicSystem.Domain.Entities;
+﻿using ClinicSystem.Domain.Entities;
 
 namespace ClinicSystem.Application.UseCases.Permissions.Dtos;
 
@@ -16,3 +16,4 @@ public static class PermissionMappings
         };
     }
 }
+

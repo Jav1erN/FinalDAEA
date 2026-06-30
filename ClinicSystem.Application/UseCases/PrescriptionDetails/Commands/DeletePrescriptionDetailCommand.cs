@@ -1,4 +1,4 @@
-using ClinicSystem.Application.Common.Models;
+﻿using ClinicSystem.Application.Common.Models;
 using ClinicSystem.Domain.Entities;
 using ClinicSystem.Domain.Ports.Persistence;
 using MediatR;
@@ -21,7 +21,7 @@ public class DeletePrescriptionDetailCommandHandler
         DeletePrescriptionDetailCommand request,
         CancellationToken cancellationToken)
     {
-        var repository = _unitOfWork.Repository<PrescriptionDetail>();
+        var repository = _unitOfWork.PrescriptionDetails;
         var entity = await repository.GetByIdAsync(request.PrescriptionDetailId, cancellationToken);
 
         if (entity is null)
@@ -33,3 +33,4 @@ public class DeletePrescriptionDetailCommandHandler
         return Result<bool>.Success(true);
     }
 }
+

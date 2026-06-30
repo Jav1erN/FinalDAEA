@@ -1,4 +1,4 @@
-using ClinicSystem.Application.Common.Models;
+﻿using ClinicSystem.Application.Common.Models;
 using ClinicSystem.Domain.Entities;
 using ClinicSystem.Domain.Ports.Persistence;
 using MediatR;
@@ -21,7 +21,7 @@ public class DeleteNotificationTypeCommandHandler
         DeleteNotificationTypeCommand request,
         CancellationToken cancellationToken)
     {
-        var repository = _unitOfWork.Repository<NotificationType>();
+        var repository = _unitOfWork.NotificationTypes;
         var entity = await repository.GetByIdAsync(request.TypeId, cancellationToken);
 
         if (entity is null)
@@ -33,3 +33,4 @@ public class DeleteNotificationTypeCommandHandler
         return Result<bool>.Success(true);
     }
 }
+

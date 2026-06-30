@@ -1,4 +1,4 @@
-namespace ClinicSystem.Application.UseCases.Permissions.Dtos;
+﻿namespace ClinicSystem.Application.UseCases.Permissions.Dtos;
 
 public class PermissionDto
 {
@@ -12,3 +12,4 @@ public class PermissionDto
 
     public DateTime? CreatedAt { get; set; } = null;
 }
+

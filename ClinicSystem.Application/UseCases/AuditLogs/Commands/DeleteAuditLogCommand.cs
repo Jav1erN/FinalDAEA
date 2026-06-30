@@ -1,4 +1,4 @@
-using ClinicSystem.Application.Common.Models;
+﻿using ClinicSystem.Application.Common.Models;
 using ClinicSystem.Domain.Entities;
 using ClinicSystem.Domain.Ports.Persistence;
 using MediatR;
@@ -21,7 +21,7 @@ public class DeleteAuditLogCommandHandler
         DeleteAuditLogCommand request,
         CancellationToken cancellationToken)
     {
-        var repository = _unitOfWork.Repository<AuditLog>();
+        var repository = _unitOfWork.AuditLogs;
         var entity = await repository.GetByIdAsync(request.AuditLogId, cancellationToken);
 
         if (entity is null)
@@ -33,3 +33,4 @@ public class DeleteAuditLogCommandHandler
         return Result<bool>.Success(true);
     }
 }
+

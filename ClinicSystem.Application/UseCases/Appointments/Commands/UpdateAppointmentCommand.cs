@@ -1,4 +1,4 @@
-using ClinicSystem.Application.Common.Models;
+﻿using ClinicSystem.Application.Common.Models;
 using ClinicSystem.Application.UseCases.Appointments.Dtos;
 using ClinicSystem.Domain.Entities;
 using ClinicSystem.Domain.Ports.Persistence;
@@ -36,7 +36,7 @@ public class UpdateAppointmentCommandHandler
         UpdateAppointmentCommand request,
         CancellationToken cancellationToken)
     {
-        var repository = _unitOfWork.Repository<Appointment>();
+        var repository = _unitOfWork.Appointments;
         var entity = await repository.GetByIdAsync(request.AppointmentId, cancellationToken);
 
         if (entity is null)
@@ -60,3 +60,4 @@ public class UpdateAppointmentCommandHandler
         return Result<AppointmentDto>.Success(entity.ToDto());
     }
 }
+

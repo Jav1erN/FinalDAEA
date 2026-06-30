@@ -1,4 +1,4 @@
-using ClinicSystem.Application.Common.Models;
+﻿using ClinicSystem.Application.Common.Models;
 using ClinicSystem.Domain.Entities;
 using ClinicSystem.Domain.Ports.Persistence;
 using MediatR;
@@ -21,7 +21,7 @@ public class DeleteUserCommandHandler
         DeleteUserCommand request,
         CancellationToken cancellationToken)
     {
-        var repository = _unitOfWork.Repository<User>();
+        var repository = _unitOfWork.Users;
         var entity = await repository.GetByIdAsync(request.UserId, cancellationToken);
 
         if (entity is null)
@@ -33,3 +33,4 @@ public class DeleteUserCommandHandler
         return Result<bool>.Success(true);
     }
 }
+

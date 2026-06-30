@@ -1,4 +1,4 @@
-using ClinicSystem.Application.Common.Models;
+﻿using ClinicSystem.Application.Common.Models;
 using ClinicSystem.Application.UseCases.StockMovements.Dtos;
 using ClinicSystem.Domain.Entities;
 using ClinicSystem.Domain.Ports.Persistence;
@@ -22,7 +22,7 @@ public class GetStockMovementByIdQueryHandler
         GetStockMovementByIdQuery request,
         CancellationToken cancellationToken)
     {
-        var entity = await _unitOfWork.Repository<StockMovement>()
+        var entity = await _unitOfWork.StockMovements
             .GetByIdAsync(request.MovementId, cancellationToken);
 
         if (entity is null)
@@ -31,3 +31,4 @@ public class GetStockMovementByIdQueryHandler
         return Result<StockMovementDto>.Success(entity.ToDto());
     }
 }
+

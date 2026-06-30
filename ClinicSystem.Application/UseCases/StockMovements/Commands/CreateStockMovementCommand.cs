@@ -1,4 +1,4 @@
-using ClinicSystem.Application.Common.Models;
+﻿using ClinicSystem.Application.Common.Models;
 using ClinicSystem.Application.UseCases.StockMovements.Dtos;
 using ClinicSystem.Domain.Entities;
 using ClinicSystem.Domain.Ports.Persistence;
@@ -40,9 +40,10 @@ public class CreateStockMovementCommandHandler
             PerformedBy = request.PerformedBy
         };
 
-        await _unitOfWork.Repository<StockMovement>().AddAsync(entity, cancellationToken);
+        await _unitOfWork.StockMovements.AddAsync(entity, cancellationToken);
         await _unitOfWork.SaveChangesAsync(cancellationToken);
 
         return Result<StockMovementDto>.Success(entity.ToDto());
     }
 }
+

@@ -1,4 +1,4 @@
-using ClinicSystem.Application.Common.Models;
+﻿using ClinicSystem.Application.Common.Models;
 using ClinicSystem.Application.UseCases.VitalSigns.Dtos;
 using ClinicSystem.Domain.Entities;
 using ClinicSystem.Domain.Ports.Persistence;
@@ -50,9 +50,10 @@ public class CreateVitalSignCommandHandler
             RecordedAt = request.RecordedAt
         };
 
-        await _unitOfWork.Repository<VitalSign>().AddAsync(entity, cancellationToken);
+        await _unitOfWork.VitalSigns.AddAsync(entity, cancellationToken);
         await _unitOfWork.SaveChangesAsync(cancellationToken);
 
         return Result<VitalSignDto>.Success(entity.ToDto());
     }
 }
+

@@ -1,4 +1,4 @@
-namespace ClinicSystem.Application.UseCases.Roles.Dtos;
+﻿namespace ClinicSystem.Application.UseCases.Roles.Dtos;
 
 public class RoleDto
 {
@@ -12,3 +12,4 @@ public class RoleDto
 
     public DateTime? UpdatedAt { get; set; } = null;
 }
+

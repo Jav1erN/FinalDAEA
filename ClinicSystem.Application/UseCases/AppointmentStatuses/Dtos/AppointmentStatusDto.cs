@@ -1,4 +1,4 @@
-namespace ClinicSystem.Application.UseCases.AppointmentStatuses.Dtos;
+﻿namespace ClinicSystem.Application.UseCases.AppointmentStatuses.Dtos;
 
 public class AppointmentStatusDto
 {
@@ -8,3 +8,4 @@ public class AppointmentStatusDto
 
     public string? Description { get; set; } = null;
 }
+

@@ -1,4 +1,4 @@
-namespace ClinicSystem.Application.UseCases.RefreshTokens.Dtos;
+﻿namespace ClinicSystem.Application.UseCases.RefreshTokens.Dtos;
 
 public class RefreshTokenDto
 {
@@ -14,3 +14,4 @@ public class RefreshTokenDto
 
     public DateTime? CreatedAt { get; set; } = null;
 }
+

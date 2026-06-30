@@ -1,4 +1,4 @@
-using ClinicSystem.Application.Common.Models;
+﻿using ClinicSystem.Application.Common.Models;
 using ClinicSystem.Application.UseCases.Billings.Dtos;
 using ClinicSystem.Domain.Entities;
 using ClinicSystem.Domain.Ports.Persistence;
@@ -48,9 +48,10 @@ public class CreateBillingCommandHandler
             UpdatedBy = request.UpdatedBy
         };
 
-        await _unitOfWork.Repository<Billing>().AddAsync(entity, cancellationToken);
+        await _unitOfWork.Billings.AddAsync(entity, cancellationToken);
         await _unitOfWork.SaveChangesAsync(cancellationToken);
 
         return Result<BillingDto>.Success(entity.ToDto());
     }
 }
+

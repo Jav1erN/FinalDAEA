@@ -1,4 +1,4 @@
-using ClinicSystem.Domain.Entities;
+﻿using ClinicSystem.Domain.Entities;
 
 namespace ClinicSystem.Application.UseCases.Treatments.Dtos;
 
@@ -18,3 +18,4 @@ public static class TreatmentMappings
         };
     }
 }
+

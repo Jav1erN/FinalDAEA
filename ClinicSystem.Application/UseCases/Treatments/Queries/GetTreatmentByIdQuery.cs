@@ -1,4 +1,4 @@
-using ClinicSystem.Application.Common.Models;
+﻿using ClinicSystem.Application.Common.Models;
 using ClinicSystem.Application.UseCases.Treatments.Dtos;
 using ClinicSystem.Domain.Entities;
 using ClinicSystem.Domain.Ports.Persistence;
@@ -22,7 +22,7 @@ public class GetTreatmentByIdQueryHandler
         GetTreatmentByIdQuery request,
         CancellationToken cancellationToken)
     {
-        var entity = await _unitOfWork.Repository<Treatment>()
+        var entity = await _unitOfWork.Treatments
             .GetByIdAsync(request.TreatmentId, cancellationToken);
 
         if (entity is null)
@@ -31,3 +31,4 @@ public class GetTreatmentByIdQueryHandler
         return Result<TreatmentDto>.Success(entity.ToDto());
     }
 }
+

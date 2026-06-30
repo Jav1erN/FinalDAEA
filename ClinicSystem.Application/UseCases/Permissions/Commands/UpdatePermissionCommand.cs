@@ -1,4 +1,4 @@
-using ClinicSystem.Application.Common.Models;
+﻿using ClinicSystem.Application.Common.Models;
 using ClinicSystem.Application.UseCases.Permissions.Dtos;
 using ClinicSystem.Domain.Entities;
 using ClinicSystem.Domain.Ports.Persistence;
@@ -27,7 +27,7 @@ public class UpdatePermissionCommandHandler
         UpdatePermissionCommand request,
         CancellationToken cancellationToken)
     {
-        var repository = _unitOfWork.Repository<Permission>();
+        var repository = _unitOfWork.Permissions;
         var entity = await repository.GetByIdAsync(request.PermissionId, cancellationToken);
 
         if (entity is null)
@@ -42,3 +42,4 @@ public class UpdatePermissionCommandHandler
         return Result<PermissionDto>.Success(entity.ToDto());
     }
 }
+

@@ -1,4 +1,4 @@
-using ClinicSystem.Application.Common.Models;
+﻿using ClinicSystem.Application.Common.Models;
 using ClinicSystem.Application.UseCases.VitalSigns.Dtos;
 using ClinicSystem.Domain.Entities;
 using ClinicSystem.Domain.Ports.Persistence;
@@ -22,9 +22,10 @@ public class GetVitalSignsQueryHandler
         GetVitalSignsQuery request,
         CancellationToken cancellationToken)
     {
-        var entities = await _unitOfWork.Repository<VitalSign>()
+        var entities = await _unitOfWork.VitalSigns
             .ListAsync(cancellationToken);
 
         return Result<IEnumerable<VitalSignDto>>.Success(entities.Select(entity => entity.ToDto()));
     }
 }
+

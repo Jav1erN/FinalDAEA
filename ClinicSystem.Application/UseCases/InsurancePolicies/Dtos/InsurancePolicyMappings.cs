@@ -1,4 +1,4 @@
-using ClinicSystem.Domain.Entities;
+﻿using ClinicSystem.Domain.Entities;
 
 namespace ClinicSystem.Application.UseCases.InsurancePolicies.Dtos;
 
@@ -25,3 +25,4 @@ public static class InsurancePolicyMappings
         };
     }
 }
+

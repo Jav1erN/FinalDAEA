@@ -1,4 +1,4 @@
-using ClinicSystem.Domain.Entities;
+﻿using ClinicSystem.Domain.Entities;
 
 namespace ClinicSystem.Application.UseCases.RefreshTokens.Dtos;
 
@@ -17,3 +17,4 @@ public static class RefreshTokenMappings
         };
     }
 }
+

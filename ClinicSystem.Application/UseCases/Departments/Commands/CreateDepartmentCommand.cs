@@ -1,4 +1,4 @@
-using ClinicSystem.Application.Common.Models;
+﻿using ClinicSystem.Application.Common.Models;
 using ClinicSystem.Application.UseCases.Departments.Dtos;
 using ClinicSystem.Domain.Entities;
 using ClinicSystem.Domain.Ports.Persistence;
@@ -34,9 +34,10 @@ public class CreateDepartmentCommandHandler
             IsActive = request.IsActive
         };
 
-        await _unitOfWork.Repository<Department>().AddAsync(entity, cancellationToken);
+        await _unitOfWork.Departments.AddAsync(entity, cancellationToken);
         await _unitOfWork.SaveChangesAsync(cancellationToken);
 
         return Result<DepartmentDto>.Success(entity.ToDto());
     }
 }
+

@@ -1,4 +1,4 @@
-namespace ClinicSystem.Application.UseCases.Payments.Dtos;
+﻿namespace ClinicSystem.Application.UseCases.Payments.Dtos;
 
 public class PaymentDto
 {
@@ -22,3 +22,4 @@ public class PaymentDto
 
     public DateTime? CreatedAt { get; set; } = null;
 }
+

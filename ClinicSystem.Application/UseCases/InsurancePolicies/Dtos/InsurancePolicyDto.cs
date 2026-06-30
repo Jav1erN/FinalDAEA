@@ -1,4 +1,4 @@
-namespace ClinicSystem.Application.UseCases.InsurancePolicies.Dtos;
+﻿namespace ClinicSystem.Application.UseCases.InsurancePolicies.Dtos;
 
 public class InsurancePolicyDto
 {
@@ -30,3 +30,4 @@ public class InsurancePolicyDto
 
     public Guid? UpdatedBy { get; set; } = null;
 }
+

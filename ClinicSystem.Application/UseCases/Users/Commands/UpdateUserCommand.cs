@@ -1,4 +1,4 @@
-using ClinicSystem.Application.Common.Models;
+﻿using ClinicSystem.Application.Common.Models;
 using ClinicSystem.Application.UseCases.Users.Dtos;
 using ClinicSystem.Domain.Entities;
 using ClinicSystem.Domain.Ports.Persistence;
@@ -35,7 +35,7 @@ public class UpdateUserCommandHandler
         UpdateUserCommand request,
         CancellationToken cancellationToken)
     {
-        var repository = _unitOfWork.Repository<User>();
+        var repository = _unitOfWork.Users;
         var entity = await repository.GetByIdAsync(request.UserId, cancellationToken);
 
         if (entity is null)
@@ -58,3 +58,4 @@ public class UpdateUserCommandHandler
         return Result<UserDto>.Success(entity.ToDto());
     }
 }
+

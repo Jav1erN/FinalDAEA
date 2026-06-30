@@ -1,4 +1,4 @@
-using ClinicSystem.Application.Common.Models;
+﻿using ClinicSystem.Application.Common.Models;
 using ClinicSystem.Application.UseCases.Roles.Dtos;
 using ClinicSystem.Domain.Entities;
 using ClinicSystem.Domain.Ports.Persistence;
@@ -27,7 +27,7 @@ public class UpdateRoleCommandHandler
         UpdateRoleCommand request,
         CancellationToken cancellationToken)
     {
-        var repository = _unitOfWork.Repository<Role>();
+        var repository = _unitOfWork.Roles;
         var entity = await repository.GetByIdAsync(request.RoleId, cancellationToken);
 
         if (entity is null)
@@ -42,3 +42,4 @@ public class UpdateRoleCommandHandler
         return Result<RoleDto>.Success(entity.ToDto());
     }
 }
+

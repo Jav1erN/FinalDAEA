@@ -1,4 +1,4 @@
-using ClinicSystem.Application.Common.Models;
+﻿using ClinicSystem.Application.Common.Models;
 using ClinicSystem.Application.UseCases.PrescriptionDetails.Dtos;
 using ClinicSystem.Domain.Entities;
 using ClinicSystem.Domain.Ports.Persistence;
@@ -22,7 +22,7 @@ public class GetPrescriptionDetailByIdQueryHandler
         GetPrescriptionDetailByIdQuery request,
         CancellationToken cancellationToken)
     {
-        var entity = await _unitOfWork.Repository<PrescriptionDetail>()
+        var entity = await _unitOfWork.PrescriptionDetails
             .GetByIdAsync(request.PrescriptionDetailId, cancellationToken);
 
         if (entity is null)
@@ -31,3 +31,4 @@ public class GetPrescriptionDetailByIdQueryHandler
         return Result<PrescriptionDetailDto>.Success(entity.ToDto());
     }
 }
+
