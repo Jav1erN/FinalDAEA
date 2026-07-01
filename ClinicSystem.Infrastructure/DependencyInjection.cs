@@ -7,6 +7,7 @@ using ClinicSystem.Infrastructure.Persistence.Repositories;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Npgsql;
 
 namespace ClinicSystem.Infrastructure;
 
@@ -18,8 +19,7 @@ public static class DependencyInjection
     {
         services.AddDbContext<ClinicDbContext>(options =>
         {
-            options.UseNpgsql(
-                configuration.GetConnectionString("DefaultConnection"));
+            options.UseNpgsql(GetPostgresConnectionString(configuration));
         });
 
         services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
@@ -58,5 +58,48 @@ public static class DependencyInjection
         services.AddScoped<IInventoryPolicyService, InventoryPolicyService>();
 
         return services;
+    }
+
+    private static string GetPostgresConnectionString(IConfiguration configuration)
+    {
+        var connectionString = configuration.GetConnectionString("DefaultConnection");
+        if (!string.IsNullOrWhiteSpace(connectionString))
+        {
+            return connectionString;
+        }
+
+        var databaseUrl = configuration["DATABASE_URL"];
+        if (!string.IsNullOrWhiteSpace(databaseUrl))
+        {
+            return ConvertDatabaseUrl(databaseUrl);
+        }
+
+        throw new InvalidOperationException(
+            "Database connection string not configured. Set ConnectionStrings:DefaultConnection or DATABASE_URL.");
+    }
+
+    private static string ConvertDatabaseUrl(string databaseUrl)
+    {
+        var uri = new Uri(databaseUrl);
+        var userInfo = uri.UserInfo.Split(':', 2);
+
+        var builder = new NpgsqlConnectionStringBuilder
+        {
+            Host = uri.Host,
+            Port = uri.Port > 0 ? uri.Port : 5432,
+            Database = uri.AbsolutePath.TrimStart('/'),
+            Username = Uri.UnescapeDataString(userInfo[0]),
+            Password = userInfo.Length > 1 ? Uri.UnescapeDataString(userInfo[1]) : string.Empty
+        };
+
+        var queryParameters = System.Web.HttpUtility.ParseQueryString(uri.Query);
+        var sslMode = queryParameters["sslmode"];
+        if (!string.IsNullOrWhiteSpace(sslMode) &&
+            Enum.TryParse<SslMode>(sslMode, true, out var parsedSslMode))
+        {
+            builder.SslMode = parsedSslMode;
+        }
+
+        return builder.ConnectionString;
     }
 }
