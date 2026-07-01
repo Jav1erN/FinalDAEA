@@ -62,7 +62,7 @@ public class BillingsController : ControllerBase
     [HttpDelete("{id}")]
     public async Task<IActionResult> Delete(Guid id, CancellationToken cancellationToken)
     {
-        var result = await _sender.Send(new DeleteBillingCommand(id), cancellationToken);
+        var result = await _sender.Send(new DeleteBillingCommand { BillingId = id }, cancellationToken);
 
         if (result.IsFailure)
             return NotFound(result.Error);

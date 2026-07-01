@@ -62,7 +62,7 @@ public class AppointmentsController : ControllerBase
     [HttpDelete("{id}")]
     public async Task<IActionResult> Delete(Guid id, CancellationToken cancellationToken)
     {
-        var result = await _sender.Send(new DeleteAppointmentCommand(id), cancellationToken);
+        var result = await _sender.Send(new DeleteAppointmentCommand { AppointmentId = id }, cancellationToken);
 
         if (result.IsFailure)
             return NotFound(result.Error);

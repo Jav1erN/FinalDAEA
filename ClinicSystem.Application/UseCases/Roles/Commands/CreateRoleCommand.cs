@@ -1,15 +1,17 @@
-﻿using ClinicSystem.Application.Common.Models;
-using ClinicSystem.Application.UseCases.Roles.Dtos;
+using ClinicSystem.Application.Common.Models;
+using ClinicSystem.Application.Common.Dtos;
 using ClinicSystem.Domain.Entities;
 using ClinicSystem.Domain.Ports.Persistence;
 using MediatR;
 
 namespace ClinicSystem.Application.UseCases.Roles.Commands;
 
-public record CreateRoleCommand(
-    string Name,
-    string? Description
-) : IRequest<Result<RoleDto>>;
+public class CreateRoleCommand : IRequest<Result<RoleDto>>
+{
+    public string Name { get; set; } = string.Empty;
+
+    public string? Description { get; set; }
+}
 
 public class CreateRoleCommandHandler
     : IRequestHandler<CreateRoleCommand, Result<RoleDto>>

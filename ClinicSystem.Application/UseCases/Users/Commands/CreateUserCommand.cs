@@ -1,23 +1,33 @@
-﻿using ClinicSystem.Application.Common.Models;
-using ClinicSystem.Application.UseCases.Users.Dtos;
+using ClinicSystem.Application.Common.Models;
+using ClinicSystem.Application.Common.Dtos;
 using ClinicSystem.Domain.Entities;
 using ClinicSystem.Domain.Ports.Persistence;
 using MediatR;
 
 namespace ClinicSystem.Application.UseCases.Users.Commands;
 
-public record CreateUserCommand(
-    Guid RoleId,
-    string Username,
-    string Email,
-    string PasswordHash,
-    string FirstName,
-    string LastName,
-    string? Phone,
-    bool? IsActive,
-    Guid? CreatedBy,
-    Guid? UpdatedBy
-) : IRequest<Result<UserDto>>;
+public class CreateUserCommand : IRequest<Result<UserDto>>
+{
+    public Guid RoleId { get; set; } = Guid.Empty;
+
+    public string Username { get; set; } = string.Empty;
+
+    public string Email { get; set; } = string.Empty;
+
+    public string PasswordHash { get; set; } = string.Empty;
+
+    public string FirstName { get; set; } = string.Empty;
+
+    public string LastName { get; set; } = string.Empty;
+
+    public string? Phone { get; set; }
+
+    public bool? IsActive { get; set; }
+
+    public Guid? CreatedBy { get; set; }
+
+    public Guid? UpdatedBy { get; set; }
+}
 
 public class CreateUserCommandHandler
     : IRequestHandler<CreateUserCommand, Result<UserDto>>

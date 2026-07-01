@@ -1,24 +1,35 @@
-﻿using ClinicSystem.Application.Common.Models;
-using ClinicSystem.Application.UseCases.VitalSigns.Dtos;
+using ClinicSystem.Application.Common.Models;
+using ClinicSystem.Application.Common.Dtos;
 using ClinicSystem.Domain.Entities;
 using ClinicSystem.Domain.Ports.Persistence;
 using MediatR;
 
 namespace ClinicSystem.Application.UseCases.VitalSigns.Commands;
 
-public record CreateVitalSignCommand(
-    Guid MedicalRecordId,
-    Guid? RecordedBy,
-    int? SystolicBp,
-    int? DiastolicBp,
-    int? HeartRate,
-    decimal? Temperature,
-    int? RespiratoryRate,
-    decimal? WeightKg,
-    decimal? HeightCm,
-    int? Spo2,
-    DateTime? RecordedAt
-) : IRequest<Result<VitalSignDto>>;
+public class CreateVitalSignCommand : IRequest<Result<VitalSignDto>>
+{
+    public Guid MedicalRecordId { get; set; } = Guid.Empty;
+
+    public Guid? RecordedBy { get; set; }
+
+    public int? SystolicBp { get; set; }
+
+    public int? DiastolicBp { get; set; }
+
+    public int? HeartRate { get; set; }
+
+    public decimal? Temperature { get; set; }
+
+    public int? RespiratoryRate { get; set; }
+
+    public decimal? WeightKg { get; set; }
+
+    public decimal? HeightCm { get; set; }
+
+    public int? Spo2 { get; set; }
+
+    public DateTime? RecordedAt { get; set; }
+}
 
 public class CreateVitalSignCommandHandler
     : IRequestHandler<CreateVitalSignCommand, Result<VitalSignDto>>

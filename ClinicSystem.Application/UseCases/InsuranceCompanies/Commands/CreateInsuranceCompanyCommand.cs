@@ -1,19 +1,25 @@
 using ClinicSystem.Application.Common.Models;
-using ClinicSystem.Application.UseCases.InsuranceCompanies.Dtos;
+using ClinicSystem.Application.Common.Dtos;
 using ClinicSystem.Domain.Entities;
 using ClinicSystem.Domain.Ports.Persistence;
 using MediatR;
 
 namespace ClinicSystem.Application.UseCases.InsuranceCompanies.Commands;
 
-public record CreateInsuranceCompanyCommand(
-    string Name,
-    string? Phone,
-    string? Email,
-    string? Address,
-    string? ContactName,
-    bool? IsActive
-) : IRequest<Result<InsuranceCompanyDto>>;
+public class CreateInsuranceCompanyCommand : IRequest<Result<InsuranceCompanyDto>>
+{
+    public string Name { get; set; } = string.Empty;
+
+    public string? Phone { get; set; }
+
+    public string? Email { get; set; }
+
+    public string? Address { get; set; }
+
+    public string? ContactName { get; set; }
+
+    public bool? IsActive { get; set; }
+}
 
 public class CreateInsuranceCompanyCommandHandler
     : IRequestHandler<CreateInsuranceCompanyCommand, Result<InsuranceCompanyDto>>
@@ -40,9 +46,10 @@ public class CreateInsuranceCompanyCommandHandler
             IsActive = request.IsActive
         };
 
-        await _unitOfWork.Repository<InsuranceCompany>().AddAsync(entity, cancellationToken);
+        await _unitOfWork.InsuranceCompanies.AddAsync(entity, cancellationToken);
         await _unitOfWork.SaveChangesAsync(cancellationToken);
 
         return Result<InsuranceCompanyDto>.Success(entity.ToDto());
     }
 }
+

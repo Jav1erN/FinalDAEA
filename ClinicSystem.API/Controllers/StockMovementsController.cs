@@ -62,7 +62,7 @@ public class StockMovementsController : ControllerBase
     [HttpDelete("{id}")]
     public async Task<IActionResult> Delete(Guid id, CancellationToken cancellationToken)
     {
-        var result = await _sender.Send(new DeleteStockMovementCommand(id), cancellationToken);
+        var result = await _sender.Send(new DeleteStockMovementCommand { MovementId = id }, cancellationToken);
 
         if (result.IsFailure)
             return NotFound(result.Error);

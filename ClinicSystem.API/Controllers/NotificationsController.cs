@@ -62,7 +62,7 @@ public class NotificationsController : ControllerBase
     [HttpDelete("{id}")]
     public async Task<IActionResult> Delete(Guid id, CancellationToken cancellationToken)
     {
-        var result = await _sender.Send(new DeleteNotificationCommand(id), cancellationToken);
+        var result = await _sender.Send(new DeleteNotificationCommand { NotificationId = id }, cancellationToken);
 
         if (result.IsFailure)
             return NotFound(result.Error);

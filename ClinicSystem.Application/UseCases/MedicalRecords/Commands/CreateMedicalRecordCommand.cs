@@ -1,22 +1,31 @@
 using ClinicSystem.Application.Common.Models;
-using ClinicSystem.Application.UseCases.MedicalRecords.Dtos;
+using ClinicSystem.Application.Common.Dtos;
 using ClinicSystem.Domain.Entities;
 using ClinicSystem.Domain.Ports.Persistence;
 using MediatR;
 
 namespace ClinicSystem.Application.UseCases.MedicalRecords.Commands;
 
-public record CreateMedicalRecordCommand(
-    Guid PatientId,
-    Guid DoctorId,
-    Guid? AppointmentId,
-    string? ChiefComplaint,
-    string? Diagnosis,
-    string? Treatment,
-    string? Observations,
-    Guid? CreatedBy,
-    Guid? UpdatedBy
-) : IRequest<Result<MedicalRecordDto>>;
+public class CreateMedicalRecordCommand : IRequest<Result<MedicalRecordDto>>
+{
+    public Guid PatientId { get; set; } = Guid.Empty;
+
+    public Guid DoctorId { get; set; } = Guid.Empty;
+
+    public Guid? AppointmentId { get; set; }
+
+    public string? ChiefComplaint { get; set; }
+
+    public string? Diagnosis { get; set; }
+
+    public string? Treatment { get; set; }
+
+    public string? Observations { get; set; }
+
+    public Guid? CreatedBy { get; set; }
+
+    public Guid? UpdatedBy { get; set; }
+}
 
 public class CreateMedicalRecordCommandHandler
     : IRequestHandler<CreateMedicalRecordCommand, Result<MedicalRecordDto>>
@@ -46,9 +55,10 @@ public class CreateMedicalRecordCommandHandler
             UpdatedBy = request.UpdatedBy
         };
 
-        await _unitOfWork.Repository<MedicalRecord>().AddAsync(entity, cancellationToken);
+        await _unitOfWork.MedicalRecords.AddAsync(entity, cancellationToken);
         await _unitOfWork.SaveChangesAsync(cancellationToken);
 
         return Result<MedicalRecordDto>.Success(entity.ToDto());
     }
 }
+

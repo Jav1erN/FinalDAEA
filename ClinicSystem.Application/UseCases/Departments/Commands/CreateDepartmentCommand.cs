@@ -1,16 +1,19 @@
-﻿using ClinicSystem.Application.Common.Models;
-using ClinicSystem.Application.UseCases.Departments.Dtos;
+using ClinicSystem.Application.Common.Models;
+using ClinicSystem.Application.Common.Dtos;
 using ClinicSystem.Domain.Entities;
 using ClinicSystem.Domain.Ports.Persistence;
 using MediatR;
 
 namespace ClinicSystem.Application.UseCases.Departments.Commands;
 
-public record CreateDepartmentCommand(
-    string Name,
-    string? Description,
-    bool? IsActive
-) : IRequest<Result<DepartmentDto>>;
+public class CreateDepartmentCommand : IRequest<Result<DepartmentDto>>
+{
+    public string Name { get; set; } = string.Empty;
+
+    public string? Description { get; set; }
+
+    public bool? IsActive { get; set; }
+}
 
 public class CreateDepartmentCommandHandler
     : IRequestHandler<CreateDepartmentCommand, Result<DepartmentDto>>

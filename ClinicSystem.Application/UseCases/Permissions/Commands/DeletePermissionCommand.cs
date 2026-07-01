@@ -5,7 +5,10 @@ using MediatR;
 
 namespace ClinicSystem.Application.UseCases.Permissions.Commands;
 
-public record DeletePermissionCommand(Guid PermissionId) : IRequest<Result<bool>>;
+public class DeletePermissionCommand : IRequest<Result<bool>>
+{
+    public Guid PermissionId { get; set; } = Guid.Empty;
+}
 
 public class DeletePermissionCommandHandler
     : IRequestHandler<DeletePermissionCommand, Result<bool>>
@@ -21,7 +24,7 @@ public class DeletePermissionCommandHandler
         DeletePermissionCommand request,
         CancellationToken cancellationToken)
     {
-        var repository = _unitOfWork.Repository<Permission>();
+        var repository = _unitOfWork.Permissions;
         var entity = await repository.GetByIdAsync(request.PermissionId, cancellationToken);
 
         if (entity is null)
@@ -33,3 +36,4 @@ public class DeletePermissionCommandHandler
         return Result<bool>.Success(true);
     }
 }
+

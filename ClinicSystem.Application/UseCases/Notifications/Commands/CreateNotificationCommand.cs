@@ -1,24 +1,35 @@
-﻿using ClinicSystem.Application.Common.Models;
-using ClinicSystem.Application.UseCases.Notifications.Dtos;
+using ClinicSystem.Application.Common.Models;
+using ClinicSystem.Application.Common.Dtos;
 using ClinicSystem.Domain.Entities;
 using ClinicSystem.Domain.Ports.Persistence;
 using MediatR;
 
 namespace ClinicSystem.Application.UseCases.Notifications.Commands;
 
-public record CreateNotificationCommand(
-    Guid UserId,
-    Guid TypeId,
-    string Channel,
-    string? Status,
-    string? EntityType,
-    Guid? EntityId,
-    string? Subject,
-    string? Body,
-    DateTime? ScheduledAt,
-    DateTime? SentAt,
-    DateTime? ReadAt
-) : IRequest<Result<NotificationDto>>;
+public class CreateNotificationCommand : IRequest<Result<NotificationDto>>
+{
+    public Guid UserId { get; set; } = Guid.Empty;
+
+    public Guid TypeId { get; set; } = Guid.Empty;
+
+    public string Channel { get; set; } = string.Empty;
+
+    public string? Status { get; set; }
+
+    public string? EntityType { get; set; }
+
+    public Guid? EntityId { get; set; }
+
+    public string? Subject { get; set; }
+
+    public string? Body { get; set; }
+
+    public DateTime? ScheduledAt { get; set; }
+
+    public DateTime? SentAt { get; set; }
+
+    public DateTime? ReadAt { get; set; }
+}
 
 public class CreateNotificationCommandHandler
     : IRequestHandler<CreateNotificationCommand, Result<NotificationDto>>

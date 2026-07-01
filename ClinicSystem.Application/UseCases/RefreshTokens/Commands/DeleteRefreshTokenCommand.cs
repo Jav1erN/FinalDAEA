@@ -1,11 +1,14 @@
-﻿using ClinicSystem.Application.Common.Models;
+using ClinicSystem.Application.Common.Models;
 using ClinicSystem.Domain.Entities;
 using ClinicSystem.Domain.Ports.Persistence;
 using MediatR;
 
 namespace ClinicSystem.Application.UseCases.RefreshTokens.Commands;
 
-public record DeleteRefreshTokenCommand(Guid RefreshTokenId) : IRequest<Result<bool>>;
+public class DeleteRefreshTokenCommand : IRequest<Result<bool>>
+{
+    public Guid RefreshTokenId { get; set; } = Guid.Empty;
+}
 
 public class DeleteRefreshTokenCommandHandler
     : IRequestHandler<DeleteRefreshTokenCommand, Result<bool>>

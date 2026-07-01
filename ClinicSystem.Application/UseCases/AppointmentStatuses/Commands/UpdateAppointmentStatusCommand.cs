@@ -1,16 +1,19 @@
-﻿using ClinicSystem.Application.Common.Models;
-using ClinicSystem.Application.UseCases.AppointmentStatuses.Dtos;
+using ClinicSystem.Application.Common.Models;
+using ClinicSystem.Application.Common.Dtos;
 using ClinicSystem.Domain.Entities;
 using ClinicSystem.Domain.Ports.Persistence;
 using MediatR;
 
 namespace ClinicSystem.Application.UseCases.AppointmentStatuses.Commands;
 
-public record UpdateAppointmentStatusCommand(
-    Guid StatusId,
-    string Name,
-    string? Description
-) : IRequest<Result<AppointmentStatusDto>>;
+public class UpdateAppointmentStatusCommand : IRequest<Result<AppointmentStatusDto>>
+{
+    public Guid StatusId { get; set; } = Guid.Empty;
+
+    public string Name { get; set; } = string.Empty;
+
+    public string? Description { get; set; }
+}
 
 public class UpdateAppointmentStatusCommandHandler
     : IRequestHandler<UpdateAppointmentStatusCommand, Result<AppointmentStatusDto>>

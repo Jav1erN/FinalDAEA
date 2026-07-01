@@ -1,19 +1,25 @@
-﻿using ClinicSystem.Application.Common.Models;
-using ClinicSystem.Application.UseCases.Specialties.Dtos;
+using ClinicSystem.Application.Common.Models;
+using ClinicSystem.Application.Common.Dtos;
 using ClinicSystem.Domain.Entities;
 using ClinicSystem.Domain.Ports.Persistence;
 using MediatR;
 
 namespace ClinicSystem.Application.UseCases.Specialties.Commands;
 
-public record UpdateSpecialtyCommand(
-    Guid SpecialtyId,
-    Guid DepartmentId,
-    string Name,
-    string? Description,
-    bool? IsActive,
-    DateTime? UpdatedAt
-) : IRequest<Result<SpecialtyDto>>;
+public class UpdateSpecialtyCommand : IRequest<Result<SpecialtyDto>>
+{
+    public Guid SpecialtyId { get; set; } = Guid.Empty;
+
+    public Guid DepartmentId { get; set; } = Guid.Empty;
+
+    public string Name { get; set; } = string.Empty;
+
+    public string? Description { get; set; }
+
+    public bool? IsActive { get; set; }
+
+    public DateTime? UpdatedAt { get; set; }
+}
 
 public class UpdateSpecialtyCommandHandler
     : IRequestHandler<UpdateSpecialtyCommand, Result<SpecialtyDto>>

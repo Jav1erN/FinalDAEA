@@ -1,11 +1,14 @@
-﻿using ClinicSystem.Application.Common.Models;
+using ClinicSystem.Application.Common.Models;
 using ClinicSystem.Domain.Entities;
 using ClinicSystem.Domain.Ports.Persistence;
 using MediatR;
 
 namespace ClinicSystem.Application.UseCases.NotificationTypes.Commands;
 
-public record DeleteNotificationTypeCommand(Guid TypeId) : IRequest<Result<bool>>;
+public class DeleteNotificationTypeCommand : IRequest<Result<bool>>
+{
+    public Guid TypeId { get; set; } = Guid.Empty;
+}
 
 public class DeleteNotificationTypeCommandHandler
     : IRequestHandler<DeleteNotificationTypeCommand, Result<bool>>

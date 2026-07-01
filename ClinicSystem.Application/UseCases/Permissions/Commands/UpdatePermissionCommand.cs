@@ -1,17 +1,21 @@
-﻿using ClinicSystem.Application.Common.Models;
-using ClinicSystem.Application.UseCases.Permissions.Dtos;
+using ClinicSystem.Application.Common.Models;
+using ClinicSystem.Application.Common.Dtos;
 using ClinicSystem.Domain.Entities;
 using ClinicSystem.Domain.Ports.Persistence;
 using MediatR;
 
 namespace ClinicSystem.Application.UseCases.Permissions.Commands;
 
-public record UpdatePermissionCommand(
-    Guid PermissionId,
-    string Resource,
-    string Action,
-    string? Description
-) : IRequest<Result<PermissionDto>>;
+public class UpdatePermissionCommand : IRequest<Result<PermissionDto>>
+{
+    public Guid PermissionId { get; set; } = Guid.Empty;
+
+    public string Resource { get; set; } = string.Empty;
+
+    public string Action { get; set; } = string.Empty;
+
+    public string? Description { get; set; }
+}
 
 public class UpdatePermissionCommandHandler
     : IRequestHandler<UpdatePermissionCommand, Result<PermissionDto>>

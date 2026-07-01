@@ -62,7 +62,7 @@ public class PrescriptionDetailsController : ControllerBase
     [HttpDelete("{id}")]
     public async Task<IActionResult> Delete(Guid id, CancellationToken cancellationToken)
     {
-        var result = await _sender.Send(new DeletePrescriptionDetailCommand(id), cancellationToken);
+        var result = await _sender.Send(new DeletePrescriptionDetailCommand { PrescriptionDetailId = id }, cancellationToken);
 
         if (result.IsFailure)
             return NotFound(result.Error);

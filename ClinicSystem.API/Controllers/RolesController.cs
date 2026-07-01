@@ -62,7 +62,7 @@ public class RolesController : ControllerBase
     [HttpDelete("{id}")]
     public async Task<IActionResult> Delete(Guid id, CancellationToken cancellationToken)
     {
-        var result = await _sender.Send(new DeleteRoleCommand(id), cancellationToken);
+        var result = await _sender.Send(new DeleteRoleCommand { RoleId = id }, cancellationToken);
 
         if (result.IsFailure)
             return NotFound(result.Error);

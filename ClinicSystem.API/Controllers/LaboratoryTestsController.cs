@@ -62,7 +62,7 @@ public class LaboratoryTestsController : ControllerBase
     [HttpDelete("{id}")]
     public async Task<IActionResult> Delete(Guid id, CancellationToken cancellationToken)
     {
-        var result = await _sender.Send(new DeleteLaboratoryTestCommand(id), cancellationToken);
+        var result = await _sender.Send(new DeleteLaboratoryTestCommand { LaboratoryTestId = id }, cancellationToken);
 
         if (result.IsFailure)
             return NotFound(result.Error);

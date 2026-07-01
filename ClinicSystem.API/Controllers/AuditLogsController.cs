@@ -62,7 +62,7 @@ public class AuditLogsController : ControllerBase
     [HttpDelete("{id}")]
     public async Task<IActionResult> Delete(Guid id, CancellationToken cancellationToken)
     {
-        var result = await _sender.Send(new DeleteAuditLogCommand(id), cancellationToken);
+        var result = await _sender.Send(new DeleteAuditLogCommand { AuditLogId = id }, cancellationToken);
 
         if (result.IsFailure)
             return NotFound(result.Error);

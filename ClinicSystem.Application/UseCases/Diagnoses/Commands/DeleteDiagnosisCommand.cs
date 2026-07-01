@@ -1,11 +1,14 @@
-﻿using ClinicSystem.Application.Common.Models;
+using ClinicSystem.Application.Common.Models;
 using ClinicSystem.Domain.Entities;
 using ClinicSystem.Domain.Ports.Persistence;
 using MediatR;
 
 namespace ClinicSystem.Application.UseCases.Diagnoses.Commands;
 
-public record DeleteDiagnosisCommand(Guid DiagnosisId) : IRequest<Result<bool>>;
+public class DeleteDiagnosisCommand : IRequest<Result<bool>>
+{
+    public Guid DiagnosisId { get; set; } = Guid.Empty;
+}
 
 public class DeleteDiagnosisCommandHandler
     : IRequestHandler<DeleteDiagnosisCommand, Result<bool>>

@@ -1,20 +1,27 @@
-﻿using ClinicSystem.Application.Common.Models;
-using ClinicSystem.Application.UseCases.LaboratoryResults.Dtos;
+using ClinicSystem.Application.Common.Models;
+using ClinicSystem.Application.Common.Dtos;
 using ClinicSystem.Domain.Entities;
 using ClinicSystem.Domain.Ports.Persistence;
 using MediatR;
 
 namespace ClinicSystem.Application.UseCases.LaboratoryResults.Commands;
 
-public record CreateLaboratoryResultCommand(
-    Guid LaboratoryTestId,
-    string ParameterName,
-    string? ResultValue,
-    string? Unit,
-    string? ReferenceRange,
-    bool? IsAbnormal,
-    DateTime? NotedAt
-) : IRequest<Result<LaboratoryResultDto>>;
+public class CreateLaboratoryResultCommand : IRequest<Result<LaboratoryResultDto>>
+{
+    public Guid LaboratoryTestId { get; set; } = Guid.Empty;
+
+    public string ParameterName { get; set; } = string.Empty;
+
+    public string? ResultValue { get; set; }
+
+    public string? Unit { get; set; }
+
+    public string? ReferenceRange { get; set; }
+
+    public bool? IsAbnormal { get; set; }
+
+    public DateTime? NotedAt { get; set; }
+}
 
 public class CreateLaboratoryResultCommandHandler
     : IRequestHandler<CreateLaboratoryResultCommand, Result<LaboratoryResultDto>>

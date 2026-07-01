@@ -1,24 +1,35 @@
-﻿using ClinicSystem.Application.Common.Models;
-using ClinicSystem.Application.UseCases.MedicalRecords.Dtos;
+using ClinicSystem.Application.Common.Models;
+using ClinicSystem.Application.Common.Dtos;
 using ClinicSystem.Domain.Entities;
 using ClinicSystem.Domain.Ports.Persistence;
 using MediatR;
 
 namespace ClinicSystem.Application.UseCases.MedicalRecords.Commands;
 
-public record UpdateMedicalRecordCommand(
-    Guid MedicalRecordId,
-    Guid PatientId,
-    Guid DoctorId,
-    Guid? AppointmentId,
-    string? ChiefComplaint,
-    string? Diagnosis,
-    string? Treatment,
-    string? Observations,
-    DateTime? UpdatedAt,
-    Guid? CreatedBy,
-    Guid? UpdatedBy
-) : IRequest<Result<MedicalRecordDto>>;
+public class UpdateMedicalRecordCommand : IRequest<Result<MedicalRecordDto>>
+{
+    public Guid MedicalRecordId { get; set; } = Guid.Empty;
+
+    public Guid PatientId { get; set; } = Guid.Empty;
+
+    public Guid DoctorId { get; set; } = Guid.Empty;
+
+    public Guid? AppointmentId { get; set; }
+
+    public string? ChiefComplaint { get; set; }
+
+    public string? Diagnosis { get; set; }
+
+    public string? Treatment { get; set; }
+
+    public string? Observations { get; set; }
+
+    public DateTime? UpdatedAt { get; set; }
+
+    public Guid? CreatedBy { get; set; }
+
+    public Guid? UpdatedBy { get; set; }
+}
 
 public class UpdateMedicalRecordCommandHandler
     : IRequestHandler<UpdateMedicalRecordCommand, Result<MedicalRecordDto>>

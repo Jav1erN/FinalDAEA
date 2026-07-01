@@ -1,21 +1,29 @@
-﻿using ClinicSystem.Application.Common.Models;
-using ClinicSystem.Application.UseCases.Payments.Dtos;
+using ClinicSystem.Application.Common.Models;
+using ClinicSystem.Application.Common.Dtos;
 using ClinicSystem.Domain.Entities;
 using ClinicSystem.Domain.Ports.Persistence;
 using MediatR;
 
 namespace ClinicSystem.Application.UseCases.Payments.Commands;
 
-public record UpdatePaymentCommand(
-    Guid PaymentId,
-    Guid BillingId,
-    Guid? InsurancePolicyId,
-    string PaymentMethod,
-    string? ReferenceNumber,
-    DateTime? PaymentDate,
-    string? Status,
-    Guid? RegisteredBy
-) : IRequest<Result<PaymentDto>>;
+public class UpdatePaymentCommand : IRequest<Result<PaymentDto>>
+{
+    public Guid PaymentId { get; set; } = Guid.Empty;
+
+    public Guid BillingId { get; set; } = Guid.Empty;
+
+    public Guid? InsurancePolicyId { get; set; }
+
+    public string PaymentMethod { get; set; } = string.Empty;
+
+    public string? ReferenceNumber { get; set; }
+
+    public DateTime? PaymentDate { get; set; }
+
+    public string? Status { get; set; }
+
+    public Guid? RegisteredBy { get; set; }
+}
 
 public class UpdatePaymentCommandHandler
     : IRequestHandler<UpdatePaymentCommand, Result<PaymentDto>>

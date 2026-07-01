@@ -1,17 +1,21 @@
-﻿using ClinicSystem.Application.Common.Models;
-using ClinicSystem.Application.UseCases.Specialties.Dtos;
+using ClinicSystem.Application.Common.Models;
+using ClinicSystem.Application.Common.Dtos;
 using ClinicSystem.Domain.Entities;
 using ClinicSystem.Domain.Ports.Persistence;
 using MediatR;
 
 namespace ClinicSystem.Application.UseCases.Specialties.Commands;
 
-public record CreateSpecialtyCommand(
-    Guid DepartmentId,
-    string Name,
-    string? Description,
-    bool? IsActive
-) : IRequest<Result<SpecialtyDto>>;
+public class CreateSpecialtyCommand : IRequest<Result<SpecialtyDto>>
+{
+    public Guid DepartmentId { get; set; } = Guid.Empty;
+
+    public string Name { get; set; } = string.Empty;
+
+    public string? Description { get; set; }
+
+    public bool? IsActive { get; set; }
+}
 
 public class CreateSpecialtyCommandHandler
     : IRequestHandler<CreateSpecialtyCommand, Result<SpecialtyDto>>

@@ -1,22 +1,31 @@
-﻿using ClinicSystem.Application.Common.Models;
-using ClinicSystem.Application.UseCases.AuditLogs.Dtos;
+using ClinicSystem.Application.Common.Models;
+using ClinicSystem.Application.Common.Dtos;
 using ClinicSystem.Domain.Entities;
 using ClinicSystem.Domain.Ports.Persistence;
 using MediatR;
 
 namespace ClinicSystem.Application.UseCases.AuditLogs.Commands;
 
-public record UpdateAuditLogCommand(
-    Guid AuditLogId,
-    Guid? UserId,
-    string Action,
-    string EntityName,
-    Guid? EntityId,
-    string? OldValues,
-    string? NewValues,
-    string? UserAgent,
-    Guid? CorrelationId
-) : IRequest<Result<AuditLogDto>>;
+public class UpdateAuditLogCommand : IRequest<Result<AuditLogDto>>
+{
+    public Guid AuditLogId { get; set; } = Guid.Empty;
+
+    public Guid? UserId { get; set; }
+
+    public string Action { get; set; } = string.Empty;
+
+    public string EntityName { get; set; } = string.Empty;
+
+    public Guid? EntityId { get; set; }
+
+    public string? OldValues { get; set; }
+
+    public string? NewValues { get; set; }
+
+    public string? UserAgent { get; set; }
+
+    public Guid? CorrelationId { get; set; }
+}
 
 public class UpdateAuditLogCommandHandler
     : IRequestHandler<UpdateAuditLogCommand, Result<AuditLogDto>>

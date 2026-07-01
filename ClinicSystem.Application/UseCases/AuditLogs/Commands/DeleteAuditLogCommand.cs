@@ -1,11 +1,14 @@
-﻿using ClinicSystem.Application.Common.Models;
+using ClinicSystem.Application.Common.Models;
 using ClinicSystem.Domain.Entities;
 using ClinicSystem.Domain.Ports.Persistence;
 using MediatR;
 
 namespace ClinicSystem.Application.UseCases.AuditLogs.Commands;
 
-public record DeleteAuditLogCommand(Guid AuditLogId) : IRequest<Result<bool>>;
+public class DeleteAuditLogCommand : IRequest<Result<bool>>
+{
+    public Guid AuditLogId { get; set; } = Guid.Empty;
+}
 
 public class DeleteAuditLogCommandHandler
     : IRequestHandler<DeleteAuditLogCommand, Result<bool>>

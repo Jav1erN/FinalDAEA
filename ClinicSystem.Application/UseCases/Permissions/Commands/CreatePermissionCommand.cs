@@ -1,16 +1,19 @@
 using ClinicSystem.Application.Common.Models;
-using ClinicSystem.Application.UseCases.Permissions.Dtos;
+using ClinicSystem.Application.Common.Dtos;
 using ClinicSystem.Domain.Entities;
 using ClinicSystem.Domain.Ports.Persistence;
 using MediatR;
 
 namespace ClinicSystem.Application.UseCases.Permissions.Commands;
 
-public record CreatePermissionCommand(
-    string Resource,
-    string Action,
-    string? Description
-) : IRequest<Result<PermissionDto>>;
+public class CreatePermissionCommand : IRequest<Result<PermissionDto>>
+{
+    public string Resource { get; set; } = string.Empty;
+
+    public string Action { get; set; } = string.Empty;
+
+    public string? Description { get; set; }
+}
 
 public class CreatePermissionCommandHandler
     : IRequestHandler<CreatePermissionCommand, Result<PermissionDto>>
@@ -34,9 +37,10 @@ public class CreatePermissionCommandHandler
             Description = request.Description
         };
 
-        await _unitOfWork.Repository<Permission>().AddAsync(entity, cancellationToken);
+        await _unitOfWork.Permissions.AddAsync(entity, cancellationToken);
         await _unitOfWork.SaveChangesAsync(cancellationToken);
 
         return Result<PermissionDto>.Success(entity.ToDto());
     }
 }
+

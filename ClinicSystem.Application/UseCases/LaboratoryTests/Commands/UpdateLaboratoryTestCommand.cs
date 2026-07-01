@@ -1,26 +1,39 @@
-﻿using ClinicSystem.Application.Common.Models;
-using ClinicSystem.Application.UseCases.LaboratoryTests.Dtos;
+using ClinicSystem.Application.Common.Models;
+using ClinicSystem.Application.Common.Dtos;
 using ClinicSystem.Domain.Entities;
 using ClinicSystem.Domain.Ports.Persistence;
 using MediatR;
 
 namespace ClinicSystem.Application.UseCases.LaboratoryTests.Commands;
 
-public record UpdateLaboratoryTestCommand(
-    Guid LaboratoryTestId,
-    Guid PatientId,
-    Guid DoctorId,
-    Guid? MedicalRecordId,
-    string TestName,
-    string Status,
-    DateTime? RequestedDate,
-    DateTime? SampleTakenDate,
-    DateTime? CompletedDate,
-    string? Observations,
-    DateTime? UpdatedAt,
-    Guid? CreatedBy,
-    Guid? UpdatedBy
-) : IRequest<Result<LaboratoryTestDto>>;
+public class UpdateLaboratoryTestCommand : IRequest<Result<LaboratoryTestDto>>
+{
+    public Guid LaboratoryTestId { get; set; } = Guid.Empty;
+
+    public Guid PatientId { get; set; } = Guid.Empty;
+
+    public Guid DoctorId { get; set; } = Guid.Empty;
+
+    public Guid? MedicalRecordId { get; set; }
+
+    public string TestName { get; set; } = string.Empty;
+
+    public string Status { get; set; } = string.Empty;
+
+    public DateTime? RequestedDate { get; set; }
+
+    public DateTime? SampleTakenDate { get; set; }
+
+    public DateTime? CompletedDate { get; set; }
+
+    public string? Observations { get; set; }
+
+    public DateTime? UpdatedAt { get; set; }
+
+    public Guid? CreatedBy { get; set; }
+
+    public Guid? UpdatedBy { get; set; }
+}
 
 public class UpdateLaboratoryTestCommandHandler
     : IRequestHandler<UpdateLaboratoryTestCommand, Result<LaboratoryTestDto>>

@@ -1,30 +1,47 @@
-﻿using ClinicSystem.Application.Common.Models;
-using ClinicSystem.Application.UseCases.Patients.Dtos;
+using ClinicSystem.Application.Common.Models;
+using ClinicSystem.Application.Common.Dtos;
 using ClinicSystem.Domain.Entities;
 using ClinicSystem.Domain.Ports.Persistence;
 using MediatR;
 
 namespace ClinicSystem.Application.UseCases.Patients.Commands;
 
-public record UpdatePatientCommand(
-    Guid PatientId,
-    Guid? UserId,
-    string DocumentNumber,
-    string FirstName,
-    string LastName,
-    DateOnly? BirthDate,
-    string? Gender,
-    string? BloodType,
-    string? Phone,
-    string? Email,
-    string? Address,
-    string? EmergencyContactName,
-    string? EmergencyContactPhone,
-    bool? IsActive,
-    DateTime? UpdatedAt,
-    Guid? CreatedBy,
-    Guid? UpdatedBy
-) : IRequest<Result<PatientDto>>;
+public class UpdatePatientCommand : IRequest<Result<PatientDto>>
+{
+    public Guid PatientId { get; set; } = Guid.Empty;
+
+    public Guid? UserId { get; set; }
+
+    public string DocumentNumber { get; set; } = string.Empty;
+
+    public string FirstName { get; set; } = string.Empty;
+
+    public string LastName { get; set; } = string.Empty;
+
+    public DateOnly? BirthDate { get; set; }
+
+    public string? Gender { get; set; }
+
+    public string? BloodType { get; set; }
+
+    public string? Phone { get; set; }
+
+    public string? Email { get; set; }
+
+    public string? Address { get; set; }
+
+    public string? EmergencyContactName { get; set; }
+
+    public string? EmergencyContactPhone { get; set; }
+
+    public bool? IsActive { get; set; }
+
+    public DateTime? UpdatedAt { get; set; }
+
+    public Guid? CreatedBy { get; set; }
+
+    public Guid? UpdatedBy { get; set; }
+}
 
 public class UpdatePatientCommandHandler
     : IRequestHandler<UpdatePatientCommand, Result<PatientDto>>

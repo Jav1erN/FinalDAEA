@@ -1,11 +1,14 @@
-﻿using ClinicSystem.Application.Common.Models;
+using ClinicSystem.Application.Common.Models;
 using ClinicSystem.Domain.Entities;
 using ClinicSystem.Domain.Ports.Persistence;
 using MediatR;
 
 namespace ClinicSystem.Application.UseCases.Payments.Commands;
 
-public record DeletePaymentCommand(Guid PaymentId) : IRequest<Result<bool>>;
+public class DeletePaymentCommand : IRequest<Result<bool>>
+{
+    public Guid PaymentId { get; set; } = Guid.Empty;
+}
 
 public class DeletePaymentCommandHandler
     : IRequestHandler<DeletePaymentCommand, Result<bool>>

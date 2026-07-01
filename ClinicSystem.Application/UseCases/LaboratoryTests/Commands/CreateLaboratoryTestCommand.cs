@@ -1,24 +1,35 @@
 using ClinicSystem.Application.Common.Models;
-using ClinicSystem.Application.UseCases.LaboratoryTests.Dtos;
+using ClinicSystem.Application.Common.Dtos;
 using ClinicSystem.Domain.Entities;
 using ClinicSystem.Domain.Ports.Persistence;
 using MediatR;
 
 namespace ClinicSystem.Application.UseCases.LaboratoryTests.Commands;
 
-public record CreateLaboratoryTestCommand(
-    Guid PatientId,
-    Guid DoctorId,
-    Guid? MedicalRecordId,
-    string TestName,
-    string Status,
-    DateTime? RequestedDate,
-    DateTime? SampleTakenDate,
-    DateTime? CompletedDate,
-    string? Observations,
-    Guid? CreatedBy,
-    Guid? UpdatedBy
-) : IRequest<Result<LaboratoryTestDto>>;
+public class CreateLaboratoryTestCommand : IRequest<Result<LaboratoryTestDto>>
+{
+    public Guid PatientId { get; set; } = Guid.Empty;
+
+    public Guid DoctorId { get; set; } = Guid.Empty;
+
+    public Guid? MedicalRecordId { get; set; }
+
+    public string TestName { get; set; } = string.Empty;
+
+    public string Status { get; set; } = string.Empty;
+
+    public DateTime? RequestedDate { get; set; }
+
+    public DateTime? SampleTakenDate { get; set; }
+
+    public DateTime? CompletedDate { get; set; }
+
+    public string? Observations { get; set; }
+
+    public Guid? CreatedBy { get; set; }
+
+    public Guid? UpdatedBy { get; set; }
+}
 
 public class CreateLaboratoryTestCommandHandler
     : IRequestHandler<CreateLaboratoryTestCommand, Result<LaboratoryTestDto>>
@@ -50,9 +61,10 @@ public class CreateLaboratoryTestCommandHandler
             UpdatedBy = request.UpdatedBy
         };
 
-        await _unitOfWork.Repository<LaboratoryTest>().AddAsync(entity, cancellationToken);
+        await _unitOfWork.LaboratoryTests.AddAsync(entity, cancellationToken);
         await _unitOfWork.SaveChangesAsync(cancellationToken);
 
         return Result<LaboratoryTestDto>.Success(entity.ToDto());
     }
 }
+

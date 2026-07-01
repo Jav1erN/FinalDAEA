@@ -1,25 +1,37 @@
-﻿using ClinicSystem.Application.Common.Models;
-using ClinicSystem.Application.UseCases.InsurancePolicies.Dtos;
+using ClinicSystem.Application.Common.Models;
+using ClinicSystem.Application.Common.Dtos;
 using ClinicSystem.Domain.Entities;
 using ClinicSystem.Domain.Ports.Persistence;
 using MediatR;
 
 namespace ClinicSystem.Application.UseCases.InsurancePolicies.Commands;
 
-public record UpdateInsurancePolicyCommand(
-    Guid InsurancePolicyId,
-    Guid PatientId,
-    Guid InsuranceCompanyId,
-    string PolicyNumber,
-    decimal? CoveragePercentage,
-    decimal? MaxCoverageAmount,
-    DateOnly StartDate,
-    DateOnly? EndDate,
-    bool? IsActive,
-    DateTime? UpdatedAt,
-    Guid? CreatedBy,
-    Guid? UpdatedBy
-) : IRequest<Result<InsurancePolicyDto>>;
+public class UpdateInsurancePolicyCommand : IRequest<Result<InsurancePolicyDto>>
+{
+    public Guid InsurancePolicyId { get; set; } = Guid.Empty;
+
+    public Guid PatientId { get; set; } = Guid.Empty;
+
+    public Guid InsuranceCompanyId { get; set; } = Guid.Empty;
+
+    public string PolicyNumber { get; set; } = string.Empty;
+
+    public decimal? CoveragePercentage { get; set; }
+
+    public decimal? MaxCoverageAmount { get; set; }
+
+    public DateOnly StartDate { get; set; } = DateOnly.FromDateTime(DateTime.UtcNow);
+
+    public DateOnly? EndDate { get; set; }
+
+    public bool? IsActive { get; set; }
+
+    public DateTime? UpdatedAt { get; set; }
+
+    public Guid? CreatedBy { get; set; }
+
+    public Guid? UpdatedBy { get; set; }
+}
 
 public class UpdateInsurancePolicyCommandHandler
     : IRequestHandler<UpdateInsurancePolicyCommand, Result<InsurancePolicyDto>>

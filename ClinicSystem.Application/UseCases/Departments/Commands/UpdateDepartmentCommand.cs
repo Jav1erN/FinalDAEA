@@ -1,18 +1,23 @@
-﻿using ClinicSystem.Application.Common.Models;
-using ClinicSystem.Application.UseCases.Departments.Dtos;
+using ClinicSystem.Application.Common.Models;
+using ClinicSystem.Application.Common.Dtos;
 using ClinicSystem.Domain.Entities;
 using ClinicSystem.Domain.Ports.Persistence;
 using MediatR;
 
 namespace ClinicSystem.Application.UseCases.Departments.Commands;
 
-public record UpdateDepartmentCommand(
-    Guid DepartmentId,
-    string Name,
-    string? Description,
-    bool? IsActive,
-    DateTime? UpdatedAt
-) : IRequest<Result<DepartmentDto>>;
+public class UpdateDepartmentCommand : IRequest<Result<DepartmentDto>>
+{
+    public Guid DepartmentId { get; set; } = Guid.Empty;
+
+    public string Name { get; set; } = string.Empty;
+
+    public string? Description { get; set; }
+
+    public bool? IsActive { get; set; }
+
+    public DateTime? UpdatedAt { get; set; }
+}
 
 public class UpdateDepartmentCommandHandler
     : IRequestHandler<UpdateDepartmentCommand, Result<DepartmentDto>>

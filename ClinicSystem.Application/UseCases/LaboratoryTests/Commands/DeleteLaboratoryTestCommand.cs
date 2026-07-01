@@ -5,7 +5,10 @@ using MediatR;
 
 namespace ClinicSystem.Application.UseCases.LaboratoryTests.Commands;
 
-public record DeleteLaboratoryTestCommand(Guid LaboratoryTestId) : IRequest<Result<bool>>;
+public class DeleteLaboratoryTestCommand : IRequest<Result<bool>>
+{
+    public Guid LaboratoryTestId { get; set; } = Guid.Empty;
+}
 
 public class DeleteLaboratoryTestCommandHandler
     : IRequestHandler<DeleteLaboratoryTestCommand, Result<bool>>
@@ -21,7 +24,7 @@ public class DeleteLaboratoryTestCommandHandler
         DeleteLaboratoryTestCommand request,
         CancellationToken cancellationToken)
     {
-        var repository = _unitOfWork.Repository<LaboratoryTest>();
+        var repository = _unitOfWork.LaboratoryTests;
         var entity = await repository.GetByIdAsync(request.LaboratoryTestId, cancellationToken);
 
         if (entity is null)
@@ -33,3 +36,4 @@ public class DeleteLaboratoryTestCommandHandler
         return Result<bool>.Success(true);
     }
 }
+

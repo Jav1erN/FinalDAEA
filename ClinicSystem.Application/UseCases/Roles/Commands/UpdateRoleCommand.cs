@@ -1,17 +1,21 @@
-﻿using ClinicSystem.Application.Common.Models;
-using ClinicSystem.Application.UseCases.Roles.Dtos;
+using ClinicSystem.Application.Common.Models;
+using ClinicSystem.Application.Common.Dtos;
 using ClinicSystem.Domain.Entities;
 using ClinicSystem.Domain.Ports.Persistence;
 using MediatR;
 
 namespace ClinicSystem.Application.UseCases.Roles.Commands;
 
-public record UpdateRoleCommand(
-    Guid RoleId,
-    string Name,
-    string? Description,
-    DateTime? UpdatedAt
-) : IRequest<Result<RoleDto>>;
+public class UpdateRoleCommand : IRequest<Result<RoleDto>>
+{
+    public Guid RoleId { get; set; } = Guid.Empty;
+
+    public string Name { get; set; } = string.Empty;
+
+    public string? Description { get; set; }
+
+    public DateTime? UpdatedAt { get; set; }
+}
 
 public class UpdateRoleCommandHandler
     : IRequestHandler<UpdateRoleCommand, Result<RoleDto>>

@@ -1,21 +1,29 @@
-﻿using ClinicSystem.Application.Common.Models;
-using ClinicSystem.Application.UseCases.InsuranceCompanies.Dtos;
+using ClinicSystem.Application.Common.Models;
+using ClinicSystem.Application.Common.Dtos;
 using ClinicSystem.Domain.Entities;
 using ClinicSystem.Domain.Ports.Persistence;
 using MediatR;
 
 namespace ClinicSystem.Application.UseCases.InsuranceCompanies.Commands;
 
-public record UpdateInsuranceCompanyCommand(
-    Guid InsuranceCompanyId,
-    string Name,
-    string? Phone,
-    string? Email,
-    string? Address,
-    string? ContactName,
-    bool? IsActive,
-    DateTime? UpdatedAt
-) : IRequest<Result<InsuranceCompanyDto>>;
+public class UpdateInsuranceCompanyCommand : IRequest<Result<InsuranceCompanyDto>>
+{
+    public Guid InsuranceCompanyId { get; set; } = Guid.Empty;
+
+    public string Name { get; set; } = string.Empty;
+
+    public string? Phone { get; set; }
+
+    public string? Email { get; set; }
+
+    public string? Address { get; set; }
+
+    public string? ContactName { get; set; }
+
+    public bool? IsActive { get; set; }
+
+    public DateTime? UpdatedAt { get; set; }
+}
 
 public class UpdateInsuranceCompanyCommandHandler
     : IRequestHandler<UpdateInsuranceCompanyCommand, Result<InsuranceCompanyDto>>

@@ -1,4 +1,4 @@
-using FluentValidation;
+﻿using FluentValidation;
 
 namespace ClinicSystem.Application.UseCases.Patients.Commands;
 
@@ -13,3 +13,4 @@ public class CreatePatientValidator : AbstractValidator<CreatePatientCommand>
         RuleFor(x => x.Phone).MaximumLength(20);
     }
 }
+

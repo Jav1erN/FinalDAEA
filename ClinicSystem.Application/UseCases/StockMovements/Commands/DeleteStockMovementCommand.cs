@@ -1,11 +1,14 @@
-﻿using ClinicSystem.Application.Common.Models;
+using ClinicSystem.Application.Common.Models;
 using ClinicSystem.Domain.Entities;
 using ClinicSystem.Domain.Ports.Persistence;
 using MediatR;
 
 namespace ClinicSystem.Application.UseCases.StockMovements.Commands;
 
-public record DeleteStockMovementCommand(Guid MovementId) : IRequest<Result<bool>>;
+public class DeleteStockMovementCommand : IRequest<Result<bool>>
+{
+    public Guid MovementId { get; set; } = Guid.Empty;
+}
 
 public class DeleteStockMovementCommandHandler
     : IRequestHandler<DeleteStockMovementCommand, Result<bool>>

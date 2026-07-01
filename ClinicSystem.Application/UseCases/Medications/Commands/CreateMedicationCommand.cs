@@ -1,24 +1,35 @@
-﻿using ClinicSystem.Application.Common.Models;
-using ClinicSystem.Application.UseCases.Medications.Dtos;
+using ClinicSystem.Application.Common.Models;
+using ClinicSystem.Application.Common.Dtos;
 using ClinicSystem.Domain.Entities;
 using ClinicSystem.Domain.Ports.Persistence;
 using MediatR;
 
 namespace ClinicSystem.Application.UseCases.Medications.Commands;
 
-public record CreateMedicationCommand(
-    string Name,
-    string? GenericName,
-    string? Presentation,
-    string? Concentration,
-    string? Laboratory,
-    bool? RequiresPrescription,
-    int? Stock,
-    decimal? UnitPrice,
-    bool? IsActive,
-    Guid? CreatedBy,
-    Guid? UpdatedBy
-) : IRequest<Result<MedicationDto>>;
+public class CreateMedicationCommand : IRequest<Result<MedicationDto>>
+{
+    public string Name { get; set; } = string.Empty;
+
+    public string? GenericName { get; set; }
+
+    public string? Presentation { get; set; }
+
+    public string? Concentration { get; set; }
+
+    public string? Laboratory { get; set; }
+
+    public bool? RequiresPrescription { get; set; }
+
+    public int? Stock { get; set; }
+
+    public decimal? UnitPrice { get; set; }
+
+    public bool? IsActive { get; set; }
+
+    public Guid? CreatedBy { get; set; }
+
+    public Guid? UpdatedBy { get; set; }
+}
 
 public class CreateMedicationCommandHandler
     : IRequestHandler<CreateMedicationCommand, Result<MedicationDto>>

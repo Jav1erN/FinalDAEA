@@ -62,7 +62,7 @@ public class PermissionsController : ControllerBase
     [HttpDelete("{id}")]
     public async Task<IActionResult> Delete(Guid id, CancellationToken cancellationToken)
     {
-        var result = await _sender.Send(new DeletePermissionCommand(id), cancellationToken);
+        var result = await _sender.Send(new DeletePermissionCommand { PermissionId = id }, cancellationToken);
 
         if (result.IsFailure)
             return NotFound(result.Error);

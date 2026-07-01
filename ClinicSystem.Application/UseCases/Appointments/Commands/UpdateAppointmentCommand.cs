@@ -1,35 +1,53 @@
-﻿using ClinicSystem.Application.Common.Models;
-using ClinicSystem.Application.UseCases.Appointments.Dtos;
+using ClinicSystem.Application.Common.Models;
+using ClinicSystem.Application.Common.Dtos;
 using ClinicSystem.Domain.Entities;
 using ClinicSystem.Domain.Ports.Persistence;
+using ClinicSystem.Domain.Ports.Services;
 using MediatR;
 
 namespace ClinicSystem.Application.UseCases.Appointments.Commands;
 
-public record UpdateAppointmentCommand(
-    Guid AppointmentId,
-    Guid PatientId,
-    Guid DoctorId,
-    Guid StatusId,
-    DateTime AppointmentDate,
-    int? DurationMinutes,
-    string? Reason,
-    string? Notes,
-    string? CancellationReason,
-    Guid? RescheduledFrom,
-    DateTime? UpdatedAt,
-    Guid? CreatedBy,
-    Guid? UpdatedBy
-) : IRequest<Result<AppointmentDto>>;
+public class UpdateAppointmentCommand : IRequest<Result<AppointmentDto>>
+{
+    public Guid AppointmentId { get; set; } = Guid.Empty;
+
+    public Guid PatientId { get; set; } = Guid.Empty;
+
+    public Guid DoctorId { get; set; } = Guid.Empty;
+
+    public Guid StatusId { get; set; } = Guid.Empty;
+
+    public DateTime AppointmentDate { get; set; } = DateTime.UtcNow;
+
+    public int? DurationMinutes { get; set; }
+
+    public string? Reason { get; set; }
+
+    public string? Notes { get; set; }
+
+    public string? CancellationReason { get; set; }
+
+    public Guid? RescheduledFrom { get; set; }
+
+    public DateTime? UpdatedAt { get; set; }
+
+    public Guid? CreatedBy { get; set; }
+
+    public Guid? UpdatedBy { get; set; }
+}
 
 public class UpdateAppointmentCommandHandler
     : IRequestHandler<UpdateAppointmentCommand, Result<AppointmentDto>>
 {
     private readonly IUnitOfWork _unitOfWork;
+    private readonly IAppointmentSchedulingService _appointmentSchedulingService;
 
-    public UpdateAppointmentCommandHandler(IUnitOfWork unitOfWork)
+    public UpdateAppointmentCommandHandler(
+        IUnitOfWork unitOfWork,
+        IAppointmentSchedulingService appointmentSchedulingService)
     {
         _unitOfWork = unitOfWork;
+        _appointmentSchedulingService = appointmentSchedulingService;
     }
 
     public async Task<Result<AppointmentDto>> Handle(
@@ -41,6 +59,16 @@ public class UpdateAppointmentCommandHandler
 
         if (entity is null)
             return Result<AppointmentDto>.Failure("Appointment not found");
+
+        var schedulingResult = await _appointmentSchedulingService.EnsureCanScheduleAsync(
+            request.DoctorId,
+            request.AppointmentDate,
+            request.DurationMinutes,
+            request.AppointmentId,
+            cancellationToken);
+
+        if (!schedulingResult.IsValid)
+            return Result<AppointmentDto>.Failure(schedulingResult.Error!);
 
         entity.PatientId = request.PatientId;
         entity.DoctorId = request.DoctorId;

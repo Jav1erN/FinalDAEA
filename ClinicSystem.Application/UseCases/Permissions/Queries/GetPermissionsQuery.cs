@@ -1,5 +1,5 @@
-using ClinicSystem.Application.Common.Models;
-using ClinicSystem.Application.UseCases.Permissions.Dtos;
+﻿using ClinicSystem.Application.Common.Models;
+using ClinicSystem.Application.Common.Dtos;
 using ClinicSystem.Domain.Entities;
 using ClinicSystem.Domain.Ports.Persistence;
 using MediatR;
@@ -22,9 +22,10 @@ public class GetPermissionsQueryHandler
         GetPermissionsQuery request,
         CancellationToken cancellationToken)
     {
-        var entities = await _unitOfWork.Repository<Permission>()
+        var entities = await _unitOfWork.Permissions
             .ListAsync(cancellationToken);
 
         return Result<IEnumerable<PermissionDto>>.Success(entities.Select(entity => entity.ToDto()));
     }
 }
+

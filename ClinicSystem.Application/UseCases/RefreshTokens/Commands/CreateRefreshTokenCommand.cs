@@ -1,17 +1,21 @@
-﻿using ClinicSystem.Application.Common.Models;
-using ClinicSystem.Application.UseCases.RefreshTokens.Dtos;
+using ClinicSystem.Application.Common.Models;
+using ClinicSystem.Application.Common.Dtos;
 using ClinicSystem.Domain.Entities;
 using ClinicSystem.Domain.Ports.Persistence;
 using MediatR;
 
 namespace ClinicSystem.Application.UseCases.RefreshTokens.Commands;
 
-public record CreateRefreshTokenCommand(
-    Guid UserId,
-    string TokenHash,
-    DateTime ExpiresAt,
-    DateTime? RevokedAt
-) : IRequest<Result<RefreshTokenDto>>;
+public class CreateRefreshTokenCommand : IRequest<Result<RefreshTokenDto>>
+{
+    public Guid UserId { get; set; } = Guid.Empty;
+
+    public string TokenHash { get; set; } = string.Empty;
+
+    public DateTime ExpiresAt { get; set; } = DateTime.UtcNow;
+
+    public DateTime? RevokedAt { get; set; }
+}
 
 public class CreateRefreshTokenCommandHandler
     : IRequestHandler<CreateRefreshTokenCommand, Result<RefreshTokenDto>>

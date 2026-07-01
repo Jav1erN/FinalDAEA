@@ -1,22 +1,31 @@
-﻿using ClinicSystem.Application.Common.Models;
-using ClinicSystem.Application.UseCases.PrescriptionDetails.Dtos;
+using ClinicSystem.Application.Common.Models;
+using ClinicSystem.Application.Common.Dtos;
 using ClinicSystem.Domain.Entities;
 using ClinicSystem.Domain.Ports.Persistence;
 using MediatR;
 
 namespace ClinicSystem.Application.UseCases.PrescriptionDetails.Commands;
 
-public record UpdatePrescriptionDetailCommand(
-    Guid PrescriptionDetailId,
-    Guid PrescriptionId,
-    Guid MedicationId,
-    string? Dosage,
-    string? Frequency,
-    int? DurationDays,
-    int QuantityPrescribed,
-    string? Instructions,
-    bool? IsSubstitutable
-) : IRequest<Result<PrescriptionDetailDto>>;
+public class UpdatePrescriptionDetailCommand : IRequest<Result<PrescriptionDetailDto>>
+{
+    public Guid PrescriptionDetailId { get; set; } = Guid.Empty;
+
+    public Guid PrescriptionId { get; set; } = Guid.Empty;
+
+    public Guid MedicationId { get; set; } = Guid.Empty;
+
+    public string? Dosage { get; set; }
+
+    public string? Frequency { get; set; }
+
+    public int? DurationDays { get; set; }
+
+    public int QuantityPrescribed { get; set; }
+
+    public string? Instructions { get; set; }
+
+    public bool? IsSubstitutable { get; set; }
+}
 
 public class UpdatePrescriptionDetailCommandHandler
     : IRequestHandler<UpdatePrescriptionDetailCommand, Result<PrescriptionDetailDto>>

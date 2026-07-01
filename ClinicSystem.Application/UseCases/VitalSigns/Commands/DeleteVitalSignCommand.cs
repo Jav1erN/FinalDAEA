@@ -1,11 +1,14 @@
-﻿using ClinicSystem.Application.Common.Models;
+using ClinicSystem.Application.Common.Models;
 using ClinicSystem.Domain.Entities;
 using ClinicSystem.Domain.Ports.Persistence;
 using MediatR;
 
 namespace ClinicSystem.Application.UseCases.VitalSigns.Commands;
 
-public record DeleteVitalSignCommand(Guid VitalSignId) : IRequest<Result<bool>>;
+public class DeleteVitalSignCommand : IRequest<Result<bool>>
+{
+    public Guid VitalSignId { get; set; } = Guid.Empty;
+}
 
 public class DeleteVitalSignCommandHandler
     : IRequestHandler<DeleteVitalSignCommand, Result<bool>>

@@ -62,7 +62,7 @@ public class RefreshTokensController : ControllerBase
     [HttpDelete("{id}")]
     public async Task<IActionResult> Delete(Guid id, CancellationToken cancellationToken)
     {
-        var result = await _sender.Send(new DeleteRefreshTokenCommand(id), cancellationToken);
+        var result = await _sender.Send(new DeleteRefreshTokenCommand { RefreshTokenId = id }, cancellationToken);
 
         if (result.IsFailure)
             return NotFound(result.Error);

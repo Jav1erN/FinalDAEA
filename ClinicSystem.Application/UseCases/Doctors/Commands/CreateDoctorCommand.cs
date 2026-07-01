@@ -1,22 +1,31 @@
-﻿using ClinicSystem.Application.Common.Models;
-using ClinicSystem.Application.UseCases.Doctors.Dtos;
+using ClinicSystem.Application.Common.Models;
+using ClinicSystem.Application.Common.Dtos;
 using ClinicSystem.Domain.Entities;
 using ClinicSystem.Domain.Ports.Persistence;
 using MediatR;
 
 namespace ClinicSystem.Application.UseCases.Doctors.Commands;
 
-public record CreateDoctorCommand(
-    Guid UserId,
-    Guid SpecialtyId,
-    string LicenseNumber,
-    int? YearsExperience,
-    decimal? ConsultationFee,
-    string? Office,
-    bool? IsActive,
-    Guid? CreatedBy,
-    Guid? UpdatedBy
-) : IRequest<Result<DoctorDto>>;
+public class CreateDoctorCommand : IRequest<Result<DoctorDto>>
+{
+    public Guid UserId { get; set; } = Guid.Empty;
+
+    public Guid SpecialtyId { get; set; } = Guid.Empty;
+
+    public string LicenseNumber { get; set; } = string.Empty;
+
+    public int? YearsExperience { get; set; }
+
+    public decimal? ConsultationFee { get; set; }
+
+    public string? Office { get; set; }
+
+    public bool? IsActive { get; set; }
+
+    public Guid? CreatedBy { get; set; }
+
+    public Guid? UpdatedBy { get; set; }
+}
 
 public class CreateDoctorCommandHandler
     : IRequestHandler<CreateDoctorCommand, Result<DoctorDto>>

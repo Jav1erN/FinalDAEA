@@ -1,19 +1,25 @@
-﻿using ClinicSystem.Application.Common.Models;
-using ClinicSystem.Application.UseCases.NotificationTypes.Dtos;
+using ClinicSystem.Application.Common.Models;
+using ClinicSystem.Application.Common.Dtos;
 using ClinicSystem.Domain.Entities;
 using ClinicSystem.Domain.Ports.Persistence;
 using MediatR;
 
 namespace ClinicSystem.Application.UseCases.NotificationTypes.Commands;
 
-public record UpdateNotificationTypeCommand(
-    Guid TypeId,
-    string Code,
-    string Name,
-    string? TemplateSubject,
-    string? TemplateBody,
-    bool? IsActive
-) : IRequest<Result<NotificationTypeDto>>;
+public class UpdateNotificationTypeCommand : IRequest<Result<NotificationTypeDto>>
+{
+    public Guid TypeId { get; set; } = Guid.Empty;
+
+    public string Code { get; set; } = string.Empty;
+
+    public string Name { get; set; } = string.Empty;
+
+    public string? TemplateSubject { get; set; }
+
+    public string? TemplateBody { get; set; }
+
+    public bool? IsActive { get; set; }
+}
 
 public class UpdateNotificationTypeCommandHandler
     : IRequestHandler<UpdateNotificationTypeCommand, Result<NotificationTypeDto>>

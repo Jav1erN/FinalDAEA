@@ -1,34 +1,54 @@
-﻿using ClinicSystem.Application.Common.Models;
-using ClinicSystem.Application.UseCases.StockMovements.Dtos;
+using ClinicSystem.Application.Common.Models;
+using ClinicSystem.Application.Common.Dtos;
 using ClinicSystem.Domain.Entities;
 using ClinicSystem.Domain.Ports.Persistence;
+using ClinicSystem.Domain.Ports.Services;
 using MediatR;
 
 namespace ClinicSystem.Application.UseCases.StockMovements.Commands;
 
-public record CreateStockMovementCommand(
-    Guid MedicationId,
-    string MovementType,
-    int Quantity,
-    Guid? ReferenceId,
-    string? Notes,
-    Guid? PerformedBy
-) : IRequest<Result<StockMovementDto>>;
+public class CreateStockMovementCommand : IRequest<Result<StockMovementDto>>
+{
+    public Guid MedicationId { get; set; } = Guid.Empty;
+
+    public string MovementType { get; set; } = string.Empty;
+
+    public int Quantity { get; set; }
+
+    public Guid? ReferenceId { get; set; }
+
+    public string? Notes { get; set; }
+
+    public Guid? PerformedBy { get; set; }
+}
 
 public class CreateStockMovementCommandHandler
     : IRequestHandler<CreateStockMovementCommand, Result<StockMovementDto>>
 {
     private readonly IUnitOfWork _unitOfWork;
+    private readonly IInventoryPolicyService _inventoryPolicyService;
 
-    public CreateStockMovementCommandHandler(IUnitOfWork unitOfWork)
+    public CreateStockMovementCommandHandler(
+        IUnitOfWork unitOfWork,
+        IInventoryPolicyService inventoryPolicyService)
     {
         _unitOfWork = unitOfWork;
+        _inventoryPolicyService = inventoryPolicyService;
     }
 
     public async Task<Result<StockMovementDto>> Handle(
         CreateStockMovementCommand request,
         CancellationToken cancellationToken)
     {
+        var inventoryResult = await _inventoryPolicyService.EnsureCanApplyMovementAsync(
+            request.MedicationId,
+            request.MovementType,
+            request.Quantity,
+            cancellationToken);
+
+        if (!inventoryResult.IsValid)
+            return Result<StockMovementDto>.Failure(inventoryResult.Error!);
+
         var entity = new StockMovement
         {
             MovementId = Guid.NewGuid(),

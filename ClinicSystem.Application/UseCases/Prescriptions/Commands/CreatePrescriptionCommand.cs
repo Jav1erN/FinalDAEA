@@ -1,21 +1,29 @@
-﻿using ClinicSystem.Application.Common.Models;
-using ClinicSystem.Application.UseCases.Prescriptions.Dtos;
+using ClinicSystem.Application.Common.Models;
+using ClinicSystem.Application.Common.Dtos;
 using ClinicSystem.Domain.Entities;
 using ClinicSystem.Domain.Ports.Persistence;
 using MediatR;
 
 namespace ClinicSystem.Application.UseCases.Prescriptions.Commands;
 
-public record CreatePrescriptionCommand(
-    Guid MedicalRecordId,
-    Guid DoctorId,
-    Guid PatientId,
-    DateOnly? ValidUntil,
-    DateTime? DispensedAt,
-    Guid? DispensedBy,
-    Guid? CreatedBy,
-    Guid? UpdatedBy
-) : IRequest<Result<PrescriptionDto>>;
+public class CreatePrescriptionCommand : IRequest<Result<PrescriptionDto>>
+{
+    public Guid MedicalRecordId { get; set; } = Guid.Empty;
+
+    public Guid DoctorId { get; set; } = Guid.Empty;
+
+    public Guid PatientId { get; set; } = Guid.Empty;
+
+    public DateOnly? ValidUntil { get; set; }
+
+    public DateTime? DispensedAt { get; set; }
+
+    public Guid? DispensedBy { get; set; }
+
+    public Guid? CreatedBy { get; set; }
+
+    public Guid? UpdatedBy { get; set; }
+}
 
 public class CreatePrescriptionCommandHandler
     : IRequestHandler<CreatePrescriptionCommand, Result<PrescriptionDto>>

@@ -1,18 +1,23 @@
-﻿using ClinicSystem.Application.Common.Models;
-using ClinicSystem.Application.UseCases.BillingDetails.Dtos;
+using ClinicSystem.Application.Common.Models;
+using ClinicSystem.Application.Common.Dtos;
 using ClinicSystem.Domain.Entities;
 using ClinicSystem.Domain.Ports.Persistence;
 using MediatR;
 
 namespace ClinicSystem.Application.UseCases.BillingDetails.Commands;
 
-public record UpdateBillingDetailCommand(
-    Guid BillingDetailId,
-    Guid BillingId,
-    string Description,
-    int Quantity,
-    decimal UnitPrice
-) : IRequest<Result<BillingDetailDto>>;
+public class UpdateBillingDetailCommand : IRequest<Result<BillingDetailDto>>
+{
+    public Guid BillingDetailId { get; set; } = Guid.Empty;
+
+    public Guid BillingId { get; set; } = Guid.Empty;
+
+    public string Description { get; set; } = string.Empty;
+
+    public int Quantity { get; set; }
+
+    public decimal UnitPrice { get; set; }
+}
 
 public class UpdateBillingDetailCommandHandler
     : IRequestHandler<UpdateBillingDetailCommand, Result<BillingDetailDto>>

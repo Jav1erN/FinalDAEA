@@ -1,19 +1,25 @@
-﻿using ClinicSystem.Application.Common.Models;
-using ClinicSystem.Application.UseCases.Diagnoses.Dtos;
+using ClinicSystem.Application.Common.Models;
+using ClinicSystem.Application.Common.Dtos;
 using ClinicSystem.Domain.Entities;
 using ClinicSystem.Domain.Ports.Persistence;
 using MediatR;
 
 namespace ClinicSystem.Application.UseCases.Diagnoses.Commands;
 
-public record UpdateDiagnosisCommand(
-    Guid DiagnosisId,
-    Guid MedicalRecordId,
-    string Cie10Code,
-    string? Description,
-    bool? IsPrimary,
-    DateTime? NotedAt
-) : IRequest<Result<DiagnosisDto>>;
+public class UpdateDiagnosisCommand : IRequest<Result<DiagnosisDto>>
+{
+    public Guid DiagnosisId { get; set; } = Guid.Empty;
+
+    public Guid MedicalRecordId { get; set; } = Guid.Empty;
+
+    public string Cie10Code { get; set; } = string.Empty;
+
+    public string? Description { get; set; }
+
+    public bool? IsPrimary { get; set; }
+
+    public DateTime? NotedAt { get; set; }
+}
 
 public class UpdateDiagnosisCommandHandler
     : IRequestHandler<UpdateDiagnosisCommand, Result<DiagnosisDto>>

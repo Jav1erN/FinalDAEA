@@ -1,11 +1,14 @@
-﻿using ClinicSystem.Application.Common.Models;
+using ClinicSystem.Application.Common.Models;
 using ClinicSystem.Domain.Entities;
 using ClinicSystem.Domain.Ports.Persistence;
 using MediatR;
 
 namespace ClinicSystem.Application.UseCases.AppointmentStatuses.Commands;
 
-public record DeleteAppointmentStatusCommand(Guid StatusId) : IRequest<Result<bool>>;
+public class DeleteAppointmentStatusCommand : IRequest<Result<bool>>
+{
+    public Guid StatusId { get; set; } = Guid.Empty;
+}
 
 public class DeleteAppointmentStatusCommandHandler
     : IRequestHandler<DeleteAppointmentStatusCommand, Result<bool>>

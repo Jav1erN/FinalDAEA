@@ -1,19 +1,25 @@
-﻿using ClinicSystem.Application.Common.Models;
-using ClinicSystem.Application.UseCases.Treatments.Dtos;
+using ClinicSystem.Application.Common.Models;
+using ClinicSystem.Application.Common.Dtos;
 using ClinicSystem.Domain.Entities;
 using ClinicSystem.Domain.Ports.Persistence;
 using MediatR;
 
 namespace ClinicSystem.Application.UseCases.Treatments.Commands;
 
-public record CreateTreatmentCommand(
-    Guid MedicalRecordId,
-    string Description,
-    DateOnly? StartDate,
-    DateOnly? EndDate,
-    string? Status,
-    string? Notes
-) : IRequest<Result<TreatmentDto>>;
+public class CreateTreatmentCommand : IRequest<Result<TreatmentDto>>
+{
+    public Guid MedicalRecordId { get; set; } = Guid.Empty;
+
+    public string Description { get; set; } = string.Empty;
+
+    public DateOnly? StartDate { get; set; }
+
+    public DateOnly? EndDate { get; set; }
+
+    public string? Status { get; set; }
+
+    public string? Notes { get; set; }
+}
 
 public class CreateTreatmentCommandHandler
     : IRequestHandler<CreateTreatmentCommand, Result<TreatmentDto>>

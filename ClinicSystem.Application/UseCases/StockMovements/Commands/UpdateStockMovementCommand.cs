@@ -1,29 +1,41 @@
-﻿using ClinicSystem.Application.Common.Models;
-using ClinicSystem.Application.UseCases.StockMovements.Dtos;
+using ClinicSystem.Application.Common.Models;
+using ClinicSystem.Application.Common.Dtos;
 using ClinicSystem.Domain.Entities;
 using ClinicSystem.Domain.Ports.Persistence;
+using ClinicSystem.Domain.Ports.Services;
 using MediatR;
 
 namespace ClinicSystem.Application.UseCases.StockMovements.Commands;
 
-public record UpdateStockMovementCommand(
-    Guid MovementId,
-    Guid MedicationId,
-    string MovementType,
-    int Quantity,
-    Guid? ReferenceId,
-    string? Notes,
-    Guid? PerformedBy
-) : IRequest<Result<StockMovementDto>>;
+public class UpdateStockMovementCommand : IRequest<Result<StockMovementDto>>
+{
+    public Guid MovementId { get; set; } = Guid.Empty;
+
+    public Guid MedicationId { get; set; } = Guid.Empty;
+
+    public string MovementType { get; set; } = string.Empty;
+
+    public int Quantity { get; set; }
+
+    public Guid? ReferenceId { get; set; }
+
+    public string? Notes { get; set; }
+
+    public Guid? PerformedBy { get; set; }
+}
 
 public class UpdateStockMovementCommandHandler
     : IRequestHandler<UpdateStockMovementCommand, Result<StockMovementDto>>
 {
     private readonly IUnitOfWork _unitOfWork;
+    private readonly IInventoryPolicyService _inventoryPolicyService;
 
-    public UpdateStockMovementCommandHandler(IUnitOfWork unitOfWork)
+    public UpdateStockMovementCommandHandler(
+        IUnitOfWork unitOfWork,
+        IInventoryPolicyService inventoryPolicyService)
     {
         _unitOfWork = unitOfWork;
+        _inventoryPolicyService = inventoryPolicyService;
     }
 
     public async Task<Result<StockMovementDto>> Handle(
@@ -35,6 +47,15 @@ public class UpdateStockMovementCommandHandler
 
         if (entity is null)
             return Result<StockMovementDto>.Failure("StockMovement not found");
+
+        var inventoryResult = await _inventoryPolicyService.EnsureCanApplyMovementAsync(
+            request.MedicationId,
+            request.MovementType,
+            request.Quantity,
+            cancellationToken);
+
+        if (!inventoryResult.IsValid)
+            return Result<StockMovementDto>.Failure(inventoryResult.Error!);
 
         entity.MedicationId = request.MedicationId;
         entity.MovementType = request.MovementType;

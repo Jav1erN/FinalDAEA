@@ -1,5 +1,5 @@
-using ClinicSystem.Application.Common.Models;
-using ClinicSystem.Application.UseCases.Payments.Dtos;
+﻿using ClinicSystem.Application.Common.Models;
+using ClinicSystem.Application.Common.Dtos;
 using ClinicSystem.Domain.Entities;
 using ClinicSystem.Domain.Ports.Persistence;
 using MediatR;
@@ -22,7 +22,7 @@ public class GetPaymentByIdQueryHandler
         GetPaymentByIdQuery request,
         CancellationToken cancellationToken)
     {
-        var entity = await _unitOfWork.Repository<Payment>()
+        var entity = await _unitOfWork.Payments
             .GetByIdAsync(request.PaymentId, cancellationToken);
 
         if (entity is null)
@@ -31,3 +31,4 @@ public class GetPaymentByIdQueryHandler
         return Result<PaymentDto>.Success(entity.ToDto());
     }
 }
+

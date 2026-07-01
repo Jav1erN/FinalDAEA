@@ -1,5 +1,5 @@
 ﻿using ClinicSystem.Application.Common.Models;
-using ClinicSystem.Application.UseCases.Medications.Dtos;
+using ClinicSystem.Application.Common.Dtos;
 using ClinicSystem.Domain.Entities;
 using ClinicSystem.Domain.Ports.Persistence;
 using MediatR;

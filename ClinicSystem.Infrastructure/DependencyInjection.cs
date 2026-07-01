@@ -1,4 +1,6 @@
-﻿using ClinicSystem.Domain.Ports.Persistence;
+using ClinicSystem.Domain.Ports.Persistence;
+using ClinicSystem.Domain.Ports.Services;
+using ClinicSystem.Infrastructure.Adapters.Services;
 using ClinicSystem.Infrastructure.Persistence;
 using ClinicSystem.Infrastructure.Persistence.Context;
 using ClinicSystem.Infrastructure.Persistence.Repositories;
@@ -50,6 +52,10 @@ public static class DependencyInjection
         services.AddScoped<IUserRepository, UserRepository>();
         services.AddScoped<IVitalSignRepository, VitalSignRepository>();
         services.AddScoped<IUnitOfWork, UnitOfWork>();
+
+        services.AddScoped<IAppointmentSchedulingService, AppointmentSchedulingService>();
+        services.AddScoped<IBillingPolicyService, BillingPolicyService>();
+        services.AddScoped<IInventoryPolicyService, InventoryPolicyService>();
 
         return services;
     }

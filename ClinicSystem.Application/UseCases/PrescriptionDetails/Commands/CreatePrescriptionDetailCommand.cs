@@ -1,21 +1,29 @@
 using ClinicSystem.Application.Common.Models;
-using ClinicSystem.Application.UseCases.PrescriptionDetails.Dtos;
+using ClinicSystem.Application.Common.Dtos;
 using ClinicSystem.Domain.Entities;
 using ClinicSystem.Domain.Ports.Persistence;
 using MediatR;
 
 namespace ClinicSystem.Application.UseCases.PrescriptionDetails.Commands;
 
-public record CreatePrescriptionDetailCommand(
-    Guid PrescriptionId,
-    Guid MedicationId,
-    string? Dosage,
-    string? Frequency,
-    int? DurationDays,
-    int QuantityPrescribed,
-    string? Instructions,
-    bool? IsSubstitutable
-) : IRequest<Result<PrescriptionDetailDto>>;
+public class CreatePrescriptionDetailCommand : IRequest<Result<PrescriptionDetailDto>>
+{
+    public Guid PrescriptionId { get; set; } = Guid.Empty;
+
+    public Guid MedicationId { get; set; } = Guid.Empty;
+
+    public string? Dosage { get; set; }
+
+    public string? Frequency { get; set; }
+
+    public int? DurationDays { get; set; }
+
+    public int QuantityPrescribed { get; set; }
+
+    public string? Instructions { get; set; }
+
+    public bool? IsSubstitutable { get; set; }
+}
 
 public class CreatePrescriptionDetailCommandHandler
     : IRequestHandler<CreatePrescriptionDetailCommand, Result<PrescriptionDetailDto>>
@@ -44,9 +52,10 @@ public class CreatePrescriptionDetailCommandHandler
             IsSubstitutable = request.IsSubstitutable
         };
 
-        await _unitOfWork.Repository<PrescriptionDetail>().AddAsync(entity, cancellationToken);
+        await _unitOfWork.PrescriptionDetails.AddAsync(entity, cancellationToken);
         await _unitOfWork.SaveChangesAsync(cancellationToken);
 
         return Result<PrescriptionDetailDto>.Success(entity.ToDto());
     }
 }
+
