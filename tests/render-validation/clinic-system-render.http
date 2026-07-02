@@ -1,0 +1,31 @@
+@API_BASE_URL = https://finaldaea.onrender.com
+
+### Health
+GET {{API_BASE_URL}}/health
+
+### Swagger JSON
+GET {{API_BASE_URL}}/swagger/v1/swagger.json
+
+### Roles
+GET {{API_BASE_URL}}/api/roles
+
+### Departments
+GET {{API_BASE_URL}}/api/departments
+
+### Specialties - route name deployed by current controller
+GET {{API_BASE_URL}}/api/specialtys
+
+### Appointment statuses
+GET {{API_BASE_URL}}/api/appointment-statuses
+
+### Patients
+GET {{API_BASE_URL}}/api/patients
+
+### Doctors
+GET {{API_BASE_URL}}/api/doctors
+
+### Appointments
+GET {{API_BASE_URL}}/api/appointments
+
+### Medical records
+GET {{API_BASE_URL}}/api/medical-records
