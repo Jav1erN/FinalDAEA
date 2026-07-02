@@ -1,0 +1,21 @@
+services:
+  - type: web
+    name: clinicsystem-api
+    runtime: docker
+    plan: free
+    dockerfilePath: ./Dockerfile
+    healthCheckPath: /health
+    envVars:
+      - key: ASPNETCORE_ENVIRONMENT
+        value: Production
+      - key: ENABLE_SWAGGER
+        value: "true"
+      - key: DATABASE_URL
+        fromDatabase:
+          name: clinicsystem-db
+          property: connectionString
+
+databases:
+  - name: clinicsystem-db
+    databaseName: clinic_system
+    user: clinicsystem
